@@ -6,8 +6,8 @@ Código Pgcomp: [PC101](http://www.pgcomp.ula.ve/LogicayMatematicaComputacional.
 
 Teoría: 4 horas por semana
 Práctica: 1/2 hora por semana
-Laboratorio: 0
-UC: 5
+Laboratorio: 0 (se usarán laboratorios virtuales)
+UC: 4
 
 ## Breve Descripción del Curso
 ## Objetivos del curso:
