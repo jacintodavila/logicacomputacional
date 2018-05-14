@@ -44,16 +44,59 @@ El egresado o egresada de este curso corto:
 ## Contenido del curso corto de Lógica Computacional
 Unidad 1. [Programas lógicos y programas con propositos](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo01.html)
 
+### tema 1. Programas Lógicos y agentes reactivos. 
+### tema 2. La forma lógica del lenguaje natural
+### tema 3. Restricciones (Constrains)
+### tema 4. Programas con propósitos (metas u objetivos). 
+
+### Ejercicio: Descubrir la forma lógica de un aviso público o publicidad. 
+
 Unidad 2. [Reducción de Metas, "Conclusiones si Condiciones" y Razonamiento hacia atrás](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo02.html)
+
+### tema 1. Representación del conocimiento y creencias de una agente proactivo.
+### tema 2. Razonamiento informal sobre una representación formal. 
+### tema 3. De bases de conocimiento a programas lógicos. 
+### tema 4. Grafos para reducción de metas. 
+### tema 5. Razonamiento hacia atrás. 
+
+### Ejercicio: Identificar las limitaciones del lenguaje Prolog para la planificación. 
 
 Unidad 3. [Sistemas de Producción y Razonamiento hacia adelante](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo03.html). 
 
+### tema 1. Conductismo versus Representación. 
+### tema 2. Sistemas de producción y el razonamiento hacia adelante. 
+### tema 3. Sistemas de producción sin ninguna representación del mundo.
+### tema 4. Sistemas de producción con memoria.
+### tema 5. El uso de los sistemas de producción para simular la reducción de metas. 
+
+### Ejercicio: Modelar un agente que reaccione razonablemente frente a su entorno. 
+
 Unidad 4. [La Historia en el Ciclo de los Agentes](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo04.html).
+
+### tema 1. Un sistema lógico que integra reducción de metas y razonamiento hacia adelante.
+### tema 2. Una lógica de metas y creencias. 
+### tema 3. Primera aproximación al factor tiempo en la lógica de los agentes. 
+
+### Ejercicio: Modelar un agente reactivo y proactivo.
 
 Unidad 5. [Pensar = Inferencia + Búsqueda + Inferencia](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo05.html).
 
+### tema 1. La metáfora geográfica de la resolución de problemas.
+### tema 2. Razonamiento lógico = búsqueda + inferencia.
+### tema 3. El manejo de la incertidumbre en la lógica.
+### tema 4. Pensar = Inferencia + Búsqueda + Inferencia
+### tema 5. Pensar sin buscar (el papel de la decisión). 
+
+### Ejercicio: Responder: ¿Cuál es la diferencia, si acaso, entre pensar y decidir?. 
+
 Unidad 6. [Especificaciones Ejecutables](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo06.html). 
 
+### tema 1. El sentido de tener un propósito. Compilando metas y creencias. 
+### tema 2. Encapsulamiento.
+
+### Ejercicio: Responder: ¿Por qué la gente no es así? 
+
+### Evaluación general del curso: Un examen escrito y el modelo codificado de un agente reactivo y proactivo. 
 
 # Curso Corto: Lógica Computacional
 Teoría: 16 horas. 
@@ -72,12 +115,40 @@ El egresado o egresada de este curso corto:
 
 Unidad 7. [Consciencia Computacional](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo07.html).
 
+### tema 1. Introducción a la consciencia computacional. 
+### tema 2. Compilando representaciones por medio del razonamiento por adelantado. 
+### tema 3. Combinando el pensamiento racional con el pensamiento intuitivo. 
+### tema 4. La lógica como el lenguaje de alto nivel del pensamiento. 
+
+### Ejercicio: Modelar un agente intuitivo y racional. 
+
 Unidad 8. [El fundamento lógico del dilema del prisionero. Introducción a la teoría de juegos](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo08.html).
+
+### tema 1. Introducción a la teoria matemática de juegos de interacción.
+### tema 2. La lógica del dilema del prisionero. 
+### tema 3. La lógica general de los juegos.
+### tema 4. Combinando la lógica y la teoría de decisiones. 
+### tema 5. Resolviendo el dilema del prisionero. 
+
+### Ejercicio: Modelar y simular un juego de interacción entre dos o más agentes. 
 
 Unidad 9. [Semántica Lógica de Modelos Dinámicos](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo09.html).
 
+### tema 1. La lógica de los estado estáticos y los estados dinámicos. 
+### tema 2. La semántica de la lógica y su relación con las estructuras del universo.
+### tema 3. El cálculo de situaciones. 
+### tema 4. El cálculo de eventos y una representación explícita del tiempo en lógica. 
+
+### Ejercicio: Modelar, simular y reinterpretar el juego de la zorra y el cuervo. 
+
 Unidad 10. [Lógica y la orientación a los objetos](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo10.html).
 
+### tema 1. El uso del conductismo y de la orientación por objetos en computación.
+### tema 2. Reconciliando la lógica con los objetos: Orientación por objetos moderada.  
+### tema 3. Redes semánticas.
+### tema 4. Lingüística orientada a objetos. 
+
+### Ejercicio: Modelar un sistema multi-agente orientado a objetos. 
 
 # Curso Corto: Aplicaciones Lógicas
 Teoría: 16 horas
@@ -94,9 +165,28 @@ El egresado o egresada de este curso corto:
 
 Unidad 11. [Lógica y la Web Semántica](http://webdelprofesor.ula.ve/ingenieria/jacinto/ws/web-semantica.html). 
 
+### tema 1. Lenguajes ontológicos e Ingeniería ontológica. 
+### tema 2. Razonamiento no monótono. 
+
+### Ejercicio: Modelar un agente que sirva como gestor de la web semántica. 
+
 Unidad 12. [Lógica y Aprendizaje Automático (Machine Learning)](http://webdelprofesor.ula.ve/ingenieria/jacinto/libros/logica-practica-aprendizaje-computacional.pdf).
 
+### tema 1. Introducción al aprendizaje computacional (machine learning).
+### tema 2. Especificación elemental de un agente aprendiz.
+### tema 3. Optimización por simulación: Agentes que aprenden en una simulación. 
+
+### Ejercicio: Resolver un problema de optimización por simulación con agentes aprendices. 
+
 Unidad 13. [Contratos Lógicos.](http://logicalcontracts.com/) 
+
+### tema 1. Introducción a las cadenas de bloques y las plataformas de criptomonedas. 
+### tema 2. Introducción a los contratos inteligentes. 
+### tema 3. Protocolo de especificación legal (LSP). 
+### tema 4. La arquitectura de la plataforma de Contratos Lógicos.
+### tema 5. Introducción al lenguaje natural controlado para escribir contratos lógicos.
+
+### Ejercicio: Producir el software de gestión de un contracto inteligente a partir del texto de un contrato real. 
 
 ## Bibliografía
 Textos guías del curso: 
