@@ -31,6 +31,13 @@ Práctica: 8 horas
 Laboratorio: 0
 UC: 1 y 1/4
 
+## Objetivos del curso:
+### Generales: Conocer los lenguajes lógicos-matemáticos y sus aplicaciones en computación.
+
+### Específicos:
+1. Revisar la historia del pensamiento lógico y matemático.
+2. Conocer el lenguaje de la programación lógica.
+
 ## Competencias
 El egresado o egresada de este curso corto:
 
@@ -41,7 +48,7 @@ El egresado o egresada de este curso corto:
 3.- Modela un agente usando el lenguaje lógico para caracterizar los objetos computacionales que animan el concepto de agente y le transfieren a cada realización capacidades para la conducta inteligente. 
 
 
-## Contenido del curso corto de Lógica Computacional
+## Contenido del curso corto de Programación Lógica
 Unidad 1. [Programas lógicos y programas con propositos](http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/capitulo01.html)
 
 ### tema 1. Programas Lógicos y agentes reactivos. 
@@ -104,6 +111,13 @@ Práctica: 8 horas
 Laboratorio: 0
 UC: 1 y 1/4
 
+## Objetivos del curso:
+### Generales: Usar los lenguajes lógicos-matemáticos para modelar sistemas computacionales.
+
+### Específicos:
+1. Conocer el lenguaje de la lógica computacional. 
+2. Conocer fundamentos de las matemáticas discretas y su relación con computación.
+
 ## Competencias
 El egresado o egresada de este curso corto: 
 
@@ -155,6 +169,13 @@ Teoría: 16 horas
 Práctica: 16 horas
 Laboratorio: 0
 UC: 1 y 1/2
+
+## Objetivos del curso:
+### Generales: Conocer los lenguajes lógicos-matemáticos y sus aplicaciones en computación.
+
+### Específicos:
+1. Evaluar el lenguaje de la programación lógica y la lógica computacional.
+2. Desarrollar modelos y aplicaciones de la lógica. 
 
 ## Competencias
 El egresado o egresada de este curso corto:
