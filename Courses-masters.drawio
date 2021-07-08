@@ -1,1 +1,73 @@
-<mxfile host="app.diagrams.net" modified="2021-07-07T23:01:06.841Z" agent="5.0 (X11)" etag="nz1aoIXx7OapZblGUcpC" version="14.8.5" type="github"><diagram id="p7oysk6ndTNmlZGjdjdw" name="Page-1">7Vpbc6o6GP01PHZGwBuPito6R90ddV/OY4QUcyYQdghe+ut3AkHFxCm7VTt6+tKGLyGEtb47GrYbbh4piJdj4kNsWDV/Y9g9w7JMy3T4PyHZ5pKm08wFAUW+XLQXzNArlMKalKbIh0lpISMEMxSXhR6JIuixkgxQStblZS8El58agwAqgpkHsCr9iXy2zKVtq7WXP0EULIsnm035wiEoFss3SZbAJ+sDkd03bJcSwvJRuHEhFuAVuOT3DU7M7g5GYcSq3AC9p3TmJ7/TRw+TxvrHc+93+iB3WQGcyhfuTOfDwdAddkby2GxbYEFJGvlQbFcz7O56iRicxcATs2vOPpctWYj5lcmH6vGKZ0HK4OZAJI/7CEkIGd3yJXK2LZGTqlOXl+s9D2YB7vKAg6aUAUl9sNt4jw4fSID+AixLAcuwmpg/teujFR8GYjhDCYMhfzbXeWiI8+VLFrRYUUj4GQ7u02w1hTGFCccPeMhwbaNrR9mu4qAuiYiHQsRnyakNj+jjChiLIecEYAwxCSgI+cIYUsQBgvR47nk/8RbbL2gDC+s9E/v1MvtmTaXfqmno3y08O/+2wv8x2RS8kggUrNwV/lZV/FtngH/Qip3GLO2ufi3c5eRHd4Y7Q42vOoa/w+0l8tEr+C+7ShkJhd10TIa8u+Oj9dl8vMsdDiOOH/AOHFpFZ5jHeP43c399bmA0ulfP1ygxbesCn6Nh2rkU06rj0xD0TIkHk53zk3FqBKMgze1xAljKMc5erCrrc7hhIYpQFFSPo7dNfuMo6bE15Levaeb1KuRPocjSLf6E2oHF9/iQogVP4UkibR+jgGMj1lbUgG2W7GCe26MVSf6nWtDQBF+tFpzDBawbD5Frbh/88Wa88Ou41eoNNMG3O/rm/uM+dYaTB3f67/P8m/t9Ou1P3GF/pqD/jspBwUqD6En4LMcpW5EGvuaFSgctfJVi5YCDBELhPs9RPXRBAnf79AAjJ23u003lY1y33y4UtOHyHB5TS7YaLl2KYiawesny0R64fdDLBmZqslGtg2pcCvS2AvqYRNCXcShADGBhDvcF+6659BbsF3NsjqrrJGI0dze1vojbVKb6vAa7PwLan01A0Sg9VHyZMItXTVLBw5ymCbt57J2yo9fWRdfFXs2K5hT4Gfj3hXW9agJ6OazVFGrU70wnw8mjAva1083GJ3aq9WCpKUg5uYQJA36eiyR5c0wU5UJMvLxllolv3l83qnSRzatSU6me7uCAUMTCjKyFZCQn5MOFwRh4SxSJTUYQ0MPeSoUm3M2U3x9UG7scanRqY9WvqTatv1abzgpEr8D/0pkr6YxdTg3tpkZn7Ku6GrUm0vAjW+n7VgFMxIdzjE9215UtBAv8ztNKcvfcH7XsdRmAdd0MQC3Mvj5WX1ABjhq2ps74a21VAdqXUgBLrQu/PtpcK82sa/oy3Pmr9L+jB8kv9z8ayuYOfnpl9/8A</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-07-08T17:07:41.684Z" agent="5.0 (X11)" etag="7PdBTLuSymisER3xf8xO" version="14.8.5" type="github">
+  <diagram id="p7oysk6ndTNmlZGjdjdw" name="Page-1">
+    <mxGraphModel dx="1422" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ecHuSdsquGclo5wVPDqu-1" value="ARTIFICIAL" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ecHuSdsquGclo5wVPDqu-2" value="&lt;div&gt;Sistemas de &lt;br&gt;&lt;/div&gt;&lt;div&gt;Representación del Conocimiento&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="100" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ecHuSdsquGclo5wVPDqu-3" value="Sistemas de razonamiento" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="200" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="F7p95SuBvXbChNVBSlAI-1" value="Sistemas de Aprendizaje Automático" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="270" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="F7p95SuBvXbChNVBSlAI-2" value="&lt;div&gt;Sistemas de Interacción&lt;/div&gt;&lt;div&gt; con el Entorno&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="135" y="340" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="F7p95SuBvXbChNVBSlAI-3" value="&lt;div&gt;Procesamiento del Lenguaje Natural y&lt;/div&gt;&lt;div&gt;Textmining&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="430" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="F7p95SuBvXbChNVBSlAI-4" value="&lt;div&gt;Redes, Sistemas Distribuidos Inteligentes&lt;/div&gt;&lt;div&gt;y Colectivos&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="500" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-1" value="BLOCKCHAIN-CRYPTOCURRENCIES" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="154" y="680" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-2" value="&lt;div&gt;Fundamentos de &lt;br&gt;&lt;/div&gt;&lt;div&gt;Bases de Datos&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="135" y="740" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-3" value="Criptografía" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="144" y="810" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-8" value="Monedas Digitales" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="144" y="860" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-9" value="Contratos Electrónicos" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="144" y="920" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-10" value="Mining versus Trust" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="145" y="980" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-11" value="Trading" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="145" y="1040" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-12" value="LEARNING" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="541" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-13" value="Fundamentos estadístico y estocásticos" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="501" y="100" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-14" value="&lt;div&gt;Algoritmos básicos de &lt;br&gt;&lt;/div&gt;&lt;div&gt;Machine Learning&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="504" y="300" width="224" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-17" value="&lt;div&gt;Algoritmos Avanzados de &lt;br&gt;&lt;/div&gt;&lt;div&gt;Machine Learning&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="360" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-18" value="&lt;div&gt;Entornos de Desarrollo&lt;/div&gt;&lt;div&gt;para Machine Learning&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="506" y="240" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-19" value="&lt;div&gt;Sistemas de &lt;br&gt;&lt;/div&gt;&lt;div&gt;Representación del Conocimiento&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="511" y="160" width="208" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w5-nC1y-dMxMbd4l77DF-20" value="&lt;div&gt;Procesamiento del Lenguaje Natural y&lt;/div&gt;&lt;div&gt;Textmining&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="501" y="420" width="223" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
