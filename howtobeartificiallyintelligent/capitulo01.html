@@ -1,0 +1,600 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Bob Kowalski. Capítulo 1. Qué hacer en caso de emergencia</title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2021-07-19T18:43:33.588373830"/>
+	<meta name="classification" content="Lógica de Agentes"/>
+	<meta name="description" content="Versión 1 de Marzo de 2005
+Traducción Jacinto Dávila"/>
+	<meta name="keywords" content="Agentes, lógica"/>
+	<meta name="Originator" content="Microsoft Word 10"/>
+	<meta name="ProgId" content="Word.Document"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 2cm; margin-right: 1cm; margin-top: 1cm; margin-bottom: 1cm }
+		p { color: #000000; background: transparent }
+		h1 { color: #000000; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		p.msonormal { margin-bottom: 0cm; font-family: "Times New Roman" }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h2 class="western">
+<font face="Utopia, serif"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a> </font><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo01_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+
+</h2>
+<h1 class="western"><font face="Utopia, serif">Capítulo 1. Qué
+hacer en caso de emergencia</font></h1>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Imagine
+que Ud viaja en el metro de Londres (o el de cualquier ciudad) y
+repentinamente siente una mano ajena en uno de sus bolsillos. Para su
+fortuna, ve Ud un aviso que le dice exactamente qué debe hacer.</font></font></p>
+<p><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Emergencias</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pulse
+el botón de la alarma </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>para</b>
+alertar al conductor.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductor se detendrá</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+alguna parte del tren está dentro de una estación</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>de
+lo contrario</b>, el tren continuará hasta la siguiente estación,</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">donde
+será más fácil conseguir ayuda.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Se
+penalizará con 50 libras</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">el
+uso inapropiado.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif">El Aviso de Emergencia
+del Metro de Londres entendido como un programa lógico</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+propósito del Aviso de Emergencia es el de regular la conducta de
+los pasajeros en caso de emergencias. En este sentido, funciona como
+un programa, no para controlar un computador, sino para controlar a
+las personas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+cumplir con su propósito, el Aviso no debe ser ambigüo, de tal
+forma que no se pueda mal-interpretar el significado establecido.
+Además, debe ser fácil de entender, de manera que el lector le
+pueda procesar con el mínimo de esfuerzo. Al igual que un programa
+para un computador, debe también ser eficiente, alcanzando su
+propósito (obtener ayuda, en este caso) tan rápido como sea
+posible. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+naturaleza computacional del Aviso de Emergencia es más fácil de
+notar en la primera oración.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pulse
+el botón de la alarma</font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 8.58cm; margin-bottom: 0.51cm">
+<font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>para</b>
+alertar al conductor.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+oración tiene la forma de un <b>procedimiento de reducción de
+metas</b>:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Reduzca
+la meta de</b> alertar al conductor</font></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>a
+la sub-meta de</b> presionar el botón de alarma. </font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+general, buena parte de nuestra comunicación entre humanos puede ser
+entendida en tales términos computacionales, en los que un humano
+intenta programar a otros para obtener la respuesta que desea. En
+este caso, la gerencia del Metro intenta programar a los pasajeros
+para que se comporten con efectividad y eficiencia en caso de
+emergencia. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+interpretación de la comunicación humana puede ser indignante a
+primera vista, porque parece contemplar a la gente como meras
+máquinas. Esa no es mi intención. Lo que intento proponer es que el
+pensar en las personas como agentes computacionales puede, algunas
+veces, ayudarnos a formular formas de comunicarnos con ellas en
+términos más efectivos y más eficientes. Más efectivos porque
+nuestros &quot;programas&quot; servirán mejor a nuestras
+intenciones. Más eficientes porque el receptor podrá procesar y
+reaccionar al programa con menos esfuerzo. </font></font>
+</p>
+<h2 class="western" align="justify"><br/>
+<br/>
+
+</h2>
+<h2 class="western" align="justify"><font face="Utopia, serif">La
+lógica de la segunda y tercer oración del Aviso de Emergencia</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+comunicación humana, sin embargo, también puede ser comprendida en
+términos lógicos. Así entendida, una comunicación es una
+colección de oraciones con una forma subyacente que le proporciona
+su significado. Para entender una oración en lenguaje natural, el
+lector o quien escucha tiene que descifrar su estructura superficial
+para extraer su significado. Necesita luego asimilar su significado
+para acomodarlo en su red de creencias. Estas creencias incluyen
+tanto creencias generales fundamentales como aquellas obtenidas de
+oraciones anteriores en la misma comunicación. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Luego
+de extraer esa colección de significados, el receptor de la
+comunicación puede usarlos para resolver problemas que surjan en su
+ambiente y en los que esos significados sean relevantes. En ese
+sentido, las oraciones del lenguaje natural son como un programa para
+el computador. El proceso de extraer los significados lógicos de las
+oraciones es como el compilar un programa de su forma externa a su
+forma interna, y el proceso de usar esos significados para resolver
+problemas es como el ejecutar el programa compilado. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el ejemplo del Aviso de Emergencia, la relación entre la forma
+externa de la oración en Español (o en Inglés) y su forma lógica
+interna es más evidente en los casos de la segunda y la tercera
+oración del Aviso, gracias principalmente a su uso de los términos
+lógicos &quot;si&quot;, &quot;alguna&quot; y &quot;de lo contrario&quot;.
+</font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Uno
+puede verse tentado a afirmar que el aviso es tan fácil de entender
+debido a que la estructura superficial de su forma externa es tan
+cercana a la forma interna del significado pretendido para esas
+oraciones. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+hecho, la segunda y la tercera oración son más ambigüas de lo que
+parece a primera vista. En particular, la segunda oración no dice
+claramente que es lo que el conductor dejará de hacer (¿se
+detendrá?). Es poco probable que sea, por ejemplo, que:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductor dejará de causar la emergencia</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#2300dc"><b>si</b></font><font color="#2300dc">
+alguna parte del tren está dentro de una estación</font>.</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+lugar de eso, es casi seguro que signifique: </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductor detendrá el tren en una estación </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+alguna parte del tren está dentro de esa estación.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, incluso esta interpretación no termina de capturar el
+significado pretendido para la oración. Si se le ubica en el
+contexto de la primer oración, la segunda oración tiene una
+condición adicional implícita, es decir, que el conductor ha sido
+alertado acerca de una emergencia. Por lo tanto, el significado
+pretendido de la segunda oración es:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductor detendrá el tren en una estación</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+está al tanto de una emergencia </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+alguna parte del tren está dentro de esa estación.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+la condición adicional, la oración significa literalmente que el
+conductor detendrá el tren cuando quiera que el tren esté en una
+estación, haya o nó una emergencia. Si ese fuese el caso, un tren
+nunca podría salir de la estación una vez que llegara a ella. Para
+entender la oración, el lector del Aviso necesita tanto conocimiento
+contextual general acerca del cómo se comportan normalmente los
+conductores de trenes así como conocimiento específico del contexto
+de las oraciones anteriores en el Aviso. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Siguiendo
+con nuestra interpretacion de la segunda oración, es claro ahora que
+el significado pretendido para la tercera oración es:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductor detendrá el tren en la siguiente estación</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">allí
+se puede brindar ayuda mejor que entre las estaciones.</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+ha sido alertado de una emergencia </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm">
+<font color="#0000cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+ninguna parte del tren está en una estación</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el lenguaje natural, es costumbre omitir condiciones tales como
+“<font color="#0000cc">parte del tren está en una estación</font>”,
+que se pueden obtener del contexto. En lógica formal, sin embargo,
+las oraciones no pueden confiarse al contexto y deben ser planteadas
+con claridad. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que las oraciones en lógica formal suelen ser explícitas y no se
+confían al contexto, Ud bien podría tomar una colección de
+oraciones escritas en lógica formal, arrojarlas al aire, como con un
+mazo de cartas y dejarlas caer en cualquier orden. La colección
+resultante de oraciones tiene el mismo significado que la colección
+en el orden original. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así
+que, en teoría, si este libro fuese escrito es forma puramente
+lógica, Ud podría leerlo al revés, al derecho o en cualquier orden
+y, en todo caso, tendría el mismo significado. De hecho, en buena
+medida, el trabajo de escribir un libro como este está en encontrar
+un orden apropiado para presentar las ideas, de manera que sean tan
+fáciles de entender como sea posible. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif">La
+primera oración del Aviso de Emergencia vista como un Programa
+Lógico. </font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primera oración del Aviso ha sido escrita en forma de un
+procedimiento, lo cual oculta su forma lógica subyacente. En
+general, un <b>procedimiento para reducir metas</b> con la forma:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Reduzca</b>
+meta <b>a</b> sub-metas.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">oculta
+una implicación lógica como:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 8.58cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">meta
+<b>si</b> sub-metas.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+conducta reductora de metas de ese procedimiento pueden obtenerse de
+esta implicación <b>razonando hacia atrás</b>:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para</b>
+<b>concluir que</b> una meta <b>puede ser resuelta,</b> </font></font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>muestre</b>
+<b>que</b> las sub-metas <b>pueden ser resueltas</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+manera que la primera oración del Aviso de Emergencia tiene esta
+forma lógica oculta:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+alerta al conductor</font></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+pulsa el botón de la señal de alarma. </font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+uso del razonamiento hacia atrás para convertir implicaciones en
+procedimientos de redución de metas se conoce como <b>programación
+lógica</b>. Las implicaciones así dispuestas son llamadas <b>programas
+lógicos</b>. La programación lógica fue bastante popular durante
+un tiempo en la década de 1980 y luego cayó en desuso. Una de las
+metas de este libro es mostrar que la programación lógica puede ser
+útil no sólo para hacer computación sino también para el
+razonamiento humano. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+razonamiento hacia atrás contrasta con el razonamiento hacia
+adelante que, probablemente, es más familiar para más personas.
+Dada una implicación con la forma:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#3333ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+condiciones <b>entonces</b> conclusión</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+una colección de oraciones que puedan compararse y aparearse con las
+condiciones, el razonamiento hacia adelante deriva la conclusión
+como una consecuencia lógica de las condiciones.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cuando
+debemos usar razonamiento hacia atrás o hacia adelante es uno de los
+asuntos más importantes investigados en este libro [1]. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif">La cuarta oración del
+Aviso de Emergencia como una restricción</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+los lenguajes naturales, las implicaciones frecuentemente se ocultan
+bajo la superficie, bien en forma de procedimientos, bien en forma
+declarativa. Por ejemplo, la última oración del Aviso es una
+oración declarativa con la siguiente forma lógica subyacente:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+obtiene una multa de 50 libras </font></font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+pulsa el botón de alarma cuando no es apropiado. </font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonando
+hacia atrás, esta implicación se convierte en el procedimiento:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para</b>
+obtener una multa de 50 libras<b>,</b></font></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#2300dc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">pulse
+el botón de alarma cuando no es apropiado. </font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+poco probable que un pasajero quiera ganarse una multa de 50 libras
+y, por tanto, es poco probable que el pasajero quiera razonar hacia
+atrás para reducir esa tan poco atractiva meta a sus sub-metas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+más probable que el pasajero use el razonamiento hacia adelante para
+derivar que usar la señal de alarma cuando no es apropiado tendrá
+consecuencias no deseables. Así que oración actúa como una
+restricción sobre la conducta del pasajero, antes que como un
+generador. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que los procedimientos de reducción de metas restringen las
+implicaciones al razonamiento hacia atrás, la forma procedimental de
+esa oración no es la apropiada. Esto explica porque esa oración es
+escrita declarativamente y no en forma de procedimiento. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+hecho, sólo la primera oración del Aviso de Emergencia es escrita
+en forma procedimental, y sólo esta oración del Aviso funciona como
+un programa normal, para invocar la conducta deseada en los pasajeros
+del tren. La cuarta oración, por su parte, funciona como una
+restricción, para evitar conductas indeseadas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+oraciones segunda y tercera, por otro lado, describen parte de un
+programa que debe ser ejecutado por un agente diferente: el conductor
+del tren. Estas oraciones son escritas declarativamente y no
+procedimentalmente, precísamente porque deben ser ejecutadas por un
+agente diferente, no por el agente que observa la emergencia en
+primer lugar. </font></font>
+</p>
+<h1 class="western"><font face="Utopia, serif">Programas con
+propósitos</font></h1>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Se
+sobreentiende que el propósito o meta [2]</font></font><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap1.html#_ftn2" name="_ftnref2"><span style="text-decoration: none">
+</span></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">del
+Aviso es explicar a los pasajeros como pueden obtener ayuda en una
+emergencia. Esta es la razón para que la tercera oración incluya la
+frase:</font></font></p>
+<p align="center"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">donde
+será más fácil conseguir ayuda.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+frase explica el porqué el conductor no detiene el tren
+inmediatamente cuando no está en una estación. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primera oración del Aviso podría ser reescrita con tres oraciones,
+para hacer explícito su propósito:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+ocurre una emergencia, consiga ayuda. </font></font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+consigue ayuda <b>si</b> alerta al conductor.</font></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+alerta al conductor <b>si</b> pulsa el botón de la señal de alarma.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aquí,
+para variar, he escrito las oraciones segunda y tercera como
+programas lógicos. Usados para razonar hacia atrás, se comportan
+como los procedimientos:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+conseguir ayuda, alerte al conductor. </font></font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+alertar al conductor, pulse el botón de la señal de alarma.</font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primera oración también tiene la forma de una implicación. Pero su
+conclusión es imperativa (consiga ayuda) antes que declarativa (Ud
+conseguirá ayuda). Es como una <i><b>regla de condición-acción</b></i>,
+pero más general, puesto que su conclusión es una meta, en lugar de
+ser sólo una acción. Es una regla <b>condición-meta</b>. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+implicaciones con conclusiones imperativas (incluyendo reglas de
+condición-acción) pueden ser usadas para “razonar hacia
+adelante”, como las implicaciones lógicas. Sin embargo, aquellas
+no tienen todas las propiedades de las implicaciones lógicas con
+conclusiones declarativas. Las implicaciones lógicas pueden ser
+usadas para razonar hacia adelante y hacia atrás, pero las
+implicaciones con conclusiones imperativas sólo pueden ser usadas
+para razonar hacia adelante. Las oraciones declarativas pueden ser
+ciertas o falsas. Las oraciones imperativas sólo pueden ser
+obedecidas o des-obedecidas. Veremos en capítulos posteriores como
+las oraciones imperativas pueden ser transformadas a formas
+declarativas asignándoles el estatus de metas y distinguiendolas de
+las creencias. </font></font>
+</p>
+<h2 class="western">¿Hacia donde vamos?</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+capítulo pretende dar una impresión general del resto del libro.
+Muestra, con un ejemplo, como las oraciones en Español (y también
+en el original en Inglés) pueden ser vistas tanto en términos
+lógicos como en términos computacionales. También muestra como
+estas dos visiones se integran en la programación lógica, un caso
+particular de la lógica computacional, tópico de este libro. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+lógica computacional ha sido usada para desarrollar aplicaciones
+para computadores, especialmente en la Inteligencia Artificial. Sin
+embargo, en este libro me concentro en las potencialidades de su uso
+para que las personas mejoren su propias habilidades de razonamiento
+y comunicación. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+lógica tradicional fue, originalmente, un modelo del razonamiento
+humano, que ha caído en descrédito en los últimos años. Otros
+modelos tales como las reglas de condición-acción han tomado buena
+parte de su espacio. Uno de los propósitos principales de este libro
+es mostrar como las reglas de condición-acción y la lógica pueden
+ser reconciliadas y combinadas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+buena parte del problema con la lógica tradicional es su falta de
+consideración para con una cantidad de asuntos muy importantes para
+el razonamiento de lo humanos. Entre tales cosas, la necesidad de:</font></font></p>
+<ul type="disc">
+	<li><p align="justify" style="page-break-before: auto; page-break-after: auto">
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">distinguir
+	entre metas y creencias. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">estar
+	abierta a cambios en el mundo. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vincular
+	el pensar acerca de las acciones con el hecho de realizzarlas </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vincular
+	el uso de la lógica para pensar con el uso de la probabilidad y de
+	la utilidad para decidir cuál acción realiza. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">razonar
+	por omisión y con reglas con excepciones. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">combinar
+	argumentos tanto a favor como en contra de una conclusión. </font></font>
+	</p>
+</ul>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Veremos
+cómo la lógica computacional contempla estos problemas en los
+siguientes capítulos. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Además,
+compararemos y trataremos de reconciliar la lógica computacional con
+puntos de vista rivales acerca del razonamiento humano, tales como:</font></font></p>
+<ul type="disc">
+	<li><p align="justify" style="page-break-before: auto; page-break-after: auto">
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Reglas
+	de condición-acción. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Búsqueda.</font></font></p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Modelos
+	mentales. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Orientación
+	a objetos. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esquemas
+	y estereotipos. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Redes
+	neuronales. . </font></font>
+	</p>
+</ul>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Finalmente,
+investigaremos la aplicación de la lógica computacional a dos áreas
+mayores:</font></font></p>
+<ul type="disc">
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonamiento
+	legal. </font></font>
+	</p>
+	<li><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Comunicación
+	humana. </font></font>
+	</p>
+</ul>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+problema que este libro contempla puede ser ilustrado de esta manera:</font></font></p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm"><img src="capitulo01_html_1de406af0c2eea42.png" name="Graphic1" align="left" width="613" height="358">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" style="margin-right: 8.58cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" style="margin-right: 8.58cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<div id="ftn1" dir="ltr"><p><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap1.html#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="2" style="font-size: 10pt"><span lang="en-GB">[1]</span></font></font></a>
+	<font face="Utopia, serif">Es normal en la lógica formal el
+	escribir implicaciones en dirección hacia adelante, así: </font><font face="Utopia, serif"><i>si
+	condiciones entonces conclusiones</i></font><font face="Utopia, serif">.
+	Esta es la razón por la que el razonamiento desde las condiciones y
+	hacia las conclusiones es llamado </font><font face="Utopia, serif"><i>razonamiento
+	hacia adelante.</i></font> 
+	</p>
+	<p><font face="Utopia, serif">Lo cierto es que las implicaciones
+	lógicas se pueden usar para razonar tanto hacia adelante como hacia
+	atrás, no importa cómo estén escritas. Sin embargo, solemos
+	escribirlas de una manera en lugar de la otra cuando tenemos una
+	dirección preferida en mente. </font>
+	</p>
+	<p>&nbsp;</p>
+</div>
+<div id="ftn2" dir="ltr"><p class="msonormal" style="margin-bottom: 0.51cm">
+	<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap1.html#_ftnref2" name="_ftn2"><font face="Utopia, serif"><span lang="en-GB">[2]</span></font></a>
+	<font face="Utopia, serif">Los términos “meta” y “propósito”
+	son intercambiables. Otros términos que algunas veces tienen el
+	mismo significado son “motivación”, “razón”, “interes”,
+	“deseo”, “objetivo”, “misión”, “objeto”, “blanco”,
+	etc (N.T. Hemos agregado algunos términos en la lista, respecto al
+	original en inglés, i.e. “blanco” en el sentido de “tiro al
+	blanco” que se aborda con la palabra inglesa “target”. Es
+	notable que meta y propósito son también intercambiables en
+	Español, aunque en el uso cotidiano “propósito” es más
+	trascendente. Otro término que se confunde o intercambia con “meta”
+	y “propósito”, especialmente con este último, es “intención”).</font></p>
+	<p>&nbsp;</p>
+</div>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</p>
+</div>
+</body>
+</html>

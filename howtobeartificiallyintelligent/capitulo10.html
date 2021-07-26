@@ -1,0 +1,1405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-03-13T00:00:00.018341000"/>
+	<meta name="changed" content="2021-07-19T18:47:10.916268289"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<meta name="sdfootnote" content=";;;;P">
+	<meta name="sdendnote" content="ARABIC">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.21cm; background: transparent }
+		h1 { background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="es-VE" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></h2>
+<h1 class="western"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo10_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+<br/>
+<br/>
+
+</h1>
+<h1 class="western"><font color="#ff0000">Lógica y objetos.</font></h1>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">¿Cual
+es la diferencia entre la zorra y el cuervo, por un lado, y el queso
+por el otro?. Desde luego, la zorra y el cuervo tienen “anima” y
+el queso es inanimado. Las cosas animadas incluyen a los agentes,
+quienes observan cambios en el mundo y realizan los suyos propios en
+el mismo mundo. Las cosas inanimadas son completamente pasivas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+si Ud es un Conductista a ultranza, Ud creerá otra cosa. Quizás Ud
+cree que la zorra, el cuervo y el queso son simplemente objetos, que
+pueden distinguirse unos de los otros por sus diversas conductas de
+entradas y salidas. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+la zorra ve al cuervo y el cuervo tiene comida en su boca</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+la zorra alaba al cuervo.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el cuervo es alabado por la zorra</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el cuervo canta. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el queso está en el pico del cuervo y el cuervo canta</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el queso cae al suelo.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el queso está junto a la zorra</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+la zorra toma el queso. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ese
+Conductismo Extremo fue la moda en Psicología a mediados del siglo
+XX. <span lang="es-ES">Pues</span> bien, en Computación, ha sido
+moda también, en los últimos 25 años, con la forma de la
+Orientación a los Objetos, OO. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+fácil burlarse de los conductistas fundamentalistas del pasado. Pero
+no es tan fácil confrontar a los Computistas e Ingenieros de
+Sistemas actuales que defienden la llamada Orientación a los
+Objetos. La orientación a los objetos domina en cada aspecto de la
+computación moderna: desde el modelado de sistemas, pasando por la
+especificación de requerimientos y hasta el diseño e implementación
+de software y hardware. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+un tiempo, durante los 1980s, parecía como si la Lógica
+Computacional podría ocupar el papel central que ocupa la
+orientación a los objetos en la computación moderna.
+Desafortunadamente, para la lógica, la orientación a los objetos
+ganó la carrera. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+llegamos a entender que es lo que hace la OO tan atractiva en la
+computación de hoy, entonces podríamos aplicar las lecciones que
+aprendamos para mejorar la lógica computacional, no sólo para
+efectos en Computación, sino también quizás para efectos en el
+razonamiento humano. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Los
+objetos como individuos del cambiante mundo</font> </font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+la forma en que la OO ve las cosas, el mundo consiste de objetos
+encapsulados, que interactúan con los otros a través de su conducta
+de entrada-salida, previamente declarada a los demás. No hay
+diferencia, en este aspecto, entre un agente inteligente y un objeto
+inanimado. Un agente es simplemente otro objeto imbuido en el mundo.
+La orientación a los objetos nos voltea la imagen anterior en la que
+mostramos la relación entre un agente y su mundo: </font></font>
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_m409f1db5.jpg" name="gráficos1" align="left" width="576" height="616">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+esta imagen, los objetos corresponden a los individuos desde la
+perspectiva lógica que hemos venido construyendo. Se trata de
+entidades semánticas, antes que de entidades lingüísticas (o
+simbólicas). Sin embargo, mientas que en la lógica tradicional, la
+relaciones estáticas entre los individuos son el tema principal y la
+conducta dinámica es apenas un asunto secundario, en la orientación
+a los objetos todo es completamente al revés – la conducta es lo
+primero y las relaciones estáticas son secundarias y muy poco
+importantes en comparación. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Con
+la lógica imbuida en el componente pensante de un agente
+inteligente, el cambio se resuelve tanto al nivel semántico como al
+nivel lingüístico-simbólico. En el nivel semántico, el cambio es
+resuelto a través de la dinámica del ciclo de
+observación-pensamiento-acción del agente. En el nivel
+lingüístico-simbólico, el cambio es representado en el lenguaje
+mental del agente que describe metas y creencias, usando bien la
+lógica modal, bien el cálculo de situaciones, bien el cálculo de
+eventos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Con
+los objetos, el cambio es resuelto esencialmente en el nivel
+semántico. Los objetos, tanto animados como inanimados, interactúan
+unos con otros, enviando y recibiendo mensajes. Los mensajes
+recibidos corresponden a las observaciones que recibe el agente de su
+ambiente. Los mensajes enviados corresponden a las acciones que el
+agente realiza en el mundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Entre
+los objetos, el cambio puede ocurrir simultáneamente en diferentes
+partes del mundo, así como en forma independiente y sin afectar
+otras partes del mundo. El cálculo de eventos ve el mundo de una
+forma parecida. Pero mientras en el cálculo de eventos esa
+perspectiva es meramente simbólica – para hablar del cambio sin
+tener que realizarlo, en los sistemas orientados a objetos, esos
+cambios ocurren de hecho. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Al
+tomar en cuenta la naturaleza dinámica de los objetos, nuestra
+imagen orientada a los objetos del mundo debería ser más o menos
+así: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_m3ccc655a.jpg" name="gráficos2" align="left" width="576" height="334">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, en la versión orientada a los objetos de la historia de la
+zorra, el cuervo y el queso, las diversas acciones y eventos
+corresponden a mensajes entre los objetos. Los candidatos naturales
+para actuar como objetos que envían y reciben esos mensajes son los
+mismos personajes: la zorra, el cuervo y el queso. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_5a2920c3.jpg" name="gráficos3" align="left" width="576" height="507">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+defensores naturales de la orientación a los objetos la consideran
+una forma natural de ver tanto al mundo natural como a los mundos
+artificiales por construir. Los ingenieros de sistemas, en
+particular, construyen sistemas complejos combinando objetos que
+procuran una meta global. Normalmente, los objetos componentes, que
+constituyen el sistema, son sub-sistemas ellos mismos, tal como en el
+caso de los termostatos, impresoras, computadores, vehículos y
+aeroplanos, que se componen, a su vez, de objetos más simples. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Encapsulamiento</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+objeto consiste de un <i><b>estado local</b></i>, que es una
+colección de <i><b>valores</b></i> de <i><b>atributos,</b></i><span style="font-variant: normal">
+</span><span style="font-variant: normal"><span style="font-style: normal"><span style="font-weight: normal">y
+una colección de </span></span></span><i><b>métodos</b></i><span style="font-variant: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+que los objetos usan para responder a mensajes o para calcular
+valores de los atributos. Métodos y atributos quedan </span></span></span><i><b>encapsulados</b></i><span style="font-variant: normal">
+</span><span style="font-variant: normal"><span style="font-style: normal"><span style="font-weight: normal">dentro
+del objeto, ocultos para otros objetos. </span></span></span></font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+encapsulamiento de los métodos de un objeto es una propiedad
+inherente del mundo natural, puesto que no hay objeto que pueda
+conocer completamente todo lo que pasa dentro de otro objeto. En
+teoría, si Ud pudiera ver dentro de otro objeto, podría descubrir
+que es simplemente igual que Ud. Todo objeto – oso, árbol, río,
+montaña o piedra – podría tener un espíritu, que conforma su
+estado mental interno. Por otro lado, podría Ud descubrir que ningún
+otro objeto, aparte de Ud mismo, tiene algún tipo de estado interno.
+</font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+encapsulamiento de métodos sirve una función diferente en los
+mundos artificiales. Reduce la complejidad en la construcción de
+sistemas complejos a partir de objetos componentes, puesto que el
+ingeniero se concentra solamente en la conducta externa de los
+componentes. Más aún, si uno de los componentes de un sistema que
+funciona se deteriora o se torna obsoleto, puede ser reemplazado por
+otro componente que tenga la misma conducta externa, sin afectar la
+conducta global del sistema. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+orientación por objetos no se distingue entre el estado interno y
+externo de los objetos. Todos los valores de los atributos de un
+objeto están encapsulados dentro del objeto. La única manera de
+conocer el valor de un atributo de un objeto es enviando un mensaje
+al objeto pidiéndole el valor o recibiendo un mensaje del objeto que
+dice el valor. Voy a explicar, más adelante, que esto es demasiado
+extremo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, en otro aspecto, la OO es menos extrema que el conductismo
+extremo. Cuando un ingeniero construye un sistema orientado a los
+objetos, el ingeniero necesita adentrarse dentro del sistema, tanto
+para combinar los componentes pre-existentes como para crear nuevos
+objetos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Métodos</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+crear un objeto, los ingenieros necesitan iniciar (inicializar) los
+valores de sus atributos y codificar sus métodos. Los valores de los
+atributos en el estado inicial pueden ser dados expresamente en el
+momento de la creación o pueden ser obtenidos por medio de métodos.
+</font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+lenguajes OO, usados comúnmente para implementar métodos, son
+lenguajes típicos de programación procedimental, cuya sintaxis es
+herencia de los lenguajes de programación anteriores a la OO. A
+diferencia de la lógica, esos lenguajes no se pueden leer
+declarativamente, puesto que no hacen ningún esfuerzo por
+representar el mundo a su alrededor. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+obstante, aún cuando los métodos sean implementados en lenguajes de
+programación procedimental, es natural plantear sus especificaciones
+en forma lógica. Estas especificaciones tienen la forma de reglas de
+condición-acción en modo declarativo:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+un objeto recibe un mensaje con la forma R </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el objeto envía un mensaje con la forma S. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+la zorra recibe un mensaje que dice que el cuervo tiene el queso en
+la boca</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+la zorra envía un mensaje de alabanza al cuervo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el cuervo recibe un mensaje de alabanza de la zorra</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el cuervo envía un mensaje de canto.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el queso recibe un mensaje de canto del cuervo</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el queso envía un mensaje de caída al suelo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">(Nota
+de Ernesto Ponsot:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el suelo recibe mensaje de caída del queso </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el suelo envía mensaje a la zorra de que está junto al queso.)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el queso envía un mensaje de que está junto a la zorra</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+la zorra envía un mensaje de que ella toma el queso. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+métodos que implementan estas especificaciones dentro de un objeto
+se pueden programar de muchas maneras. También pueden ser
+implementados, como veremos más tarde y como debiera ser obvio para
+los lectores, por medio de metas y creencias en forma lógica.</font></font></p>
+<p align="justify"> 
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Clases</font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify" style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+OO se enorgullece de facilitarle al ingeniero la creación de nuevos
+objetos a través de la instanciación de clases más generales de
+objetos, que le heredan a los nuevos objetos sus métodos originales.
+</font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, un ingeniero podría crear una nueva zorra creando una
+instancia de la clase general de todos las zorras. La clase de las
+zorras podría tener métodos generales para mensajes tales como la
+visión de otro animal con comida y la visión de la comida en su
+poder. Podría, incluso, tener valores por omisión para atributos
+como el color de su piel y la forma de su cola. Una nueva clase de
+zorra podría, entonces, heredar esos métodos y valores de atributos
+tal como estén o con algunas modificaciones, quizás luego de
+agregar ciertos métodos y atributos únicos para ese tipo de zorra. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+clases se organizan en jerarquías taxonómicas. Por ejemplo, la
+clase de todos los zorros podría heredar la mayoría de sus métodos
+y atributos de la clase de todos los animales. La clase de todos los
+animales podría, a su vez, heredar de la clase de todos los seres
+animados. La clase de los seres animados podría heredar de la clase
+de todos los objetos materiales y, esta, finalmente, de la clase de
+todas las cosas. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h1 lang="en-GB" class="western" align="justify" style="margin-right: 3.81cm">
+<br/>
+<br/>
+
+</h1>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Cambio
+de estado</font></font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Objetos
+y clases tienen diferentes tipos de existencia. Los objetos son
+individuos concretos que, típicamente, existen y sufren cambios de
+estados. Las clases son individuos abstractos ajenos al tiempo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, en la historia de la zorra y el cuervo, el queso cambia en
+respuesta a los eventos locales que ocurren a su alrededor:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_5a2920c3.jpg" name="gráficos4" align="left" width="576" height="507">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estos
+cambios de estado son generados por métodos heredados de la clase de
+todos los quesos, algunos de los cuáles, como la tendencia a estar
+en el aire luego de comenzar a caer, son heredados a su vez de la
+clase de todas las cosas materiales. Sin embargo, las clases en sí
+mismas no cambian de estado de la misma manera. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+sistemas OO son entidades semánticas antes que simbólicas. Como
+consecuencia, los objetos no tienen que tener memoria de su pasado.
+Cuando un objeto cambia de estado, el estado suele limpiar el estado
+anterior reemplazándolo con uno nuevo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+su parte, las representaciones lógicas del cambio de estado lo
+describen sin, de hecho, realizarlo. Por lo tanto, además de
+registrar el estado actual de un objeto, pueden registrar los estados
+anteriores y predecir y explorar los futuros. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Reconciliando
+la lógica con los objetos</font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify" style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hay
+una forma obvia de reconciliar la lógica con los objetos: usando
+lógica para implementar los métodos asociados con los objetos y
+clases de objetos. Una implementación típica podría incluir metas
+de mantenimiento y creencias, que terminarían reduciendo metas a
+sub-metas con mensajes a otros objetos entre ellas. Por ejemplo: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Meta:
+Si recibo un mensaje con la forma R entonces resuelvo la meta G<span lang="en-GB">.</span></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Creencias:
+</font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">G'
+si condiciones. …</font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">G
+si otras condiciones y Yo envío un mensaje con la forma S.</font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm">… <font face="Utopia, serif"><font size="4" style="font-size: 14pt">etc.</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Crear
+un nuevo objeto instanciando una clase se convierte entonces en una
+forma de instanciación lógica, reemplazando términos concretos
+(tales como Yo) por términos abstractos (tales como “cualquier
+zorra”), quizás luego de agregarle métodos especializados y
+asignarle valores particulares a algunos atributos del objeto. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+lógica, usada para implementar los métodos de esa manera, puede
+ampliar el alcance de los sistemas orientados a objetos. Algunos
+objetos inteligentes podrían usar lógica, no solamente para
+reaccionar a los mensajes que reciben, reduciendo metas a sub-metas,
+sino también para representar el mundo, generando cursos
+alternativos de acción y derivando sus consecuencias probables.
+Otros, quizás menos inteligentes podrían también usar la lógica
+como lenguaje de implementación de alto nivel. En procura de
+eficiencia, esas implementaciones pueden ser compiladas a más bajo
+nivel, incluso en hardware. Por otro lado, estas implementaciones de
+bajo nivel podrían ser decompiladas en su forma lógica, para
+analizar la conducta de los objetos sólos o en grupo y mejorarla. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+combinar lógica con orientación por objetos puede extender nuestro
+modelo de agente basado en lógica. Más aún, la combinación ofrece
+un contexto para extender agentes aislados a sistemas multi-agentes,
+al imbuir a los agentes en una estructura semántica compartida. Los
+diversos objetos en esta estructura pueden tener diversos grados de
+inteligencia y diversos grados de actividad. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+estructura semántica de la OO es tal que los objetos pueden cambiar
+de estado concurrentemente en diferentes sitios del mundo, con total
+independencia y sin afectar a los demás. Estos cambios pueden
+ocurrir destructivamente, sin dejar ningún registro del pasado. Sin
+embargo, aparte de esos cambios que ocurren externamente en la
+estructura semántica, un agente inteligente puede usar lógica
+internamente para representar los cambios antes de que ocurran. Estas
+representaciones internas no son destructivas como las externas que
+acaban con los estados anteriores de mundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+alcanzar esos beneficios, no tenemos que abandonar la distinción que
+se hace en la lógica entre estructuras del mundo y sus
+representaciones simbólicas – tampoco la visión de que las
+estructuras del mundo consisten de individuos, quizás con eventos y
+con relaciones entre individuos. Por otro lado, puede que tengamos
+que dejar de lado la versión extremista de la OO, que insiste en que
+todos los atributos de los individuos están encapsulados y que todas
+la interacciones ocurren con mensajes. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Considere,
+por ejemplo, una vez más la historia de la zorra y el cuervo y,
+particularmente, la observación de la zorra de que el cuervo tiene
+el queso. En la versión estricta de la OO, la observación es un
+mensaje que es enviado a la zorra desde otro objeto. Pero, ¿cúal
+objeto?. Los candidatos obvios son el cuervo y el queso. Pero, es
+claro que el objeto cuervo no tiene ninguna razón (meta) para enviar
+tal mensaje a la zorra y que un verdadero queso no tiene metas reales
+de ningún tipo. Aún si aceptamos que uno de ellos debe ser el
+responsable de enviar ese mensaje, ¿Por qué enviarlo a la zorra?.
+¿Por qué no a todas las otras criaturas del área también?. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+nuestra versión anterior de la historia y, con mayor generalidad, en
+nuestro modelo basado en lógica, la zorra y el cuervo, no el queso,
+son agentes e interactúan entre sí, pero no por pase de mensajes,
+sino observando el mundo y realizando acciones sobre ese mundo. Las
+acciones que realizan pueden ser observadas por otros agentes en el
+área. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pareciera
+que la orientación a los objetos tiene poco que ofrecer a nuestra
+comprensión de la historia, excepto porque nos recuerda que:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<ul>
+	<li><p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+	importante distinguir entre el mundo y cualquier representación que
+	los agentes puedan tener del mundo. </font></font>
+	</p>
+</ul>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<ul>
+	<li><p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+	útil entender el mundo en términos de jerarquías, y</font></font></p>
+</ul>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<ul>
+	<li><p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+	métodos usados por los agentes para interactuar con el mundo deben
+	ser encapsulados para que no sea observados directamente por otros
+	agentes. </font></font>
+	</p>
+</ul>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+OO tiene otra virtud: muestra como construir mundo artificiales en
+los que objetos diferentes pueden cambiar de estado concurrentemente
+y con independencia. Pero esto no es muy relevante en la historia de
+la zorra y el cuervo, en la que tan solo nos interesa contar la
+historia, no construir el mundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Orientación
+a objetos moderada</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, al comparar la lógica con la OO, parece que la OO va
+demasiado lejos – encapsula todas las relaciones entre individuos
+dentro de objetos. Así, el hecho de que el cuervo tiene el queso al
+comienzo de la historia queda atrapado dentro bien de uno o de ambos,
+el cuervo y el queso, al alcance solamente de otros objetos si estos
+pueden enviar y recibir mensajes del cuervo y el queso. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+alternativa es adoptar una forma menos extremista de orientación por
+objetos en la que solamente aquellos individuos que activamente
+cambian de estado son considerados objetos, y solamente aquellos
+métodos que ellos usan para interactuar con el mundo son
+encapsulados. Las relaciones entre objetos y otro tipo de individuos
+no son encapsuladas, sino que se dejan ver en el mundo externo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+objetos, en esta forma moderada de OO, interactúan con el mundo, no
+solamente enviando y recibiendo mensajes, sino, en forma más
+generalista, observando relaciones en el mundo y realizando acciones
+que cambian esas relaciones. Los mensajes pueden ser vistos como
+actos verbales, en los que un objeto realiza un tipo especial de
+acción cuyos efectos deben ser observados por otro objeto. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Otro
+tipo de individuos, como las propias clases, los eventos, los
+números, los momentos del tiempo, pueden participar en relaciones
+sin ser forzados dentro de objetos encapsulados. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+forma modelada de orientación por objetos es compatible con nuestro
+modelo de agente basado en lógica. Le da cierta libertad a nuestra
+noción de agente, incluyendo tipos más primitivos de objetos
+encapsulados. Enriquece nuestra noción de ambiente de agente, al
+incluir, no sólo individuos simples y relaciones, sino individuos
+que son objetos que pueden cambiar de estado concurrentemente usando
+métodos encapsulados ocultos del mundo exterior. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Las
+redes semánticas como una variante de la orientación por objetos.</font>
+</font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hay
+varios otros paradigmas de computación que soportan variantes
+similares de la orientación por objetos. Entre esos se incluyen las
+redes semánticas y las plantillas o frames, desarrollados como
+formalismos para representar conocimiento en Inteligencia Artificial,
+y como el modelo de entidad-relación en bases de datos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+redes semánticas representan el universo como una red de relaciones
+entre individuos. Por ejemplo, la red que representaría el estado
+inicial en el cuento de la zorra y el cuero luciría así: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_m28ea380e.jpg" name="gráficos5" align="left" width="567" height="427">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aquí
+los nodos representan individuos y los arcos relaciones binarias
+entre pares de individuos. La representación se puede extender a
+relaciones no binarias. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+redes semánticas son representaciones orientadas a objetos por
+<span style="text-decoration: none">cuanto todos los hechos sobre un
+individuo están ubicados en un mismo lugar, es decir, en torno al
+nodos que representa al individuo. Estos hechos están representados
+por flechas conectadas a ese nodo y por otros nodos a los cuáles
+están conectados esos actos. </span></font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="text-decoration: none"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, contrario a la orientación por objetos ortodoxa, las
+relaciones acá están representadas sólo una vez y conectadas con
+todos los individuos que participan en la relación. Más aún, son
+visibles desde el exterior y no están encapsulados dentro objetos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="text-decoration: none"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+redes semánticas también han sido usadas para representar
+información dinámica, reificando eventos. Por ejemplo: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_396e595f.jpg" name="gráficos6" align="left" width="576" height="275">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aquí
+los términos de las red semántica “objeto” y “agente”
+apenas si están asociados con nuestras nociones de objeto y agente
+usadas en este libro. El término “agente” es análogo al sujeto
+de una oración en Español y el término “objeto” al objeto de
+tales oraciones. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+red semántica también ha sido usada para representar jerarquías de
+clases. Por ejemplo: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_m7beb991c.jpg" name="gráficos7" align="left" width="576" height="539">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">A
+pesar de su nombre, las redes semánticas no son estructuras
+semánticas en el mismo sentido que las estructuras OO, sino más
+bien son como estructuras semánticas representadas por conjuntos de
+oraciones atómicas en lógica. De hecho, las conexiones e las redes
+semánticas con esta forma: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><img src="capitulo10_files/capitulo10_html_2c2d52dc.jpg" name="gráficos8" align="left" width="433" height="157">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">son
+símplemente representaciones de oraciones atómicas. Como las
+oraciones en lógica, cuando se les usa para representar información
+dinámica con eventos reificados, las redes semánticas representan
+el cambio sin realizarlo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Por
+otro lado, las redes semánticas son como estructuras semánticas por
+cuanto representan solamente hechos atómicos, antes que
+regularidades más generales. Aún cuando se han desarrollado varias
+extensiones de las redes semánticas para representar regularidades,
+estas extensiones no son convincentes.<a href="#_ftn1" name="_ftnref1">[1]</a></span></font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+obstante, las redes semánticas muestran que es posible usar objetos
+para estructurar representaciones del mundo y no sólo la propia
+estructura del mundo. También ilustran cómo suscribir una forma
+moderada de OO, en la cual los objetos dan estructura a nuestra
+comprensión del mundo sin ocultar todo dentro de ellos mismos. Los
+<i>frames</i> y las bases de datos entidad-relación son similares en
+este sentido. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Oraciones
+orientadas a objetos.</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+redes semánticas son objetos unidireccionales que se pueden usar
+para estructurar representaciones del mundo. Los objetos son usados
+también para dar estructura a representaciones lingüísticas más
+generales. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Vimos
+en el capítulo 1 que las oraciones en lógica se pueden escribir en
+cualquier orden. Sin embargo, algunas oraciones resultan mucho más
+fáciles de entender que otras. Agrupar las oraciones en conjuntos de
+oraciones acerca de objetos es una forma de hacerlas más fácil de
+entender. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, podemos agrupar las oraciones atómicas que describen el
+comienzo del cuento de la zorra y el cuervo en los siguiente
+conjuntos de oraciones: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo: </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo tiene el queso.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo está en el árbol. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol está sobre el suelo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra: </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra está en el suelo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+supuesto, podemos agrupar las mismas oraciones a través de otros
+objetos: </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+queso:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo tiene el queso.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol: </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo está en el árbol.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+suelo: </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol está arriba del suelo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra está en el suelo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+obtener una buena organización, es preciso decidir cuáles objetos
+son los más importantes.</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+lenguajes naturales, como el Inglés o el Español, llevan la
+orientación por objetos un paso más allá, al usar las formas
+gramaticales en las que el comienzo de una oración indica su <i><b>tópico</b></i>
+y la siguiente parte indica un <i><b>comentario</b></i> acerca de ese
+tópico. Esta forma suele coincidir, aunque no es obligatorio, con la
+estructura gramatical de las oraciones que tienen <b>sujeto</b> y
+<b>predicado</b>. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+dos formas de orientación por objetos – agrupar los conjuntos de
+oraciones por objetos y ordenar oraciones individuales por objetos –
+son frecuentemente combinadas. Considere, por ejemplo, este par de
+oraciones:</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><a href="#_ftn2" name="_ftnref2">[2]</a>:</span></font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primer ministro bajó del avión.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+periodistas la rodearon. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ambas
+oraciones están en la forma activa, lo cual parecer estar respetando
+algunas guias y normas de estilo que se proponen para muchos textos
+en Inglés y Español. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+dos oraciones se refieren a los tres objetos, la primer ministro
+(mencionada a través del “la” en la segunda oración), los
+periodistas y el avión. La primer ministro es el único objeto común
+entre ambas oraciones. Así que la primer ministro es el objeto que
+conecta ambas oraciones. Sin embargo, el tópico cambia de la primer
+ministro a los periodistas al cambiar de oración. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ahora
+considere el siguiente par de oraciones lógicamente equivalente a
+las anteriores: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primer ministro bajó del avión.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+rodearon de inmediato los periodistas.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+este caso, no sólo es que ambas oraciones se refieren a un objeto
+común, sino que comparten el tópico. Sin embargo, la segunda
+oración se expresa en voz pasiva. A pesar de esto y de contradecir
+aquellos manuales del buen estilo simplificados, mucha gente opina
+que el segundo par de oraciones es más fácil de entender (NT ¿Qué
+opina el lector?). Esto sugiere que la gente prefiere organizar sus
+pensamientos en forma orientada a objetos, y esa preferencia tiene
+prioridad sobre la preferencia de voz activa sobre voz pasiva. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+orientación por objetos no es la única forma de ordenar oraciones.
+En ambos pares anteriores, las oraciones están ordenadas por la
+secuencia temporal de los eventos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ahora
+considere el siguiente conjunto de oraciones: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra adula al cuervo.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo canta una canción.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+queso cae al suelo.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra toma el queso. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aquí
+las oraciones están agrupadas por proximidad temporal y ordenadas
+siguiendo la secuencia temporal. Las oraciones están organizadas, no
+por objetos, sino por agentes, tal como se acostumbra en la voz
+activa. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+importante dejar las cosas en perspectiva. La orientación por
+objetos NO lo es todo. En el caso del Inglés, no tiene nada que ver
+con el contenido de las oraciones vistas por separado, pero es una
+forma de agrupar y ordenar las oraciones. Comparado con la lógica,
+la OO es como el índice de un libro, y lógica es cómo el lenguaje
+en el que se escribe el libro. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000"><font face="Utopia, serif">Conclusiones</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+comparación con la lógica, la atracción principal de la OO es que
+nos muestra como construir mundos artificiales en los que los objetos
+pueden cambiar de estado al mismo tiempo e independientemente de
+otros objetos. La OO facilita la construcción de nuevos objetos a
+partir de los que existen y por medio de métodos encapsulados,
+reduciendo la complejidad y aumentando la mantenibilidad.</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, comparada con la lógica y con formas mas moderadas de OO,
+tales como las redes semánticas, la OO extremista lleva el
+encapsulamiento muy lejos. En lugar de esconder los atributos y las
+relaciones entre individuos dentro de los objetos, sería más
+natural hacerlos visibles al exterior. En lugar de tratar todos los
+individuos como objetos encapsulados, los objetos se pueden reducir a
+ser individuos que interactúan con el universo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+OO extremista también va muy lejos con la metáfora del pase de
+mensajes. El lugar de forzar toda las interacciones entre objetos y
+el mundo a ser mensajes, sería más natural para los agentes y otros
+objetos interactuar con el mundo haciendo observaciones y realizando
+acciones. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+lógica computacional se puede reconciliar con ambas, la OO
+extremista y la moderada, usando la lógica como un lenguaje de más
+alto nivel para implementar métodos y para definir jerarquías de
+clasificación. Aunque no hemos discutido la posibilidad en este
+capítulo, también puede ser usada por un diseñador de sistemas
+para mostrar que una colección de objetos alcanza una meta común. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+redes semánticas y los lenguajes naturales, como el Inglés y el
+Español, muestran que la OO no se limita a el modelado de
+estructuras semánticas, sino que puede servir para dar estructura a
+representaciones del mundo. Los ejemplos en lenguaje natural
+muestran, en particular, que en el área de representaciones
+lingüísticas, la lógica y la OO apuntan en direcciones diferentes.
+La lógica pretende representar el mundo, mientras que la OO sólo se
+ocupa de una forma de ordenar las representaciones. Como hemos visto,
+la OO necesita combinarse con otras formas de ordenar
+representaciones para ser útil. Sería interesante, por ejemplo, ver
+como la OO podría ser usada para ordenar una colección de oraciones
+tan complejas como las usadas para armar este capítulo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<div id="ftn1" dir="ltr"><p align="justify"><a href="#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	Yo mismo he contribuido a esas extensiones en </font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Deliyanni,
+	A. and Kowalski, R., &quot;Logic and Semantic Networks&quot;, en
+	CACM, Vol. 22, No. 3, 1979, pp. 184-192.</span></font></font></p>
+</div>
+<p align="justify"><a href="#_ftnref2" name="_ftn2"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[2]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+Este capítulo viene de “</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Discourse
+Analysis” de Gillian Brown y George Yule, Cambridge University
+Press, 1983, pag 130.</span></font></font></p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018 </font>
+	</p>
+</div>
+</body>
+</html>

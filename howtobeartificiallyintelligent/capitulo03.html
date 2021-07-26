@@ -1,0 +1,852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Capítulo 3 El Piojo y el Explorador de Marter</title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="created" content="2004-08-11T00:00:00.023132077"/>
+	<meta name="changed" content="2021-07-19T18:45:21.440443226"/>
+	<meta name="classification" content="Lógica de Agentes"/>
+	<meta name="description" content="Traducción del Capítulo 3.
+Libro de Bob Kowalski.
+Traducido por Jacinto Dávila &lt;jacinto@ula.ve&gt;"/>
+	<meta name="Originator" content="Microsoft Word 10"/>
+	<meta name="ProgId" content="Word.Document"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2cm; margin-right: 2cm; margin-top: 1cm; margin-bottom: 1cm }
+		p { color: #000000; background: transparent }
+		h1 { color: #000000; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		p.msonormal { margin-bottom: 0cm; font-family: "Times New Roman" }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo03_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+</h2>
+<h1 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-before: auto; page-break-after: avoid">
+<font face="Utopia, serif"><font size="6" style="font-size: 24pt"><b>Capítulo
+3. El Piojo y el explorador de Marte</b></font></font></h1>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+Fundamentalismo Lógico, que concibe la vida como puro pensamiento
+sin acción, le ha dado a la lógica una mala reputación. Además,
+ha ocultado a su cercano familiar, la Lógica Tolerante, que reconoce
+que la lógica es sólo una forma de pensar y que el pensar no lo es
+todo. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+anti-tesis del Fundamentalismo Lógico es el Conductismo Extremo, el
+cual niega cualquier forma de Vida Mental y que, por el contrario, ve
+la vida completamente en términos de conducta. El Conductismo
+Extremo, a su vez, puede ser fácilmente confundido con el modelo del
+pensar que constituyen las reglas de condición-acción. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Conductismo</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Imagine
+que Ud está analizando la conducta del termostato, que regula la
+temperatura de un cuarto calentándolo cuando está muy frio y
+enfriándolo cuando está muy caliente. Ud bien podría <i><b>describir</b></i>
+la conducta de entrada-salida del termostato en forma de
+condiciones-acciones:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+la temperatura actual es T grados y la temperatura deseada es T’ y
+T &lt; T’ -&nbsp; 2°</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+el termostato aumenta la temperatura.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+la temperatura actual es T grados y la temperatura deseada es T’ y
+T &gt; T’ + 2°</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+el termostato reduce la temperatura.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+seguramente Ud no le atribuiría al termostato una mente que manipula
+tales descripciones para <i><b>generar</b></i> su conducta.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Tal
+como Ud ve el termostato en este ejemplo, el conductista ve a los
+agentes en general. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Por
+tanto, en el cuento de la zorra y el cuervo, un conductista, incapaz
+por principios de considerar el estado mental, interno de la zorra,
+explicaría su conducta de la misma forma en que la zorra explica la
+conducta del cuervo</span>: </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; font-style: normal; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#0000ff">Si
+</font>la zorra ve que el cuervo tiene un queso <font color="#0000ff">entonces</font>
+la zorra alaba al cuervo.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; font-style: normal; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#0000ff">Si
+</font>la zorra está cerca del queso <font color="#0000ff">entonces</font>
+la zorra toma el queso.</b></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+descripción conductista de la zorra comienza y termina la conducta
+de la zorra observable “desde afuera”. El conductista justifica
+su rechazo a la atribución de cualquier actividad mental interna a
+la zorra, en el hecho de que es imposible verificar tales
+atribuciones por el supuesto método científico de la observación y
+la experimentación. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+acuerdo con el conductista, la zorra es un agente puramente reactivo,
+que simplemente responde a los cambios en el mundo a su alrededor.
+Si, durante el proceso de reaccionar a esos cambios, la zorra obtiene
+el queso, entonces este resultado es meramente un efecto indirecto
+“emergente”, nunca uno causado deliberadamente por la zorra
+gracias a su razonar proactivo y orientado a una meta. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductista tampoco ve ninguna razón para distinguir entre la
+conducta del termostato y la de un humano. El conductista podría
+usar una implicación</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><b>Si</b>
+un pasajero observa una emergencia en el metro, </i></font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><b>entonces</b>
+el pasajero pulsa el botón de la señal de alarma.</i></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#000000">para
+</font><font color="#000000"><i><b>describir</b></i></font><font color="#000000">
+la conducta de un pasajero del metro. Pero el uso de esta implicación
+no dice nada acerca de cómo </font><font color="#000000"><i><b>genera</b></i></font><font color="#000000">
+el pasajero esa conducta. Por lo que concierne al conductista, pulsar
+el botón de la señal de alarma cuando hay una emergencia podría
+ser simplemente un instinto, cuyo propósito</font> el pasajero
+ignora completamente<font color="#000000">. </font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductismo es apoyado circunstancialmente por el Darwinismo, puesto
+que este sostiene que los organismos evolucionaron a través de
+adaptaciones frente al ambiente, en lugar de por un proceso de
+auto-mejora dirigido a metas.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+conductismo también comparte con las reglas de condición-acción
+esa orientación a modelar la conducta como reacciones a cambios en
+el ambiente. Sin embargo, mientras el conductismo restringe su
+atención a las <i><b>descripciones</b></i> de la conducta, las
+reglas de condición-acción son usadas en los llamados sistemas de
+producción para <i><b>generar</b></i> conductas. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Sistemas
+de Producción</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Son
+pocos los psicólogos que, hoy en día, suscriben incluso las
+versiones moderadas del conductismo. Por el contrario, la mayoría se
+adhiere al punto de vista de las ciencias cognitivas, según el cual,
+los agentes inteligentes realizan cierta forma de pensar que bien
+puede ser entendida como la aplicación de procedimientos
+computacionales a representaciones mentales del mundo. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Paul
+Thagard declara en su libro <font color="#800000"><i>La Mente: una
+introducción a la Ciencia Cognitiva </i></font>(<font color="#ff0000"><i>Mind:
+Introduction to Cognitive Science)</i></font><i> </i>que, entre los
+varios modelos del pensar investigados en las ciencias cognitivas,
+los sistemas de producción son “los que tienen más aplicaciones
+en psicología” (página 51). Steven Pinker en <font color="#800000"><i>Cómo
+trabaja la mente</i></font> (<font color="#ff0000"><i>How the Mind
+Works)</i></font> también utiliza sistemas de producción como su
+principal ejemplo de un modelo computacional de la mente (página
+69). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+<i><b>sistema de producción</b></i> es una colección de reglas de
+condición-acción imbuídas en el componente pensante del ciclo
+observación-pensamiento-decisión-acción de un agente. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><b>Las
+reglas de condición-acción</b></i> (también llamadas <i><b>reglas
+de producción</b></i>) son muy parecidas a las descripciones de
+conducta de los conductistas. Sin embargo, puesto que son usadas por
+cada agente <i><b>internamente</b></i> para <i><b>generar</b></i> su
+conducta, sus conclusiones pueden ser expresadas en modo imperativo
+en lugar del declarativo. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+(estas) <b>condiciones</b> (se cumplen) </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+<b>haga</b> (estas) <b>acciones</b>.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+sistemas de producción fueron inventados en la década de 1930 por
+el lógico Emil Post, pero fueron propuestos como un modelo
+computacional de la inteligencia humana por Alan Newell. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="font-variant: normal; font-style: normal; background: transparent; page-break-before: auto; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">El
+ciclo del Sistema de Producción</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+sistemas de producción incorporan las reglas de condición-acción
+en ciclo de observación-pensamiento-decisión-acción del agente:</font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>Para
+“ciclar” o para que cicle</b></font><font color="#000000">,</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>observe</b></font><font color="#000000">
+el mundo,</font><font color="#3333cc"> </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>piense</b></font>,</font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>decida</b></font>
+cuáles acciones realizar<font color="#3333cc">,</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#3333cc">actúe</font><font color="#000000">,</font></b></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>cicle</b></font><font color="#000000">
+de nuevo.</font></font></font></p>
+<p align="justify" style="margin-right: 0.02cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+pensar es, así, una forma de <i><b>razonamiento hacia adelante</b></i>,
+que comienza con una observación que se aparea con una de las
+condiciones de una regla de condición-acción. En tales casos, se
+dice que la observación <b>dispara</b> la regla de condición-acción.
+Tal como en lógica, si las restantes condicciones también se
+verifican, se deriva la conclusión. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+lógica, la conclusión es una consecuencia inescapable de las
+condiciones. Sin embargo, en los sistemas de producción, se trata
+solamente de una <i><b>recomendación</b></i> de realizar las
+acciones que están en la conclusión. Si sólo una de las reglas es
+disparada por las observaciones, entonces las recomendación es, de
+hecho, una <i><b>orden</b></i> inequívoca. Pero, si más de una
+regla es disparada, el agente debe escoger entre las varias
+recomendaciones, para decidir cuál acción realizar. Está <i><b>decisión</b></i>
+es normalmente etiquetada como <i><b>resolución de conflicto</b></i>,
+puesto que las recomendaciones pueden contradecirse unas a otras. </font></font>
+</p>
+<p lang="en-GB" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo:</font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.7cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+alguien me ataca, responde igual.</font></font></font></p>
+<p align="justify" style="margin-left: 3.7cm; background: transparent">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+alguien me ataca, consigue ayuda<span lang="en-GB">.</span></font></font></font></p>
+<p align="justify" style="margin-left: 3.7cm; background: transparent">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">S<span lang="en-GB">i
+alguien me ataca, trata de escapar. </span></font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Decidir
+que hacer, cuando hay conflicto entre las recomendaciones, puede ser
+más difícil que generar las recomendaciones. Volveremos al problema
+de decisión más adelante. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Sistemas
+de Producción sin ninguna representación del mundo</font></font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el caso más simple, el estado mental del agente podría consistir
+únicamente de reglas de producción, sin ninguna representación
+mental del mundo. En tal caso, las condiciones de una regla se
+verifican por apareo directo con las observaciones actuales del
+agente. En este caso, se puede decir (y se ha dicho) que el mundo
+sirve como su propia representación: Si quieres averiguar acerca del
+mundo, no pienses al respecto, sólo observa!. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observar
+el estado actual del mundo es mucho más fácil que tratar de
+predecirlo a partir de las observaciones pasadas y suposiciones
+acerca de la persistencia de los estados pasados. Y es mucho más
+confiable, porque las suposiciones de persistencia fácilmente pueden
+ser erróneas, especialmente cuando hay otros agentes alrededor,
+cambiando el mundo a placer. Es muy pronto aún, para discutir este
+tema en este capítulo, pero volveremos a él más tarde, cuando
+revisemos en detalle que implica el razonar acerca de la persistencia
+de estados en el tiempo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Qué
+se siente ser un Piojo</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-right: 7.01cm; font-variant: normal; font-style: normal">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+entender en qué consiste ser un sistema de producción sin ninguna
+representación del mundo, imagine que Ud es un piojo de la madera y
+que toda su conducta de vida se puede resumir en las siguiente tres
+reglas:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+al frente está libre <b>entonces</b> me muevo adelante. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+hay un obstáculo al frente <b>entonces</b> volteo a la derecha.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+estoy cansando <b>entonces</b> me detengo.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que es Ud tan elemental forma de vida, su visión se limita a la
+porción del mundo que está directamente en frente suyo. Además,
+puede Ud sentir cuando está cansado. Es decir, su cuerpo es parte
+del mundo, externo a su mente. Tal como ocurre con otros objetos
+externos, su cuerpo genera observaciones como estar cansado o estar
+hambriento, que deben ser atendidas por su mente. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+importa de donde provienen las reglas. Si son un producto del proceso
+evolutivo o si le fueron otorgadas por un Gran Diseñador. Lo
+importante es que, ahora que las tiene, ellas gobiernan y regulan su
+vida. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga,
+para propósitos ilustrativos, que Ud percibe la siguiente secuencia
+de observaciones:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Al
+frente está libre.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Al
+frente está libre.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hay
+un obstáculo al frente.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Al
+frente está libre y estoy cansado.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Apareando
+las observaciones, en ese mismo orden, con las condiciones de sus
+reglas, se obtiene la siguiente secuencia combinada de observaciones
+y acciones:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Observe</i>:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Al
+frente está libre.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Haga</i>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Me muevo adelante.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Observe</i>:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Al
+frente está libre.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Haga</i>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Me muevo adelante.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Observe</i>:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Hay un obstáculo al frente.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>H</i><i>aga</i>:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Volteo a a derecha.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Observe</i>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Al
+frente está libre <b>y</b> estoy cansando.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+este punto, las observaciones actuales disparan dos reglas diferentes
+y las acciones correspondientes que ellas recomiendan están en
+conflicto. Ud no puede moverse adelante y detenerse al mismo tiempo.
+Necesita un método para resolver el conflicto, para decidir que
+hará. </font></font>
+</p>
+<p align="justify"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Existen
+muchas estrategias para resolver conflictos. Pero, en este, como en
+muchos otros casos, el conflicto puede resolverse simplemente</font></font></font><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftn1" name="_ftnref1">[1]</a><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+asignando prioridades distintas a las reglas y seleccionando la
+acción generada por la regla con la mayor prioridad. En nuestro
+caso, es obvio que la tercer regla debe tener mayor prioridad que la
+segunda (NT: </font></font></font><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">¿</font></font></font><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">lo
+es?. Suponemos que el cansancio impide el movimiento). Así que la
+acción apropiada es:</font></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Haga</i>:&nbsp;&nbsp;
+Me detengo.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+vez que un piojo ha aprendido sus reglas, su estado interno permanece
+fijo. Las observaciones vienen y van y las acciones asociadas se
+realizan sin que se les registre o recuerde. El precio a pagar por
+esta simplicidad es que el piojo vive en el aquí y ahora solamente y
+no tiene idea de grandioso mundo que le rodea. Pero, para un piojo,
+ese es, probablemente, un pequeño precio a pagar por el disfrute de
+una vida simple. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="font-variant: normal; font-style: normal; background: transparent; page-break-before: auto; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Sistemas
+de Producción con Memoria</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-top: 0.35cm; margin-bottom: 0.21cm; font-variant: normal; font-style: normal; background: transparent">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aunque
+la vida simple pueda parecer atractiva, la mayoría de las personas
+probablemente preferiría algo más excitante. Para tenerlo, Ud
+necesita, por lo menos, un sistema de producción con una memoria
+interna. La memoria puede ser usada, no sólo para registrar las
+observaciones del estado actual del mundo, sino también para
+almacenar los registros históricos de las observaciones pasadas. </font></font>
+</p>
+<p align="justify"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Normalmente,
+una observación individual tiene la forma de una </font></font></font><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>oración
+atómica</b></font></font></font><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+</font></font></font><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftn2" name="_ftnref2"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>[2]</b></font></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">,
+llamada así porque no se puede subdividir en subpartes que sean
+también oraciones. Esto implica que la forma lógica de una
+observación no contiene a ninguna de las conectivas lógicas “y”,
+“o”, “si” y “no”, que transforman oraciones simples en
+otras más complejas. Cada oración atómica es también llamada
+</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>átomo</b></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">.
+</font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+un sistema de producción con memoria, una regla se dispara con una
+observación que se aparee con una de las condiciones de la esa
+regla. Todas las otras condiciones son también verificadas evaluándo
+si corresponden a los registros de observaciones pasadas, futuras y
+las del momento. Si todas las condiciones concuerdan con
+observaciones, las acciones de la regla se separan como candidatas
+para ejecución. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="font-variant: normal; font-style: normal; background: transparent; page-break-before: auto; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Qué
+se siente se un Explorador de Marte</font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-top: 0.35cm; margin-bottom: 0.21cm; font-variant: normal; font-style: normal; background: transparent">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+imaginar cómo es ser un sistema de producción con memoria, imagine
+que Ud ha superado su vida como piojo y ha reencarnado como un robot
+que fue enviado a Marte en busca de rastros de vida marciana. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+fortuna, su vida anterior como piojo le da a Ud una buena idea de
+como comenzar esta nueva reencarnación. Más aún, siendo un robot,
+Ud nunca se cansa y nunca tiene que descansar. No obstante, todavía
+hay 2 problemas que debe resolver: cómo reconocer la vida cuando la
+vea y cómo evitar caminar en círculos. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+el primer problema, sus diseñadores lo han equipado a Ud con un
+módulo de reconocimiento de vida, que le permite identificar signos
+de vida, y también con un transmisor para informar al centro de
+control de sus descubrimientos. Para el segundo problema, necesita Ud
+una memoria que le permita reconocer cuando ya ha estado en un lugar
+antes, de manera que evite visitarlo de nuevo. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+sistema de producción con memoria, que es una versión mejorada del
+sistema de producción de un piojo, podría verse así:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el espacio adelante está libre </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+yo <b>no</b> he estado en ese espacio antes,</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+vaya a ese espacio.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm">&nbsp;</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el espacio adelante está libre</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+he estado en ese espacio antes,</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+volteo a la derecha.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm">&nbsp;</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+hay un obstáculo adelante </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+<b>no</b> muestra signos de vida, </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+volteo a la derecha.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm">&nbsp;</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+hay un obstáculo adelante </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+muestra signos de vida, </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>entonces</b>
+lo reporto al centro de control </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+volteo a la derecha.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+saber si Ud ha estado en un lugar antes, necesita Ud un mapa del
+terreno. Puede hacerlo, por ejemplo, dividiendo el terreno en
+espacios cuadrados e identificando cada espacio con unas coordenadas,
+(E, N), donde E es la distancia hacia el Este desde el centro del
+cuadrado y hasta un punto de origen o referencia, mientras que N es
+la distancia al Norte desde ese origen. Ud comienza en el cuadrado
+(0,0). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+que esto funcione, cada cuadrado tiene que tener el mismo tamaño que
+el paso que Ud da al moverse adelante. Suponiendo que Ud conoce las
+coordenadas de su posición actual, Ud puede usar aritmética simple
+para calcular las coordenadas tanto del cuadrado adelante, como del
+cuadrado a la derecha, con lo que estaría obteniendo las coordenadas
+de su siguiente posición. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cada
+vez que Ud pasa a un nuevo cuadrado, registra su observación del
+cuadrado con sus coordenadas. Así, para establecer si ha estado ya
+en ese lugar antes, sólo tiene que consultar su memoria de
+observaciones pasadas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que, por ejemplo, Ud está en el origen, mirando al Este. Suponga,
+también, que las siguientes oraciones atómicas describen el mundo a
+su alrededor:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Vida
+en (2,1)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Libre
+el (1, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Libre
+el (2, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Obstáculo
+en (3, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Obstáculo
+en (2, -1)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Obstáculo
+en (2, 1).</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aunque
+hay vida en su vecindario, Ud no puede verla. Al arrancar, lo único
+que Ud sabe del mundo es que está libre en (1,0). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+también que, aún cuando su misión es buscar vida, Ud es la única
+cosa que se mueve. Esta descripción del mundo se cumple en todos los
+estados del mundo que encontrará (suponiendo que, cuando Ud ocupe un
+lugar, este se considerará libre). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Dadas
+esas suposiciones, Ud no tiene elección. Su conducta está
+completamente predeterminada:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Libre el (1, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Vaya a (1, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Libre el (2, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Vaya a (2, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Obstáculo en (3, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Volteo a la derecha</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Obstáculo en (2, -1)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Volteo a la derecha</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe:&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Libre el (1, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Recuerde:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Visité (1, 0)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Volteo a la derecha</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#000000">Observe:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Obstáculo en (2, 1)&nbsp; y&nbsp; Vida en</font> (2, 1)</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Reporte vida en (2, 1) al centro de control.</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Haga:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Volteo a la derecha.<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftn3" name="_ftnref3">[3]</a></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Observe
+que el reportar su descubrimiento de vida al centro de control es
+simplemente otra acción más, como moverse adelante o voltear a la
+derecha. Ud no tiene idea de que, para sus creadores, esta es su
+misión fundamental. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sus
+diseñadores lo han dotado con un sistema de producción que logra la
+meta de descubrir vida como una propiedad emergente. Quizás, incluso
+para ellos, esta meta es una sub-meta de otra de nivel todavía
+superior, tal como satisfacer su propia curiosidad científica. Pero
+ninguna de esas metas o sub-metas es evidente para Ud. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 lang="en-GB" class="western" align="justify" style="font-variant: normal; font-style: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font size="5" style="font-size: 18pt">El
+uso de los sistemas de producción para simular la reducción de
+metas</font> </font></font></font>
+</h2>
+<p lang="en-GB" align="justify" style="font-variant: normal; font-style: normal">
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+sistemas de producción han sido usados, no sólo para construir
+modelos computacionales de agentes inteligentes, sino también para
+construir aplicaciones, con frecuencia con la forma de sistemas
+expertos. En muchas de esas aplicaciones, se usan reglas de
+condición-acción para simular explícitamente la reducción de
+metas, en lugar de confiar en las propiedades emergentes para
+procurar metas de nivel superior implícitamente. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, la reducción de la Zorra que obtiene de la meta de tener el
+queso, la de estar cerca del queso y tomarlo, puede ser simulada con
+la siguiente regla de condicción-acción<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftn4" name="_ftnref4">[4]</a>:</font></font></p>
+<p align="justify" style="margin-left: 3.7cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span style="font-weight: normal">Si</span></font><font color="#ff0000"><b>
+yo quiero tener un objeto</b></font></font></font></p>
+<p align="justify" style="margin-left: 3.7cm; background: transparent">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-weight: normal">entonces</span><b>
+paso a creer que yo quiero estar cerca de ese objeto </b></font></font></font>
+</p>
+<p align="justify" style="margin-left: 3.7cm; background: transparent">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-weight: normal">y</span><b>
+tomo el objeto.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aquí
+la <b>Meta</b> se representa anotando en la memoria del sistema una
+pseudo-creencia con la siguiente forma<span lang="en-GB">:</span></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+quiero <i><b>Meta.</b></i></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+reducción de <i><b>Meta</b></i> a <i><b>Sub-metas</b></i> se simula
+con una regla de condición-acción que tiene por condición a <i><b>Meta</b></i>
+y cuyas acciones bien pueden tener la forma:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Agrega
+a mis creencias que yo quiero <i><b>Sub-metas</b></i></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">que
+se convierte luego en una actualización interna de la memoria de
+sistema , o bien pueden ser acciones genuínas realizadas
+externamente.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+problema principal con este método simulado es que pierde la
+conexión entre la reducción de la meta y la creencia que la
+justifica, en este caso, con la creencia:</font></font></p>
+<h2 class="western" align="justify" style="margin-left: 3.7cm; background: transparent; page-break-before: auto; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+animal tiene un objeto</font></font></font></h2>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-weight: normal">si</span><b>
+el animal está cerca del objeto</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-weight: normal">y</span><b>
+el animal toma el objeto.</b></font></font></font></p>
+<p lang="en-GB" align="justify" style="font-variant: normal; font-style: normal">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Como
+hemos visto, la conexión a la que nos referimos es que la reducción
+de la meta es lo mismo que razonar hacia atrás con la creencia, tal
+como se postula en la idea principal de la programación lógica. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Thagard
+(página 45) da un ejemplo similar con una regla de condición-acción,
+pero la usa para ilustrar su afirmación de que “a diferencia de la
+lógica, los sistemas basados en reglas pueden también representar
+fácilmente información estratégica acerca de lo que hay que
+hacer”</span>:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-weight: normal">si</span><b>
+Ud quiere ir a casa </b><span style="font-weight: normal">y</span><b>
+tiene Ud el dinero del pasaje del bus</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; background: transparent">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span style="font-style: normal"><span style="font-weight: normal">entonces</span></span><b>
+Ud puede tomar el bus.</b></font></font></font></p>
+<p align="justify" style="margin-right: 0.02cm"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonando
+hacia adelante con la regla se puede reducir la meta (ir a casa) a la
+sub-meta (tomar el bus), lo cual simula el razonamiento hacia atrás
+con la creencia</font></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftn5" name="_ftnref5">[5]</a>:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Vas
+a casa </b><span style="font-weight: normal">si</span><b> tienes el
+pasaje del bus </b><span style="font-weight: normal">y</span><b>
+tomas un bus.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así
+pues, el argumento de Thagard en contra de la Lógica puede, por el
+contrario, ser visto como un argumento en favor de la programación
+lógica porque esta puede “<span lang="en-GB">representar
+fácilmente información estratégica acerca de lo que hay que hacer”
+(lo que un Agente debe hacer)</span>. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+hecho, tal parece que todos los argumentos de Thagard en favor de la
+reglas de producción pueden ser entendidos como argumentos en favor
+de la lógica computacional. Esto se debe a que él confunde reglas
+de producción:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+condiciones <b>entonces</b> haga acciones<span lang="en-GB">.</span></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">con
+implicaciones lógicas:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+condiciones <b>entonces</b> conclusiones<span lang="en-GB">.</span></font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Una
+lamentable confusión</font></font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+confusión de Thagard es quizás más evidente cuando escribe (en
+página 47) que “las reglas se pueden usar para razonar bien <i>hacia
+adelante</i> o bien <i>hacia atrás</i>”. Esto, sin embargo, no es
+cierto de las reglas de producción sino más bien es una
+característica de las implicaciones lógicas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que las condiciones en las reglas de producción aparecen primero y
+las acciones ocurren después, las verdaderas reglas de producción
+sólo pueden ser usadas hacia adelante, cuando se cumplen las
+condiciones para derivar acciones sugeridas. Mientras que debido a
+que, en lógica, las conclusiones siempre se expresan en modo
+declarativo, las implicaciones lógicas se pueden usar para razonar
+bien hacia adelante o hacia atrás.</font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Thagard,
+entonces, erróneamente le atribuye a las reglas de producción una
+propiedad que no tienen, pero que sí tienen las implicaciones
+lógicas, para luego usar esa atribución para argumentar que “las
+reglas” son mejores que la lógica. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Siendo
+justos, debemos reconocer que Thagard sólo está exhibiendo una
+confusión muy generalizada. En este caso, la regla que él usa como
+ejemplo simula <b>reducción de metas</b>, que es un caso especial de
+<b>razonamiento hacia atrás con una creencia</b> expresada en forma
+lógica. Veremos también, como la reducción de metas y las reglas
+de producción se pueden combinar en un contexto más general que usa
+lógica tanto para creencia como para metas.</font></font></p>
+<h2 class="western" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Resumen</font></font></h2>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+uso de los sistemas de producción para generar la conducta de un
+agente inteligente, como hemos visto en este capítulo, se puede
+perfilar así:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<img src="capitulo03_files/vision-capitulo-03.jpg" name="Graphic1" align="left" width="614" height="289">
+  <br clear="left"/>
+</img>
+
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.01cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<div id="ftn1" dir="ltr"><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftnref1" name="_ftn1">[1]</a>
+	Un método todavía más simple es evitar tener que resolver los
+	conflictos, cambiando las reglas con una condición extra “y Ud no
+	está cansado” en las primera y segunda regla. Un método más
+	complicado es a través de la llamada Teoría de Decisiones, que
+	compararía las diferentes alternativas y seleccionaría la
+	alternativa con el máximo beneficio esperado. Sin importar como se
+	haga, sin embargo, en este caso el resultado seguramente será el
+	mismo: mejor descansar cuando Ud está cansado que forzarse y seguir
+	en contra de todo. </font></font>
+	</p>
+	<p align="justify">&nbsp;</p>
+</div>
+<div id="ftn2" dir="ltr"><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftnref2" name="_ftn2">[2]</a>
+	Aquí se asume que la experiencia de un agente en el mundo se puede
+	expresar en términos lingüisticos. Esto, ciertamente, no es cierto
+	del lenguaje natural ordinario, pero podría, con un esfuerzo de la
+	imaginación, servir para el “Lenguaje del Pensamiento”. Más de
+	esto más adelante.</font></font></p>
+</div>
+<div id="ftn3" dir="ltr"><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftnref3" name="_ftn3">[3]</a>
+	Le dejo al lector el derivar que pasa después, y me disculpo por
+	adelantado. </font></font>
+	</p>
+</div>
+<div id="ftn4" dir="ltr"><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftnref4" name="_ftn4">[4]</a>
+	La regla puede ser parafraseada en Español con mayor naturalidad,
+	aunque quizás menos precisa, así: Si quiero tener un objeto,
+	entonces debo estar cerca del objeto y tomar el objeto</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.&nbsp;
+	</span></font></font>
+	</p>
+</div>
+<div id="ftn5" dir="ltr"><p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap3.html#_ftnref5" name="_ftn5">[5]</a>
+	En esta forma es, quizás, menos obvio que el procedimiento servirá
+	sólo si el bus que Ud toma pasa por su casa</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+</div>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</font></p>
+</div>
+</body>
+</html>

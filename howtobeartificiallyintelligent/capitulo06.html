@@ -1,0 +1,720 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-03-03T00:00:00.019045800"/>
+	<meta name="changed" content="2021-07-19T18:46:15.050999050"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.2cm; background: transparent }
+		h1 { background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></font></h2>
+<h1 lang="en-GB" class="western" style="margin-right: 0.02cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font size="6" style="font-size: 24pt">El
+significado de la Vida</font> </font></font></font><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo06_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+
+</h1>
+<p lang="en-GB" style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+parece muy atractivo ser un Explorador de Marte y no saber que
+nuestro propósito en la vida es encontrar vida en Marte. Pero es
+todavía peor ser un piojo de la madera y no tener nada más que
+hacer en la vida que seguir unas reglas sin sentido. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Metas</span></i><b>:</b></font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si
+está libre al frente entonces muévete adelante.</b></font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si
+hay un obstáculo al frente entonces voltea a la derecha.</b></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si
+estoy cansando entonces descansa.</b></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+hecho, es peor que el sin-sentido. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+comida, el piojo morirá y sin hijos, los genes del piojo
+desaparecerán. ¿De qué sirve merodear por allí si no se ocupa de
+comer y tener hijos?.</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Parte
+del problema es que el cuerpo del piojo no le está dando las señales
+adecuadas – no le hace sentir hambre cuando se le está acabando la
+energía y no le hace sentir el deseo de aparearse cuando debería
+estar reproduciendose. Su cuerpo también debería ser capaz de
+reconocer el alimento y comerlo, y debería identificar parejas
+potenciales y procurarlas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">¿Qué
+puede hacer entonces el piojo?. Si llegó hasta aquí por la
+evolución entonces ya no puede ir ningún otro sitio (como
+individuo) y está camino a la muerte. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+si le debe su vida a alguna Gran Diseñadora, entonces le puede rogar
+que lo rediseñe, esta vez desde arriba hacia abajo. La Gran
+Diseñadora tendrá que re-pensar las metas superiores del piojo,
+decidir cómo se les debe reducir a sub-metas y derivar, en ese
+proceso, una nueva especificación de la conducta de entrada-salida
+del piojo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Imagine
+ahora que la Gran Diseñadora establece las siguientes metas
+superiores para el piojo:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Metas
+superiores</i>:</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+piojo vive tanto tiempo como sea posible y </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>El
+piojo tiene tantos hijos como es posible.</b></font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+supuesto, algún crítico ateo bien podría preguntar: ¿A cuál
+propósito sirven estas metas? Y ¿Por qué esas metas y no otras?.
+Quizás sobrevivir sea sólo otra sub-meta de tener hijos. Y, quizás,
+tener hijos sea solamente una forma de promover la supervivencia de
+nuestros genes. Tarde o temprano, sin embargo, nuestro crítico
+tendrá que dejar de preguntar. No puede seguir preguntando para
+siempre. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+reducir las metas superiores a sub-metas, la Diseñadora necesita
+usar sus creencias acerca del mundo, que incluyen sus creencias
+acerca de las capacidades del cuerpo del piojo. Más aún, podría
+aprovechar su diseño anterior, con el que el piojo terminaba
+moviendose sin propósito, y modificarlo para darle propósito a esos
+movimientos. Podría usar creencias como: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Creencias</i>:
+</font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+piojo vive tanto tiempo como es posible</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+</font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que está hambriento, busca comida y </font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuando
+tiene comida enfrente, la come, y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que está cansado, descansa, y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que es amenazado, se defiende. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+piojo tiene tantos hijos como es posible</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+</font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que desea aparearse, busca pareja, y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuando
+tiene la pareja al frente, trata de encargar bebés.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+piojo busca un objeto</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+</font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que está libre al frente, se mueve adelante, y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que hay un obstáculo al frente y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">no
+es el objeto buscado, entonces voltea a la derecha, y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuando
+el objeto está al frente, entonces se detiene. </font></font></font>
+</p>
+<p style="margin-left: 5cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+piojo se defiende si ataca primero.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+comida es un objeto.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+pareja es un objeto. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el piojo fuese tan inteligente como la diseñadora, la diseñadora
+podría simplemente explicarle estas creencias directamente al propio
+piojo. El piojo podría entonces razonar para adelante o para atrás,
+cuando sea necesario, y no tendría problema alguno para alcanzar sus
+metas, siempre, claro, que las creencias de las Gran Diseñadora sean
+válidas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+el piojo no tiene ni el intelecto de la Diseñadora, ni cuerpo de
+supermodelo, ni educación universitaria. Así que la Diseñadora
+tiene que, no sólo precisar los requerimientos del piojo, sino
+también derivar una especificación de entrada-salida de la conducta
+del piojo que pueda ser implantada (implementada) en el piojo con sus
+limitadas capacidades físicas y mentales. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+forma para el proceder de la diseñadora es que ella misma razone por
+el piojo antes. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puede
+comenzar razonando hacia atrás a partir de las metas superiores del
+piojo, para generar el siguiente nivel de sub-metas:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Sub-metas</i>:
+</font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cuandoquiera
+que el piojo está hambriento, busca comida y </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuando
+la comida está al frente, la come, y</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que el piojo está cansado, descansa, y</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que el piojo es amenazado, se defiende, y</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuandoquiera
+que el piojo desea aparearse entonces busca pareja, y</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">cuando
+tiene la pareja al frente, trata de encargar bebés.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+palabras “cuandoquiera” y “cuando” se pueden interpretar como
+el “si” condicional pero también tienen una implicación
+temporal. Nos distraeriamos mucho si explicamos ese punto aquí. Por
+esta razón, es útil re-escribir esas sub-metas en términos lógicos
+más convencionales. Al mismo tiempo, nos aprovecharemos de esa
+re-escritura para eliminar la ambigüedad asociada con al “alcance”
+de las palabras “y cuando”. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Sub-metas:</i>
+</font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está hambriento entonces busca de comer, <b>y</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está hambriento y tiene comida al frente entonces se la
+come, <b>y</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está cansado entonces descansa, <b>y</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está amenazado entonces se defiende, <b>y</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo desea aparearse entonces busca pareja, <b>y</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo desea aparearse y hay una pareja al frente entonces trata de
+encargar bebés. </font></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Sin
+embargo, el trabajo de la Diseñadora no ha terminado aquí. Alguna
+de las conclusiones de las sub-metas implican otras metas (como
+buscar comida</span></font></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">,
+defenderse y buscar pareja) que deben ser reducidas a otras sub-metas
+de nivel aún más bajo. Por fortuna, para la Diseñadora, esto es
+fácil. Sólo hace falta un poco más de razonamiento hacia atrás y
+algo de simplificaciones lógicas</font></font><a href="#_ftn3" name="_ftnref3">[3]</a><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">,
+para derivar una especificación de la que estaría orgullosa
+cualquier conductista. </span></font></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Nuevas
+metas:</i></font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está hambriento <b>y</b> está libre al frente <b>entonces</b>
+el piojo se mueve adelante. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está hambriento <b>y</b> hay un obstáculo al frente<b> y
+no</b> es comida <b>entonces</b> el piojo voltea a la derecha. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está hambriento <b>y</b> hay comida adelante <b>entonces</b>
+el piojo se detiene y come la comida. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está cansado <b>entonces</b> el piojo descansa.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo está amenazado <b>entonces</b> el piojo ataca primero. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo desea <span style="font-weight: normal">aparearse</span> <b>y</b>
+está libre al frente <b>entonces</b> el piojo se mueve adelante. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo el piojo desea una pareja <b>y</b> hay un obstáculo al
+frente<b> y no</b> es una pareja <b>entonces</b> el piojo voltea a la
+derecha. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+el piojo desea aparearse <b>y</b> hay un obstáculo al frente <b>y</b>
+es una pareja <b>entonces</b> el piojo se detiene <b>y</b> trata de
+encargar bebés. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+nuevas metas definen la conducta de entrada-salida del piojo y pueden
+ser implementadas directamente como un sistema de producción sin
+memoria. Sin embargo, hay inconsistencias potenciales. Si el piojo
+desea aparearse y está hambriento al mismo tiempo puede que se
+encuentre en una situación difícil, por ejemplo, en la que debiera
+tanto detenerse y comer como voltear a la derecha y buscar pareja,
+todo al mismo tiempo. Para evitar tales inconsistencias, el piojo
+tendrá que resolver los conflictos. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero,
+si era demasiado esperar que el piojo razonara con lógica, es quizás
+también pedirle demasiado que resuelva los conflictos. Menos aún
+que aplique Teoría de Decisiones para que pese las ventajas
+relativas de satisfacer su hambre con las de satisfacer su deseo de
+aparearse. La solución más simple es la Diseñadora tome esas
+decisiones por el piojo y se las incluya en la especificación. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0000"><span lang="en-GB">Si
+el piojo está hambriento y </span></font><font color="#0000ff"><span lang="en-GB">no
+está amenazado </span></font><font color="#ff0000">y</font></b></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">está
+libre al frente</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo se mueve adelante</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0000">Si
+el piojo está hambriento y </font><font color="#0000ff">no es
+amenazado </font><font color="#ff0000">y</font></b></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0000">hay
+un obstáculo al frente y no es comida y </font><font color="#0000ff">no
+desea aparearse</font></b></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo voltea a la derecha.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Si
+el piojo está hambriendo y </b></span></font><font color="#0000ff"><span lang="en-GB"><b>no
+es amenazado</b></span></font><font color="#ff0000"> </font><font color="#ff0000"><span lang="en-GB"><b>y</b></span></font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">hay
+comida al frente </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo se detiene y come la comida.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0000"><span lang="en-GB">Si
+el piojo está cansado y </span></font><font color="#0000ff"><span lang="en-GB">no
+es amenazado </span></font><font color="#ff0000">y</font> </b></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>no
+tiene hambre</b></span></font><font color="#ff0000"> </font><font color="#ff0000"><b>y
+</b></font><font color="#0000ff"><span lang="en-GB"><b>no desea
+aparearse </b></span></font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo descansa.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+el piojo es amenazado entonces el piojo ataca primero</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Si
+el piojo desea aparearse y </b></span></font><font color="#0000ff"><span lang="en-GB"><b>no
+está amenazado</b></span></font><font color="#ff0000"> </font><font color="#ff0000"><span lang="en-GB"><b>y
+</b></span></font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">está
+libre al frente</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo se mueve adelante.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Si
+el piojo desea aparearse y </b></span></font><font color="#0000ff"><span lang="en-GB"><b>no
+está amenazado</b></span></font><font color="#ff0000"> </font><font color="#ff0000"><b>y
+</b></font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#0000ff">no
+está hambriendo </font><font color="#ff0000">y hay un obstáculo
+adelante y no es una pareja </font></b></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo voltea a la derecha.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Si
+el piojo desea aparearse y </b></span></font><font color="#0000ff"><span lang="en-GB"><b>no
+está amenazado</b></span></font><font color="#ff0000"> </font><font color="#ff0000"><span lang="en-GB"><b>y
+</b></span></font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">hay
+una pareja al frente </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo se detiene y trata de encargar bebés. </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#0000ff">Si
+el piojo desea aparearse y está hambriento y no es amenazado </font><font color="#ff0000">y</font></b></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0000">hay
+un obstáculo al frente y </font><font color="#0000ff">no es una
+pareja y no es comida</font></b></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+el piojo voltea a la derecha.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+nueva especificación es una colección de asociaciones
+entrada-salida que le otorga prioridad máxima al reaccionar contra
+un ataque, pioridad mínima a descansar cuando está cansado e igual
+prioridad a aparearse y comer. Ahora, la única situación en la que
+podría surgir el conflicto es cuando hay comida y pareja al frente
+al mismo tiempo. Uno tiene que preocuparse por las cosas importantes.
+</font></font>
+</p>
+<p style="margin-top: 0.43cm; margin-bottom: 0.51cm; page-break-after: avoid">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">El problema mente-cuerpo</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Normalmente,
+el trabajo de una diseñadora termina cuando ha construido una
+descripción declarativa de la conducta de entrada-salida de su
+objeto de estudio. El cómo se “implante” esa conducta dentro del
+objeto no es asunto suyo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+Computación, esta distinción entre el diseño de un objeto y su
+implementación es llamada <i><b>encapsulamiento</b></i>. La
+implementación (implantación) queda encapsulada en el objeto. Los
+objetos pueden interactuar con otros objetos, considerando solamente
+su conducta de entrada-salida. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+noción de encapsulamiento es una justificación parcial del método
+conductista. No es solamente que resulta imposible en muchos casos
+determinar lo que hay dentro del otro objeto, sino también que, para
+muchos propósitos prácticos, es innecesario e incluso indeseable. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Nuestro
+piojo no es la excepción. Sería fácil, dada la especificación de
+entrada-salida, implementar la conducta del piojo con un sistema de
+producción primitivo sin memoria y sin resolución de conflictos.
+¿Acaso el piojo necesita una mente – para representar conceptos
+como hambre y comida y para derivar representaciones simbólicas de
+sus acciones?. De verdad ¿un piojo necesita cargar con todo este
+aparato mental, cuando toda la conducta instintiva necesaria podría
+ser “cableada”, como una colección de asociaciones de
+entrada-salida, directamente en el cuerpo del piojo</span></font></font><a href="#_ftn4" name="_ftnref4">[4]</a><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">?</span></font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+la misma manera, una diseñadora podría especificar el diseño de un
+termostato en términos simbólicos: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Metas</i>:</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+la temperatura actual es T grados y la temperatura deseada es T' y T
+&lt; T’ - 2° <b>entonces</b> el termostato aumenta el calor. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+la temperatura actual es T grados y la temperatura deseada es T' y T
+&gt; T’ + 2° <b>entonces</b> el termostato disminuye el calor.</font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+esto no implica que el termostato manipule expresiones simbólicas
+para generar su conducta. Muchas personas estarían satisfechas si el
+diseño se implantara en un dispositivo mecánico o electrónico
+simple. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+la misma forma como la conducta del termostato puede ser vista desde
+afuera en términos de lógica simbólica, sin que esto implique que
+el propio termostato manipule expresiones simbólicas, la conducta de
+nuestro piojo podría ser implantada como una colección de
+asociaciones entrada-salida en un cuerpo sin mente. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estas
+posibilidades se pueden ilustrar así:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><img src="capitulo06_files/vision-capitulo-06.jpg" name="Graphic1" align="left" width="614" height="342">
+  <br clear="left"/>
+</img>
+<!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-ansi-language:EN-US'><v:shape id="_x0000_i1025" type="#_x0000_t75"
+ style='width:480.6pt;height:27pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+<p style="page-break-before: always"><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">La gente no es así</h2>
+<p align="justify" style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.02cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aún
+cuando mucha de nuestra conducta es instintiva e, incluso,
+inconsciente, casi siempre podemos separarnos de lo que hacemos,
+reflexionar con cuidado sobre nuestros propósitos finales y, hasta
+cierto punto, controlar nuestra conducta para alcanzar mejor nuestra
+metas. Es como si pudieramos ser un piojo y la diseñadora del piojo
+al mismo tiempo. </font></font>
+</p>
+<p style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.02cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+es, de hecho, la meta superior de este libro – investigar cómo
+podemos usar la lógica para supervisar nuestra conducta y cómo
+podemos alcanzar nuestra metas más efectivamente como resultado de
+esa supervisión. Para ello, debemos investigar la relación entre
+pensamiento instintivo y pensamiento lógico. Hemos visto un ejemplo
+de esta relación en este capítulo. Pero, en este ejemplo, los
+niveles lógico e instintivos estaban separados en individuos
+diferentes. En el próximo capítulo, veremos como pueden estar
+presentes en el mismo individuo. </font></font>
+</p>
+<p style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<hr size="1"/>
+
+<div id="ftn1" dir="ltr"><p align="justify"><a href="#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	Es muy interesante notar que tanto la interpretación temporal como
+	la lógica de la claramente ambigüa palabra “entonces” tienen
+	sentido aquí. </font></font>
+	</p>
+</div>
+<div id="ftn2" dir="ltr"><p align="justify"><a href="#_ftnref2" name="_ftn2"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[2]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	Por simplicidad, asumimos que atacar primero, descansar y tratar de
+	encargar bebés son todas acciones que el piojo puede ejecutar
+	directamente sin reducirlas a otras sub-metas de nivel inferior. </font></font>
+	</p>
+	<p align="justify"><a href="#_ftnref3" name="_ftn3"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[3]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	Esta simplificación reemplaza las oraciones con la forma “si A,
+	entonces si B entonces C”, con oraciones “si A y B entonces C”.
+	</font></font>
+	</p>
+</div>
+<p align="justify"><a href="#_ftnref4" name="_ftn4"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[4]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+Este argumento ha sido presentado, entre otros por Rodney Brooks del
+MIT, quien ha implementado varias generaciones de robots sin
+procesador, muy parecidos a un piojo, que despliegan conductas
+inteligentes muy impresionantes. </font></font>
+</p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</font></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,919 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Capítulo 4. Combinando reducción de metas, condición-acción y otros recursos</title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-02-28T00:00:00.022502600"/>
+	<meta name="changed" content="2021-07-19T18:45:43.492889292"/>
+	<meta name="classification" content="Lógica de Agentes"/>
+	<meta name="description" content="Traducción del Libro de Bob Kowalski
+realizada por Jacinto Dávila &lt;jacinto@ula.ve&gt;"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.2cm; background: transparent }
+		h1 { color: #000000; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		p.msonormal { margin-bottom: 0cm; font-family: "Times New Roman" }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></font></h2>
+<h1 lang="en-GB" class="western" align="justify" style="margin-right: 0.02cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="6" style="font-size: 24pt">Capítulo
+4 Un Sistema Lóg<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo04_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+ico
+que combina reducción de metas, reglas de condición-acción y otros
+recursos lógicos</font></font></font></h1>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">¿Qué
+tienen en común el pasajero del metro, la zorra, el piojo, el
+explorador marciano e, incluso, el termostato?. Seguramente no se
+trata de su manera de vestir, sus compañías o sus modales. Se trata
+de que todos ellos están constantemente ocupados en lidiar con el
+cambiante mundo – Una lidia que algunas veces amenaza su existencia
+y otras veces les provee con oportunidades para sobreponerse y
+prosperar. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Para
+que la lógica sea relevante en tal contexto, tiene que resolver
+primero un gran problema: la lógica tradicional, tal como se le
+entiende normalmente, está cerrada ante los cambios en el mundo.
+Para recuperar su relevancia, la lógica debe ser puesta primero en
+el lugar adecuado: en el componente pensante de ciclo del agente</span>:</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#3333cc">Para
+ciclar</font><font color="#000000">,</font></b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><span lang="en-GB"><b>observa</b></span></font><font color="#000000">
+el </font><font color="#000000"><span lang="en-GB">mundo,</span></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>piensa</b></font>,</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent">
+<font color="#3333cc"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><b>decide</b></span>
+<font color="#800000">cuáles acciones realizar</font><span lang="en-GB">,</span>
+</font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><span lang="en-GB"><b>actúa</b></span></font><font color="#000000"><span lang="en-GB"><b>,
+</b></span></font><font color="#3333cc"><span lang="en-GB"><b>cicla</b></span></font><font color="#000000">
+de nuevo</font><font color="#000000"><span lang="en-GB">.</span></font></font></font></p>
+<p align="justify" style="margin-right: 0.05cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">A
+este nivel, el más alto, el ciclo del agente es igual que el ciclo
+de los sistemas de producción, pero no pierde generalidad y así,
+puede acomodar otros tipos de pensamiento, incluyendo el razonamiento
+lógico. Imbuída como el componente pensante del ciclo del agente,
+la lógica queda tanto para asimilar las entradas que el agente
+recibe de su mundo, como para producir las salidas que el agente usa
+para cambiar ese mundo. </font></font>
+</p>
+<p align="justify" style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<h2 class="western">La lógica de las metas y creencias</h2>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Otra
+limitación importante en la lógica tradicional es que no le presta
+atención a la distinción entre las metas de un agente y sus
+creencias. Esta distinción es fundamental para la supervivencia de
+los agentes y los inteligentes la aprovechan tanto como pueden. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+metas de un agente representan la visión de cómo le gustaría que
+fuese el mundo a ella o él. Las metas incluyen acciones que el
+agente puede realizar. También incluyen metas por lograr, para
+alcanzar algun estado futuro deseado, metas de mantenimiento, para
+preservar alguna relación deseada entre el agente y el cambiante
+estado de mundo, y restricciones, para prevenir estados indeseable.
+Voy a proponer que las reglas de condición-acción sean entendidas
+como metas de mantenimiento y también voy a mostrar que, en general,
+las metas pueden ser descritas naturalmente en forma lógica. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+creencias del agente, por otro lado, representan su visión del mundo
+tal como realmente es, gústele o nó. Incluyen oraciones atómicas
+que registran las observaciones del agente. También incluyen sus
+creencias acerca de las leyes de la naturaleza, además de las
+definiciones y taxonomías que el agente usa para clasificar y
+organizar sus experiencias. Voy a insistir en que muchas, quizás
+todas, las creencias pueden expresarse naturalmente en forma de
+programas lógicos. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h1 lang="en-GB" class="western" align="justify" style="margin-right: 0.02cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">El
+cuento de la zorra y el cuervo revisado</font></font></font></h1>
+<p lang="en-GB" align="justify" style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.08cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuento en el capítulo 2 comienza cuando la zorra adquiere la meta de
+tener el queso del cuervo. Pero, ¿de donde vino la meta de la zorra?
+</font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Quizás,
+como un muchachito malcriado, la zorra quiere tener todo lo que ella
+ve que otros tienen. O quizás, ella simplemente está buscando su
+siguiente comida. En cualquier caso, la meta de la zorra de tener el
+queso proviene de una meta de nivel superior – bien la meta de
+poseer cualqueir cosa que otro tenga o la meta de tener que comer
+cuando tenga hambre. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así,
+la meta de la zorra de tener el queso puede verse como una meta <i><b>por
+lograr</b></i> cierto estado futuro en el mundo, que corresponde al
+<i><b>observar</b></i> un cambio en el mundo que dispara una meta de
+nivel superior de <i><b>mantener</b></i> cierta relación con el
+mundo que la rodea. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Démosle
+el beneficio de la duda a la zorra y asumamos que ella quiere el
+queso simplemente porque tiene hambre (y no debido a algún problema
+de conducta). Esto se puede representar así como una meta de nivel
+superior:</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.08cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+me da hambre entonces necesito tener comida y comer-la comida</font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+meta puede ser parafraseada de muchas maneras. Por ejemplo, en forma
+imperativa (y jugando un poco con la auto-disciplina en Español): </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+me da hambre<b>,</b> consigue comida y cóme-la comida.</font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+formulación imperativa se asemeja a una regla de condición-acción,
+salvo porque la conclusión contiene la meta “consigue comida” en
+lugar de una acción simple que puede ser realizada sin más. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+otro lado, la meta puede ser planteada en modo declarativo, pero con
+una indicación de que se trata de una meta en lugar de una creencia.
+</font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Meta</i>:
+<b>si </b><span style="font-weight: normal">tengo hambre</span><b>
+entonces </b><span style="font-weight: normal">(ob)tengo comida</span><b>
+y </b><span style="font-weight: normal">como la comida</span><b>.</b>
+</font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+ventaja de expresar la meta como una declaración es que, entonces,
+obtiene una forma lógica. La forma lógica puede ser usada para
+verificar si la proposición es verdadera o falsa y puede usarse en
+deducciones lógicas con razonamiento hacia adelante, hacia atrás y
+de otros tipos. El hecho de que es una meta, no una creencia, implica
+que el agente debe procurar que se haga cierta. </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+<i><b>mostrar</b></i> que una implicación</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+<i>condiciones</i> <b>entonces</b> <i>conclusión</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+cierta, es necesario mostrar que cuando quiera que las condiciones
+son ciertas, entonces la conclusión es también cierta. El que sea
+una meta o un creencia es irrelevante. </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, para <i><b>hacer</b></i> cierta una implicación, siendo una
+meta, no es sólo que hace falta hacer que la conclusión sea cierta
+cuando quiera que las condiciones lo son, sino que es todo lo que hay
+que hacer. No sólo es una condición necesaria, sino que es
+suficiente también. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">En
+teoría, es posible hacer que la implicación sea cierta haciendo
+ciertas tanto las condiciones como la conclusión. Sin embargo, hacer
+que las condiciones sean ciertas es un trabajo innecesario. En la
+práctica, el agente no intenta hacer que las condiciones de las
+metas en forma de implicación sean satisfechas expresamente. O bien
+es el mundo el que las hace ciertas, o bien el agente las hace
+ciertas por algún otro motivo<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftn1" name="_ftnref1">[1]</a>.</span></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+un mundo abierto y en constante cambio, puede no ser posible hacer
+que las implicaicones permanezcan ciertas para siempre. Puede que sea
+necesario mantener su verdad por un periodo indefinido, haciendo que
+las instancias individuales de cada condición sean ciertas en cada
+ocasión en que surgan. El proceso completo consiste de los
+siguientes tres pasos:</font></font></p>
+<ul>
+	<li><p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">razonar
+	hacia adelante, apareando nuevas observaciones <font color="#ff3333">con
+	algunas condiciones</font> de la implicación, generando una nueva
+	instancia de la implicación. </font></font>
+	</p>
+	<li><p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonar
+	hacia adelanta o hacia atrás, para verificar <font color="#ff3333">todas
+	las restantes condiciones</font> de esa instancia de la implicación.
+	</font></font>
+	</p>
+	<li><p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Derivar
+	la nueva meta de hacer la <font color="#ff3333">conclusión</font>
+	cierta. </font></font>
+	</p>
+</ul>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+nueva meta es una sub-meta de una <i><b>meta de mantenimiento</b></i>
+de nivel superior. Normalmente es una <i><b>meta de alcance</b></i>,
+para obtener cierto estado final. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Veamos
+como funciona la derivación de una meta de alcance a partir de una
+meta de mantenimiento, en esta versión de la Zorra y el Cuervo:</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#ff3333"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Meta</i>:
+<b>si </b><span style="font-weight: normal">me da hambre</span><b>,
+</b><span style="font-weight: normal">consigue comida</span><b> y
+</b><span style="font-weight: normal">come la comida</span><b>. </b></font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff3333"><i>Creencias</i></font>:
+</font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>El
+cuervo tiene el queso</b>. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#ff3333"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Un
+animal tiene un objeto </b></font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 7.5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>si</b></font>
+<font color="#993366"><b>el animal está cerca del objeto</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 7.5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>y</b></font>
+<b>el animal toma el objeto. </b></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#993366"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Estoy
+cerca del queso</b> </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 7.5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>si</b></font>
+<b>el cuervo tiene el queso</b></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 7.5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>y</b></font>
+<font color="#00dcff"><b>el cuervo canta</b></font>. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><br/>
+<font color="#00dcff"><b>El
+cuervo canta</b></font> <font color="#0000ff"><b>si</b></font>
+<b>alabo/halago/adulo al cuervo</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>El
+queso es un tipo de comida. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>La
+comida es un tipo de objeto. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+que este cuento funcione, la Zorra necesita el conocimiento
+taxonómico de que el queso es un tipo de comida y de que la comida
+es un tipo de objeto. Este conocimiento puede ser representado de
+varias maneras y hay, inclusive, lógicas especializadas para cada
+propósito. Sin embargo, para el simple propósito de recontar el
+cuento, esos detalles no tienen importancia. Es suficiente reconocer
+que este conocimiento es necesario simplemente para asistir el
+razonamiento, como veremos más adelante. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ver como es que funciona el derivar una meta de alcance a partir de
+una meta de mantenimiento en este ejemplo, suponga que la Zorra tiene
+la meta y la creencia que se indicó antes y, de pronto, su cuerpo le
+dice que tiene hambre. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observe</span></i><b>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Me da hambre.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que su cuerpo es parte del mundo, la Zorra se hace-vuelve consciente
+de su hambre por medio de una observación. La observación dispara
+la meta de alto-nivel y el razonar hacia adelante deriva la
+sub-metas:</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Sub-metas</span></i><b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Tengo comida y Como la comida.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así,
+la verdadera meta de mantenimiento no es tan específica como obtener
+el queso del cuervo, sino la más general de obtener cualquier clase
+de comida. Pero esta meta de mantenimiento es apenas la mitad de la
+historia. La otra mitad es que la Zorra también necesita comerse esa
+comida. Tener comida y no comerla es una tonteria. </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#000000"><span lang="en-GB">Derivar
+sub-meta de mantenimiento a partir de metas de más alto nivel</span></font>
+es una generalización del derivar acciones a partir una regla de
+condición-acción, porque las sub-metas pueden ser (pero no
+necesariamente son) acciones atómicas (ejecutables de inmediato). En
+el caso general, las sub-metas son, a su vez, metas que deben se
+reducidas a otras sub-metas de nivel inferior. Esta es también una
+generalización de las reglas de condición-acción porque las reglas
+de alcance así derivadas podrían ser para alcanzar en algún
+momento en el futuro y no sólo en el siguiente instante de tiempo. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h1 class="western" align="justify"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">El
+Factor Tiempo</font></font></h1>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Nuestra
+nueva versión del cuento de la Zorra y el Cuervo es todavía una
+gran simplificación debido, principalmente, a que ignora el tema del
+tiempo. No distingue entre distintas ocurrencias de tener hambre en
+momentos diferentes. Tampoco se indica cuanto tiempo ha transcurrido
+entre la observación del hambre y el momento de comer. De hecho, no
+se indica que la Zorra necesita tener la comida antes de que pueda
+comerla. </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ese
+ejercicio de ignorancia del tiempo fue hecho a propósito, porque
+resulta que el razonamiento de sentido común sobre el tiempo es
+mucho más complicado de lo que parece. Volveremos sobre ese problema
+más adelante. Entretanto, seguiremos usando esta versión
+supersimplificada del cuento, sin tiempo, tanto para simplificar el
+ejemplo como para concentrarnos en cómo la Zorra entrelaza su
+razonamiento con sus observaciones y acciones en el contexto del
+ciclo del agente. </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm; font-weight: normal">
+<br/>
+<br/>
+
+</p>
+<h1 class="western" align="justify"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Incorporando
+la historia en el ciclo de los agentes</font></font></h1>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Vamos
+a recontar el cuento, comenzando en esta ocasión en el instante en
+el que la Zorra comienza a tener hambre. Para que la historia sea más
+interesante, asumimos que la Zorra sólo tiene tiempo para realizar
+un paso de razonamiento en cada ciclo. También asumiremos que la
+Zorra observa si sus acciones tienen éxito o fallan. </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>El
+primer ciclo.</b></font><font color="#000000"> </font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+Me da hambre.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><i><span style="font-weight: normal">Razonando
+hacia adelant</span></i></font><font color="#008000"><i><span style="font-weight: normal">e</span></i></font><font color="#008000"><i><span style="font-weight: normal">,
+</span></i></font><font color="#ff0000"><i><span style="font-weight: normal">sub-metas</span></i></font><b><font color="#ff0000">:
+Tengo la comida y como la comida.</font></b></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>No
+hay acciones por ejecutar.</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+es el caso clásico de una observación que dispara una meta de
+mantenimiento y produce una meta de alcance. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>El
+segundo ciclo</b></span></font><span lang="en-GB">.</span> </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Ninguna
+observación. </i></font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia atrás, nuevas sub-metas</span></i><b>:&nbsp; Estoy cerca de la
+comida y Tomo la comida y Como la comida.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Ninguna
+acción por ejecutar.</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+único pensar que la Zorra puede hacer en este ciclo es razonar hacia
+atrás, para reducir la sub-meta de obtener la comida a la sub-metas
+de estar cerca de la comida y tomarla. Este razonar incorpora el
+razonamiento taxonómico que aparea “comida” con “objeto”. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>El
+tercer ciclo</b></span></font><span lang="en-GB">.</span> </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+El cuervo tiene el queso</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i><span style="font-weight: normal">Razonando
+hacia adelante, nueva creencia</span></i></span><b><span lang="en-GB">:
+Estoy cerca del queso si el cuervo canta</span>.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Ninguna
+acción por ejecutar.</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+este ciclo, la Zorra tiene la alternativa de continuar el
+razonamiento hacia atrás a partir de sus sub-metas actuales o de
+razonar hacia adelante a partir d e esta nueva observación.
+Normalmente es una buena idea darle mayor prioridad al razonar con
+las nuevas observaciones, porque puede tratarse de una emergencia que
+requiere atención inmediata o una oportunidad que no debiera
+desperdiciarse. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+observación se aparea con una de las condiciones de su creencia:</font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#990099"><b>Estoy
+cerca del queso </b></font><font color="#0000ff"><b>si</b></font><font color="#000000">
+</font><font color="#000000"><b>el cuervo tiene el queso</b></font> <font color="#0000cc"><b>y</b></font><font color="#3366ff"><b>
+el cuervo canta</b></font><font color="#000000"><b>.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que su creencia está expresada en forma lógica, puede ser usada
+para razonar tanto hacia adelante como hacia atrás. Si se usa para
+razonar hacia adelante, como en este caso, produce una nueva
+creencia:</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>El
+cuarto ciclo</b></font>.</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Ninguna
+observación.</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia atrás, la nueva sub-metas</span></i><b>: El cuervo canta y
+Tomo el queso y Como el queso </b></font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Ninguna
+acción por ejecutar</span></i><b>.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+Zorra usa sus nueva creencia hacia atrás, para reducir la meta de
+estar cerca de la comida a la sub-meta de hacer que el cuervo cante.
+Para hacerlo, aparea “comida” con “el queso”. Esto tiene el
+efecto colateral de precisar qué es lo que va a comer su la nueva
+sub-meta termina con éxito. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>El
+quinto ciclo</b></font>.</font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Ninguna
+observación. </i></font></font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia atrás, la nueva sub-metas</span></i><b>:&nbsp; Adulo al cuervo
+y Tomo el queso y Como el queso.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Acción</span></i><b>:
+Adulo al cuervo.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+Zorra reduce la meta de hacer que el cuervo cante a la sub-meta de
+adular al cuervo. Luego intenta resolver esta nueva sub-meta
+realizando la acción. No hay otras acciones pendientes para ejecutar
+en este momento, así que no hay necesidad de resolver ningún
+conflicto entre acciones. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>El
+sexto ciclo</b></span></font><span lang="en-GB">.</span> </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+Adulo al cuervo.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><i><span style="font-weight: normal">Razonando
+hacia adelante, nuevas sub-metas</span></i></font><b><font color="#ff0000">:
+Tomo el queso y Como el queso.</font></b></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Acción</span></i><b>:
+Tomo el queso.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+Zorra observa el resultado de la acción que acaba de intentar en el
+ciclo anterior. La observación, que confirma que ha tenido éxito,
+resuelve la primera de las tres sub-metas, dejando las otras dos para
+tratar luego. La siguiente sub-meta también es una acción y hay
+otras acciones candidatas a ser realizadas en este momento. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><b>El
+séptimo ciclo</b></font>. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+No tomo el queso.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm; font-weight: normal">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>No
+piensa.</i></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Acción</span></i><b>:
+Tomo el queso.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">La
+Zorra observa el resultado de su acción. Sin embargo, esta vez
+suponemos que falla, bien porque el Cuervo todavía no ha comenzado a
+cantar, bien porque el queso no ha llegado al suelo, bien debido a su
+ineptitud física<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftn2" name="_ftnref2">[2]</a></span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.
+Supondremos, además, que la Zorra intentará la misma acción otra
+vez<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftn3" name="_ftnref3">[3].</a></span></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 6.68cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>El
+octavo ciclo</b></span></font><span lang="en-GB">.</span> </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+Tomo el queso.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><i><span style="font-weight: normal">Razonamiento
+hacia adelante, nuevas sub-metas</span></i></font><b><font color="#ff0000">:
+Como el queso.</font></b></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Acción</span></i><b>:
+Como el queso.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+Zorra observa que, esta vez, la acción ha sido exitosa. La
+observación resuelve la sub-meta acción asociada, dejando pendiente
+solamente la última acción, que la Zorra decide tratar en el
+siguiente ciclo:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000ff"><span lang="en-GB"><b>El
+noveno ciclo</b></span></font><span lang="en-GB">.</span> </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.7cm; margin-bottom: 0.51cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><span lang="en-GB"><i><span style="font-weight: normal">Observación</span></i></span></font><font color="#008000"><span lang="en-GB"><b>:
+Como el queso.</b></span></font> </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+observación resuelve la última de las sub-metas acción. Noten que
+la meta de mantenimiento todavía permanece allí, para ser disparada
+en otra ocasión futura. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+patrón general de razonamiento de este ejemplo, que se despliega
+sobre varios otros ciclos y, posiblemente, se entrelaza con otras
+observaciones y acciones, es algo así:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+ Un evento ocurre.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><i><span style="font-weight: normal">Razonamiento
+hacia adelante</span></i></font><font color="#008000"><b>:</b></font><font color="#0000ff"><b>
+El evento se aparea con las condiciones de una meta de mantenimiento
+o de una creencia</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Meta
+de logro o alcance</span></i><b>: En algún momento la conclusión
+una meta de mantenimiento es convertida en una meta de logro o
+alcance. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonamiento
+hacia atrás</span></i><b>: Las creencias son usadas para reducir las
+metas de logro en acciones. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Acciones</span></i><b>:
+Una sub-meta acción es seleccionada para ser ejecutada.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+El agente verifica si la acción tiene éxito o falla.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+patrón no es excepcional. Algo parecido ocurre en el ejemplo del
+metro de Londres con su Aviso de Emergencias. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif">De vuelta en el metro</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Recuerde
+nuestra última versión del ejemplo::</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Si</b>
+hay una emergencia <b>entonces</b> consiga ayuda. </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+consigue ayuda <b>si</b> alerta al conductor.</font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+alerta al conductor <b>si</b> presiona el botón de la señal de
+alarma. </font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primera oración presenta una meta de mantenimiento. Podemos
+reescribirla como una oración declarativa, indicando al lado que se
+trata de una meta y no de una creencia. Entretanto, para capturar
+mejor el significado pretendido de la segunda y tercera oración,
+reemplazamos la segunda persona “Ud” por la tercera persona. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Meta</span></i><b>:
+ Si hay una emergencia entonces Yo consigo ayuda.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Creencias</span></i><b>:
+</b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Una
+persona consigue ayuda si la persona alerta al conductor.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Una
+persona alerta al conducto si presiona el botón de la señal de
+alarma. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+establecer hay una emergencia, necesitamos creencias adicionales. Por
+ejemplo: </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Creencias:</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+una emergencia si hay fuego.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+una emergencia si una persona ataca a otras.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+una emergencia si alguién se enferma gravemente.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+una emergencia si hay un accidente.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Podríamos
+continuar esta reducción de los conceptos abstractos de alto nivel
+hacia los mas concretos de bajo nivel hasta cualquier nivel de
+detalle deseado. Por ejemplo, tratándose de reconocer el fuego,
+podríamos agregar:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Creencias
+adicionales:</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+fuego si hay llamas. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Hay
+fuego si hay humo.</b></font></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Con
+todo, pronto nos parecerá cada vez más difícil definir todo los
+conceptos de bajo nivel en términos lingüísticos. Al final, debe
+haber un punto en el que hay un nivel mínimo, que es irreductible y
+en el cual el sistema sensorial del agente transforma las sensaciones
+que recibe del ambiente en observaciones que pueden ser representadas
+en términos conceptuales. </font></font>
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga,
+en este ejemplo, que el concepto de reconocer el fuego es ese nivel
+mínimo. Suponga, más aún, que Ud está viajando en el metro y
+observa humo:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+Hay llamas. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.05cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia adelante, nueva creencia</span></i><b>: Hay fuego.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia adelante, nueva creencia</span></i><b>: Hay una emergencia</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#008000"><i><span style="font-weight: normal">Razonando
+hacia adelante,</span></i></font><font color="#0000ff"><i><span style="font-weight: normal">
+</span></i></font><font color="#ff0000"><i><span style="font-weight: normal">meta
+de logro</span></i></font><font color="#ff0000"><b>: Yo consigo
+ayuda!</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia atrás, sub-meta</span></i><b>: Yo alerto al conductor!</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Razonando
+hacia atrás, acción</span></i><b>: Yo presiono el botón de la
+señal de alarma!</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+tres pasos de razonamiento hacia adelante, Ud deriva la meta de
+alcance de obtener ayuda. En el primer paso, Ud reconoce que hay
+fuego. En el segundo, que hay una emergencia. En el tercero, Ud usa
+la meta de mantenimiento para derivar la meta de alcance de obtener
+ayuda. Luego, en dos paso de razonamiento hacia atrás, Ud reduce la
+meta de obtener ayuda a la sub-meta de acción de presionar el botón
+de alarma. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+acción de presionar el botón de alarma, en forma similar a como
+dijimos de la observación de la emergencia, puede ser reducida aún
+más a términos de nivel inferior. Por ejemplo, mover primero su
+dedo y luego empujar el botón con ese dedo. Mover su dedo hacia el
+botón puede, a su vez, ser reducida a todavía más bajas sub-metas,
+tales como primero mover su brazo cerca de botón y luego mover el
+dedo hacia el botón. Con todo, al final tiene que haber un punto
+donde su cuerpo releva a la mente y realiza las acciones por su
+propia cuenta. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Toda
+esta pensadera toma un tiempo durante el cual Ud puede que tenga que
+dar cuenta de otras observaciones y realizar otras acciones.
+Programar estas acciones, de manera que todo se realice en el momento
+apropiado, es una tarea para el componente que toma decisiones en el
+ciclo del agente. Hemos preservado los ejemplos del capítulos tan
+simples muy a propósito para evitar ese tipo de decisiones sobre el
+tiempo. Vamos a referirnos a esos temas en el siguiente capítulo. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h1 class="western" align="justify" style="margin-right: 6.68cm"><font color="#ff0000"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Resumen</font></font></font></h1>
+<p align="justify" style="margin-right: 6.68cm"><br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+ejemplos en este capítulo muestran como la lógica puede ser usada
+en el contexto del ciclo de observación-pensamiento-decisión-acción
+de un agente. Puesta en este contexto, la lógica es usada por los
+niveles superiores del pensar tanto para razonar hacia adelante, a
+partir de las observaciones, disparando metas de mantenimiento y
+derivando metas de alcance, como para razonar hacia atrás, para
+reducir metas de alcance en acciones. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Bajo
+el nivel lógico, los procesos de percepción transforman las
+sensaciones crudas en observaciones y los procesos motores
+transforman las representaciones conceptuales en actividad física en
+el ambiente. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Todo
+esto se puede representar así: </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 6.68cm; margin-bottom: 0.51cm">
+&nbsp;</p>
+<img src="capitulo04_files/vision-capitulo-04.jpg" name="Graphic1" align="left" width="567" height="462">
+  <br clear="left"/>
+</img>
+
+<p class="msonormal" align="justify" style="margin-right: 6.68cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 6.68cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hemos
+visto que el razonamiento hacia adelante con metas en forma de
+implicación sirve como generalización de las reglas de
+condición-acción, mientras que el razonamiento hacia atrás con
+creencias en forma de implicación sirve para generalizar los
+procedimientos de reducción de metas. En el siguiente capítulo,
+veremos cómo es que el razonamiento hacia atrás puede ser usado
+para inferir las consecuencias de las soluciones que se deriven en
+ciertos momentos. También veremos como la combinación de búsqueda
+más inferencia provee información para la siguiente etapa del
+ciclo, de forma que las soluciones alternativas puedan ser comparadas
+y que se tome así, una decisión final con más información. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<hr size="1"/>
+
+<div id="ftn1" dir="ltr"><p align="justify"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	También es posible hacer que la implicación sea cierta, haciendo
+	que sus condiciones se vuelva falsas. En el caso de la Zorra, ella
+	podría tratar de satisfacer su meta evitando sentir hambre. </font></font>
+	</p>
+</div>
+<div id="ftn2" dir="ltr"><p align="justify"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftnref2" name="_ftn2"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[2]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Esta
+	complicación sirve para indicar una limitación de nuestra
+	formulación del ciclo del agente: No hay chequeo explícito en el
+	ciclo para determinar si las acciones de bajo nivel de hecho
+	alcanzan las metas de nivel superior. El ciclo chequea si las
+	acciones tienen éxito o no, pero no chequea si ese éxito conduce
+	al éxito de las metas superiores que se propuso alcanzar. Si las
+	creencias que fueron usadas para reducir esas metas a sub-metas se
+	pudieran garantizar como ciertas, entonces estos chequeos serían
+	innecesarios. Así que una manera de corregir esta limitación es
+	agregar al ciclo un componente de aprendizaje general y de
+	verificación de validez. Volveremos con esto más tarde.</span></font></font></p>
+</div>
+<p align="justify"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap4.html#_ftnref3" name="_ftn3"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[3]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+Esto supone que hay un tiempo asociado antes del cuál debe ser
+realizada la acción y que tal tiempo no ha sido alcanzado. Veremos
+como se hace esto, con todo detalle, más adelante cuando revisemos
+la representación del tiempo. </font></font>
+</p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</font></p>
+</div>
+</body>
+</html>

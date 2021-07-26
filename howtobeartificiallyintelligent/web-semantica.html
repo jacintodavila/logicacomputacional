@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252">
+	<title>La Lógica y la Web Semántica</title>
+	<meta name="GENERATOR" content="OpenOffice.org 2.0  (Linux)">
+	<meta name="CREATED" content="20060121;9134600">
+	<meta name="CHANGED" content="20070606;17200400">
+	<meta name="CLASSIFICATION" content="Lógica y Agentes Computacionales">
+	<meta name="DESCRIPTION" content="Estas notas son un complemento al libro del prof. Kowalski &quot;como ser artificialmente inteligente&quot; y son responsabilidad de Jacinto Dávila. ">
+	<meta name="KEYWORDS" content="Web Semántica, Lógica, Agentes">
+	<style type="text/css">
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Nimbus Sans L", sans-serif; font-size: 16pt }
+		H1.cjk { font-size: 16pt }
+		H1.ctl { font-family: "Nimbus Sans L"; font-size: 16pt }
+		P.sdfootnote { margin-left: 0.5cm; text-indent: -0.5cm; margin-bottom: 0cm; font-size: 10pt }
+		A.sdfootnoteanc { font-size: 57% }
+	-->
+	</style>
+</head>
+<body dir="LTR" lang="es-VE">
+<h1 class="western">La Lógica, Los Agentes y la Web Semántica</h1>
+<p>Por Jacinto Dávila 
+</p>
+<p>Universidad de Los Andes, Venezuela</p>
+<p>versión 1.1</p>
+<p><br><br>
+</p>
+<p align="JUSTIFY">La Web es un enorme “repositorio” de
+información, de contribución abierta y acceso libre. La
+Web Semántica pretende ser un enorme repositorio de
+conocimiento. La distancia entre una y otra puede ser cubierta por un
+agente capaz de  entender esa información, o inclusive datos
+crudos, y convertirla o convertirlos en conocimiento.  Por ahora,
+esos agentes son seres humanos.  Pero si dispusiéramos de una
+representación del conocimiento para la Web y en la Web que
+pudiera ser procesada por agentes artificiales, estaríamos a
+un paso de relevar o, al menos, de asistir a los humanos en el uso de
+la Web para acceder al conocimiento.</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Siendo el medio de representación de
+conocimiento más conocido y más aplicado en la historia
+tecnológica de Occidente, no es de extrañar que la
+lógica, en algunas de sus formas computacionales, sea
+convocada para proveer esa representación del conocimiento
+para la Web. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Por razones cercanas, no debe extrañar
+tampoco que quisiéramos aprovechar el Libro del Prof.
+Kowalski, dedicado a elaborar un modelo de agente artificial basado e
+inspirado sobre la lógica, para  completar la conexión
+con la Web Semántica.</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">La Web Semántica se convirtió en
+proyecto tecnológico por iniciativa del mismo creador de la
+Web: Sir Tim Berners-Lee. El objetivo de ese proyecto es definir el
+lenguaje y las estrategias para dotar a la Web tradicional de
+representaciones del conocimiento procesables por máquinas. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">El primer paso en esa dirección fue la
+definición de una estrategia de <b><i>anotación</i></b>
+de textos (<b><i>marcado</i></b> o <b><i>etiquetado,</i></b> también
+se le dice) similar al lenguaje base de la Web: HTML, pero que
+sirviera para crear nuevos lenguajes con los cuáles se
+pudieran etiquetar (o anotar) los textos con referencias
+<b><i>significativas</i></b> en términos del uso humano del
+lenguaje. Esa estrategia, casi un lenguaje, es <b>XML</b>. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">XML, sin embargo, <i>es solamente una notación</i>.
+A diferencia de HTML, un lenguaje que se le parece mucho, las
+etiquetas en XML no han sido pre-definidas para causar cierto efecto
+operativo en la máquina. De hecho, no han sido pre-definidas
+para nada. El propio usuario, creador de una “página
+XML”, agrega sus propias etiquetas (tal como haría con
+una página Web, si estuviera usando HTML). Más aún,
+se pueden combinar ambas notaciones. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Así por ejemplo, en lugar de la tradicional
+estructura y etiquetas HTML de una <b><i>hiper</i></b>-página
+web: 
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;html&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;body&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">Este
+documento describe a la Web Semántica. </font></font></font>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/body&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/html&gt;</font></font></font></p>
+<p><br><br>
+</p>
+<p>una página en la Web Semántica podría incluir
+otras etiquetas “más significativas” para las
+máquinas:</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;html&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;body&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;resumen&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">Este
+documento describe a la &lt;tema&gt;Web Semántica&lt;/tema&gt;.
+</font></font></font>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/resumen&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/body&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/html&gt;</font></font></font></p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">con etiquetas como <font style="font-size: 11pt" size="2"><font face="FreeMono"><font color="#000000">&lt;tema&gt;</font></font></font>
+que pueden ser aprovechadas por un agente que “entienda”
+su sentido para separar fácilmente, a partir de ese texto, la
+respuesta a la pregunta “¿de qué trata este
+texto?”  (u otras consultas como “Hazme un <font style="font-size: 11pt" size="2"><font face="FreeMono"><font color="#000000">resumen</font></font></font>
+de esta página!”). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Pero XML no es un lenguaje. Es solamente una
+notación (parte de la sintaxis de un lenguaje). Para crear un
+lenguaje a partir de XML tenemos que disponer de una forma de proveer
+a esa notación de semántica. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">El primer paso en esa dirección es la
+definición de <i>las cosas de las que puede hablar ese
+lenguaje</i>. Esto es, prestando el término de los filósofos,
+una <b>ontología</b>. Una especificación de cuáles
+cosas (u otros “conceptos” ) se podrían aplicar
+allá afuera en el mundo y del cómo se les puede nombrar
+o referir en el lenguaje.</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Como quiera que los lenguajes los crea una comunidad
+(y los re-crea constantemente), los ingenieros de la Web entendieron,
+mas bien temprano, que su trabajo antes de ser definir una ontología,
+era proveer a sus usuarios de los medios para definir sus propias
+ontologías y lenguajes, quizás a partir de una
+ontología básica y algunos medios para extenderlas. Esa
+ontología básica y esos medios para extenderlas
+constituyen, en si mismas, los llamados <b>lenguajes ontológicos
+</b><span style="font-weight: medium">(un nombre más bien
+desafortunado, porque parece sugerir que hay lenguajes que no tienen
+ontología asociada, una confusión muy peligrosa como
+podrá dar fe cualquier filósofo de la lógica). </span>
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Así surge el proyecto por los lenguajes
+ontológicos que ha creado una explosión de interés
+y esfuerzos de investigación sobre la Web Semántica. En
+este texto vamos a mencionar solamente a 2 de ellos, RDF y OWL. Este
+último muy cercano a una forma de lógica un tanto
+distinta a la que se estudia en el libro del Prof. Kowalski. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">RDF es un lenguaje, basado en XML, dotado con una
+semántica “para hablar de la web”.  En RDF se
+supone que “hay un mundo” en el que existen <b>recursos</b>
+y <b><span style="font-style: normal">relaciones entre recursos</span></b>,
+y el lenguaje se dispone para que un agente <b>declare hechos</b> que
+involucren esas relaciones y esos recursos. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Por ejemplo, la declaración del hecho:</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">	Jacinto Dávila tiene una página web
+en http://webdelprofesor.ula.ve/ingenieria/jacinto</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">sería plasmado en así en RDF (recuerde
+que esta es una notación para la máquina, difícil
+de leer para un humano)<a class="sdfootnoteanc" name="sdfootnote1anc" href="#sdfootnote1sym"><sup>1</sup></a>.
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;?xml
+version=”1.0” encoding=”UTF-16”?&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;rdf:RDF</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">	xmlns:rdf=”<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns">http://www.w3.org/1999/02/22-rdf-syntax-ns</a>#”</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">	xmlns:midominio=”<a href="http://www.midominio.org/mi-rdf-ns">http://www.midominio.org/mi-rdf-ns</a>”&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;rdf:Description
+rdf:about=”http://webdelprofesor.ula.ve/ingenieria/jacinto”&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">	&lt;midominio:posee-web&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">		Jacinto
+Dávila</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">	&lt;/midominio:posee-web&gt;</font></font></font></p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/rdf:Description&gt;</font></font></font></p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p style="margin-bottom: 0cm" align="JUSTIFY"><font color="#000000"><font face="FreeMono"><font style="font-size: 11pt" size="2">&lt;/rdf:RDF&gt;</font></font></font></p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">El lector, con un poco de tiempo, podrá
+identificar cuáles secciones corresponde a terminología
+predefinida y cuáles no. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">RDF, un lenguaje completo, sin embargo está
+atado a hablar de la web (recursos – relaciones - objetos o
+<b><i>tripletas</i> RDF</b> como también se les conoce). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Quienes quieren ir más allá de esta
+semántica (útil para que las máquinas
+“entiendan” como ubicar y gestionar recursos Web)
+tendrían que probar con un lenguaje de propósito más
+general. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">OWL es uno de esos lenguajes que, además,
+está “impregnado” de una forma particular de
+lógica llamada lógica descriptiva<a class="sdfootnoteanc" name="sdfootnote2anc" href="#sdfootnote2sym"><sup>2</sup></a>.
+Las lógicas descriptivas son un desarrollo más bien
+reciente dirigido a lenguajes que se prestasen para el tratamiento
+computacional, incluso si eso implicaba restringirlos para que
+ciertas declaraciones (problemáticas por su complejidad
+computacional) no se pudieran “decir” en ellos. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Existen varios de esos lenguajes. Incluso se ha
+adoptado un mecanismo de clasificación de esos lenguajes que
+indica su nivel de expresividad (vs tractabilidad).  
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Las lógicas descriptivas construyen sus
+discursos (o teorías) sobre una pocas relaciones binarias.
+Particularmente sobre la relación “es un” (o “es
+una”, normalmente la misma relación puesto que el Inglés
+no distingue). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Así que un documento OWL es, básicamente,
+un ARBOL taxonómico que explica que objetos son de qué
+tipo y con cuáles atributos o propiedades. Una jerarquía
+de clases equivalente a las que se emplean en la Orientación
+por Objetos, OO pero, en muchos casos, incorporando otros elementos
+en la formalización de la jerarquía (como restricciones
+de integridad, al estilo de las Bases de Datos). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">No queremos, en estas notas complementarias del
+curso de lógica y agentes, contrariar (más) el esfuerzo
+del Prof. Kowalski, en el texto guía, de explicar un modelo de
+agentes basado en lógica, sin emplear ninguna lógica
+formal para ello. Así que no mostraremos más detalles
+de la sintaxis de los lenguajes ontológicos. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Lo que si queremos es mostrar 2 ejemplos de modelos
+de agentes que implementan otras dos nociones que se han vuelto
+fundamentales en la Web: Los <b>metadatos</b> y el <b>razonamiento no
+monótono</b>.<br><br><br>
+</p>
+<p align="JUSTIFY">Una de las primeras aplicaciones naturales de la
+tecnología de la Web Semántica es la búsqueda de
+documentos. Con recursos como repositorios RDF y OWL en la Web, uno
+puede imaginar un agente que nos ayude a ubicar documentos a partir
+del tipo de conocimiento que contienen (y que buscamos).  Por
+ejemplo, para responder preguntas como ¿Quienes han escrito
+sobre el legado epistolar del Libertador de Venezuela?, uno puede
+pensar<a class="sdfootnoteanc" name="sdfootnote3anc" href="#sdfootnote3sym"><sup>3</sup></a>
+en un agente con una META como esta:</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">si me preguntan ¿Quien
+Opina sobre Tema? y 
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">	Quien es una variante
+gramatical de “Quienes” y</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">	Opina es una variante
+semántica de “opinar” y</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">	el análisis del
+Tema arroja estos Descriptores entonces 
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">		Rastreo la Web
+buscando todos los Autores de documentos 
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">			con esos
+Descriptores.</p>
+<p align="JUSTIFY"> 
+</p>
+<p align="JUSTIFY">Esta meta requerirá, desde luego, mecanismos
+de soporte (que podrían convertirse en creencias del agente)
+para realizar el análisis del Tema que produce los
+Descriptores y el Rastreo de la Web. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">En la tarea de análisis del tema, sería
+muy útil contar con un mecanismo que le permita al agente, en
+el caso particular de nuestra pregunta, <u>traducir</u> “legado
+epistolar” en todos sus sinónimos e hipónimos. 
+Así  el agente sabría que quien quiera que declare
+haber escrito sobre las “cartas” del Libertador es un
+autor a revisar.  Algo similar habría que hacer con
+“Libertador de Venezuela” para que la máquina
+entienda que se trata de Simón Bolívar.  Esto último
+requeriría, desde luego, un mecanismo adecuado para el caso
+venezolano-colombiano-ecuatoriano-peruano-boliviano.</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Esta clase de relaciones de sinonimía, tanto
+universales como locales, son posibles con sistemas como WordNET, una
+especie de diccionario y tesauro terminológico automático.
+WordNET contiene una ontología que le permite relacionar los
+términos. Desafortunadamente, esa ontología no está
+escrita en ninguno de los lenguajes ontológicos de la Web
+Semántica, pero aún así puede ser útil. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">La segunda tarea es también muy interesante.
+Requiere que nuestro agente disponga de medios para identificar entre
+la enorme cantidad de documentos contenidos en la Web, los autores y
+los descriptores de esos documentos. Esa información que
+refiere el contenido y otros atributos de los datos es conocida como
+<b>METADATA</b> y es fundamental para que las máquinas puedan
+contribuir a la gestión de los repositorios de conocimiento. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Hay muchos esfuerzos en la dirección de
+proveernos de un <b><i>standard de metadatos</i></b> en la forma de
+una ontología que explique que son y que contienen los
+documentos formales.  El <i>Dublin Core</i> es quizás el más
+avanzado de esos esfuerzos. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Podemos ver, en ese primer ejemplo de agente para la
+Web Semántica, como se incorporaría el manejo de
+significado en un agente que atienda consultas en la Web. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Hay, sin embargo, un siguiente nivel de complejidad
+en el manejo de significados para atender consultas. Algo que es bien
+conocido en Bases de Datos desde hace años: El manejo de datos
+temporales y el <b>razonamiento no monótono</b>.</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Se habla de razonamiento no monótono a aquel
+que “cambia de opinión”. Típicamente, un
+agente, con cierto cúmulo de creencias, alcanza ciertas
+conclusiones, pero si esas creencias cambian (debido quizás, a
+un cambio en el mundo), las conclusiones también podrían
+cambiar. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Los lectores del libro del Profesor podrán
+asociar esa forma de razonar con esos lenguajes lógicos que
+estudiaron en el capítulo sobre el cambiante mundo (lógicas
+modales, el cálculo de situaciones y el cálculo de
+eventos). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Permítannos, sin embargo, un último
+ejemplo con un agente que implementa una forma de razonamiento no
+monótono indispensable para la aplicación a su cargo:</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Imaginen un agente que maneja un repositorio de
+información catastral<a class="sdfootnoteanc" name="sdfootnote4anc" href="#sdfootnote4sym"><sup>4</sup></a>
+elemental. Entre muchos otros tipos de consulta, este agente debe
+poder explicar quienes son los propietarios de los terrenos en un
+área dada. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">La meta de mantenimiento y creencia correspondiente
+para este agente es simple:</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">si me solicitan los
+Propietarios de terrenos en un Área entonces reportar
+Propietarios del Área.</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY"><br><br>
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">Para reportar
+Propietarios del Área haga</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">	transforme la
+descripción del Área en un Área Geográfica
+y</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">	Los Propietarios son
+los sujetos para 
+</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY">		quienes se cumple
+(ahora) que poseen propiedades contenidas en el Área
+Geográfica.</p>
+<p style="margin-left: 1.25cm" align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">La última sub-meta (“Los
+Propietarios..”) es una consulta que se podría responder
+con una versión extendida del cálculo de situaciones o
+el de eventos adecuada para lidiar con propiedades y áreas
+geográficas. Lo importante en este caso es que si a este
+agente se le hace la consulta en un momento dado, su respuesta bien
+puede variar respecto a otro momento si han ocurrido eventos que
+cambien las relaciones propiedad-propietario en ese área
+geográfica. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Desde luego, este agente tendría que operar
+con conocimiento que le permita asociar cualquier descripción
+de un área (por ejemplo, en términos políticos:
+parroquia, municipio, país, etc) con un conjunto de
+coordenadas <i>standard</i>, por ejemplo.  Más importante aún,
+el agente requeriría de un registro sistemático de los
+eventos de compra y venta de propiedades que incluya los detalles de
+cada propietario y propiedad (incluyendo la ubicación de cada
+una, desde luego).  Todo este conocimiento bien puede estar
+almacenado en un repositorio asociado con una ontología de
+registro catastral (por ejemplo, un archivo, con marcaciones en OWL
+específicas para el problema). 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY">Esos dos ejemplos, informales y muy simples, pueden
+servir para ilustrar la extraordinaria riqueza de posibilidades en
+este encuentro entre la Web, la lógica y los agentes. 
+</p>
+<p align="JUSTIFY">---</p>
+<p align="JUSTIFY">Copyright © Jacinto Dávila. El Autor se
+reserva el derecho de proclamarse autor de este texto y asume la
+responsabilidad por las consecuencias. El texto puede distribuirse
+sin ninguna otra restricción implícita o explícita.
+Noten que los autores citados o referidos mantienen íntegramente
+sus derechos. 
+</p>
+<p align="RIGHT">Fin del documento. Versión 1.1. 
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<p align="JUSTIFY"><br><br>
+</p>
+<div id="sdfootnote1">
+	<p class="sdfootnote"><a class="sdfootnotesym" name="sdfootnote1sym" href="#sdfootnote1anc">1</a>Siguiendo
+	los ejemplos de “A semantic Web Primer” de Grigoris
+	Antoniuo y Frank van Harmelen. MIT Press. ISBN 0-262-012110-3.  El
+	espacio de nombres en midominio es hipotético. NO lo usen. 
+	</p>
+</div>
+<div id="sdfootnote2">
+	<p class="sdfootnote"><a class="sdfootnotesym" name="sdfootnote2sym" href="#sdfootnote2anc">2</a>Hay
+	varios otros desarrollos intermedios entre RDF y OWL, como
+	RDF-Scheme y DAML-OIL. No se trata de extensiones solamente, sino de
+	diversos lenguajes cubriendo diversos aspectos del problema.  
+	</p>
+</div>
+<div id="sdfootnote3">
+	<p class="sdfootnote"><a class="sdfootnotesym" name="sdfootnote3sym" href="#sdfootnote3anc">3</a>Agradecemos
+	a Icaro Alzuru por motivar este ejemplo con su trabajo de maestría
+	en <a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/tesis/2007-feb-msc-icaro-alzuru.pdf">“Alejandría
+	Inteligente: Un experimento en la Web Semántica con un
+	sistema de gestión de documentos”</a>. 
+	</p>
+</div>
+<div id="sdfootnote4">
+	<p class="sdfootnote"><a class="sdfootnotesym" name="sdfootnote4sym" href="#sdfootnote4anc">4</a>Agradecemos
+	a Nelcy Patricia Piña por motivar este ejemplo con su trabajo
+	de maestría en <a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/tesis/2006-mayo-msc-nelcy-pina.pdf">“Una
+	Ontología para Manejo de Información Catastral”</a>.</p>
+</div>
+
+</body></html>

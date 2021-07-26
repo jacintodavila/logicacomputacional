@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Capítulo 2. La Zorra y el Cuervo</title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2021-07-19T18:45:05.694919444"/>
+	<meta name="description" content="version 1 de Marzo de 2005."/>
+	<meta name="Originator" content="Microsoft Word 10"/>
+	<meta name="ProgId" content="Word.Document"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 2cm; margin-right: 1.49cm; margin-top: 1cm; margin-bottom: 1cm }
+		p { color: #000000; background: transparent }
+		td p { color: #000000; background: transparent }
+		h1 { color: #000000; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		p.msonormal { margin-bottom: 0cm; font-family: "Times New Roman" }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h2 class="western">
+<font face="Utopia, serif"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a> </font><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo02_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+
+</h2>
+<h1 class="western"><!--  --><!--  --><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>R Kowalski</o:Author>
+  <o:LastAuthor>Bob</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>478</o:TotalTime>
+  <o:LastPrinted>2002-03-10T12:00:00Z</o:LastPrinted>
+  <o:Created>2003-10-07T18:22:00Z</o:Created>
+  <o:LastSaved>2003-10-07T18:23:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1513</o:Words>
+  <o:Characters>8627</o:Characters>
+  <o:Company>IC Department of Computing</o:Company>
+  <o:Lines>71</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>10120</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050">
+  <o:colormenu v:ext="edit" fillcolor="#0cf"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--><font face="Utopia, serif">Capítulo
+2. La Zorra y el Cuervo</font></h1>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Algunas
+personas son proactivas. Les gusta planificar por adelantado, prever
+obstáculos y llevar una vida ordenada. Otra gente es reactiva. Les
+gusta permanecer abiertos a lo que ocurre alrededor, aprovechar
+nuevas oportunidades y ser espontáneos. La mayoría de las personas
+son tanto proactivos como reactivos, en momentos diferentes y en
+varios niveles. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+este capítulo, veremos cómo el pensamiento proactivo puede ser
+modelado usando la lógica para razonar acerca del mundo y para
+reducir metas a sub-metas. En el siguiente capítulo, veremos cómo
+el pensamiento reactivo puede ser modelado con reglas de
+condición-acción. Y, en el capítulo subsiguiente, cómo los dos
+tipos de pensamiento se pueden combinar reformulando las reglas de
+condición-acción en forma lógica. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif"><font color="#cc0000"><font size="5" style="font-size: 18pt">La
+Zorra y el Cuervo</font></font><font color="#cc0000"> </font></font>
+</h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+muy probable que el lector conozca la antigua fábula Griega,
+atribuida a Esopo, según la cúal una zorra proactiva engaña a un
+cuervo reactivo. El cuento comienza, inocentemente, con un cuervo
+descansando en la rama de un árbol y sosteniendo un queso en su
+boca. Aparece entonces la zorra, que quiere comerse el queso. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<table width="680" cellpadding="0" cellspacing="0">
+	<col width="362"/>
+
+	<col width="2"/>
+
+	<col width="316"/>
+
+	<tr valign="top">
+		<td width="362" style="border: none; padding: 0cm"><p align="justify">
+			<img src="capitulo02_html_7b8120538f96783b.png" name="Graphic1" align="left" width="361" height="411">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+			</p>
+			<p align="justify"><br/>
+
+			</p>
+		</td>
+		<td width="2" style="border: none; padding: 0cm"><p align="justify">
+			<br/>
+
+			</p>
+		</td>
+		<td width="316" style="border: none; padding: 0cm"><p align="justify">
+			<img src="capitulo02_html_26e99ea61cf87ca8.png" name="Graphic2" align="right" width="315" height="297">
+  <br clear="right"/>
+</img>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+esta versión de la historia, veremos el cuento desde el punto de
+vista de la zorra. Para modelar su forma proactiva de pensar,
+representaremos sus creencias y sus metas en forma lógica. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000">Meta:
+</font><font color="#000000"><b>Yo tengo el queso. </b></font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Creencias:
+</font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>El
+cuervo tiene el queso.</b></font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Un
+animal tiene un objeto</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#990099"><b>el animal está cerca del objeto</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>y</b></font><font color="#000000">
+</font><font color="#000000"><b>el animal toma el objeto.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font color="#990099"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Yo
+estoy cerca del queso</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#000000"><b>el cuervo tiene el queso</b></font><font color="#3366ff">
+</font></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>y</b></font><font color="#3366ff">
+</font><font color="#3366ff"><b>el cuervo canta</b></font><font color="#000000"><b>.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3366ff"><b>El
+cuervo canta</b></font><font color="#000000"> </font><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#000000"><b>Yo alabo al cuervo.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Como
+pueden ver, la zorra no sólo es una lógica, sino también una
+física. En particular, la creencia acerca de su proximidad al queso
+cuandoquiera que el cuervo cante combina una declaración simple
+sobre su ubicación con el conocimiento de las leyes de la gravedad. </font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-right: 0.02cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif">Razonando
+informalmente (¿Cómo piensa la Zorra?)</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify" style="page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra sabe que si el cuervo canta, tendrá que abrir su pico y
+entonces el queso caerá a tierra junto al árbol. La zorra también
+sabe que, puesto que ella está junto al árbol, estará entonces
+cerca del queso. De esta forma, la zorra sabe que estará cerca del
+queso si el cuervo canta. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra también es una psicóloga conductista. Como conductista, está
+únicamente interesada en la conducta externa, de entrada-salida, del
+cuervo y no en los mecanismos internos al cuervo que podrían estar
+causando su conducta. De hecho, aunque ella representa sus propias
+creencias acerca del cuervo en términos lógicos, no asume que el
+cuervo usa lógica para representar sus creencias acerca del mundo.
+Por lo que concierne a la zorra, la conducta del cuervo bien podría
+ser generada por medio de reglas de condición-acción sin forma
+lógica. O, quizás, podrían estar “cableadas” directamente en
+su cuerpo, sin ni siquiera pasar por su cerebro. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Justo
+como vimos con las creencias de la zorra acerca de su proximidad al
+queso si el cuervo cantaba, las creencias de la zorra acerca de la
+conducta del cuervo bien podrían derivarse de otras creencias suyas
+– Quizás a partir de unas creencias más generales acerca del cómo
+un agente reactivo e ingenuo responde a las alabanzas, sin pensar en
+las posibles consecuencias de sus acciones. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra, además, está dotada con el ordinario sentido común. Sabe
+que un animal tendrá un objeto si está cerca del objeto y lo recoge
+(lo toma). Sabe la zorra que esta es una ley general, que se aplica
+universalmente a cualquier animal y a cualquier objeto (aunque
+pareciera no entender que la ley también se aplica a los robots, a
+menos que crea que los robots son una especie de animal). Sabe
+también, la zorra, suficiente lógica como para <b>instanciar</b> la
+ley general y aplicarla al caso particular en el que la zorra es el
+animal y el queso el objeto. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif">Las
+creencias de la zorra como un Programa Lógico</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+creencias de la zorra, no sólo tienen forma lógica, sino que
+también tienen la forma de un programa lógico. Como vimos antes, un
+programa lógico es una colección de implicaciones con la forma:</font></font></p>
+<p align="center"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span style="font-weight: normal">Conclusión</span></font><font color="#ff0000">
+</font><font color="#ff0000"><b>si</b></font><font color="#ff0000">
+</font><font color="#ff0000"><span style="font-weight: normal">Condiciones</span></font><font color="#ff0000"><b>.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Tanto
+la conclusión como las condiciones se escriben en forma declarativa.
+</font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+implicaciones se escriben hacia atrás, la conclusión primero, para
+indicar se pueden usar para razonar hacia atrás, de las conclusiones
+a las condiciones. Como consecuencia de razonar hacia atrás, cada
+implicación se comporta como un procedimiento reductor de metas<a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap2.html#_ftn1" name="_ftnref1">[1]</a>:
+</font></font>
+</p>
+<p align="center"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><b>Para
+derivar la </b></font><font color="#ff0000"><span style="font-weight: normal">Conclusión</span></font><font color="#ff0000"><b>,
+derive las </b></font><font color="#ff0000"><span style="font-weight: normal">Condiciones</span></font><font color="#ff0000"><b>.
+</b></font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aún
+los “hechos”, que registran observaciones, tales como la creencia
+de que el cuervo tiene el queso, pueden ser considerados como
+implaciones que tienen una conclusión, pero no tienen condiciones:</font></font></p>
+<p align="center"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Conclusión
+<b>si</b> nada<b>.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estos
+hechos también se comportan como procedimientos:</font></font></p>
+<p align="center"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para
+derivar la</b> Conclusión<b>,</b> [no] haga nada<b>. </b></font></font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">(N.T.
+El [no] lo usamos para acomodar la oración al Español, en el que
+usamos la doble negación en forma opuesta al sentido formal en
+Lógica). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+lo tanto, las creencias de la zorra pueden ser usadas como una
+colección de procedimientos:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font color="#ff0066"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para
+[ob]tener un objeto,</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#993366"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>esté
+(ubíquese) cerca del objeto</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>y</b></font><font color="#000000">
+</font><font color="#000000"><b>tome el objeto.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font color="#990099"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para
+estar cerca el queso,</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>verifique
+que el cuervo tiene el queso </b></font></font>
+</p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>y</b></font><font color="#3366ff">
+</font><font color="#3366ff"><b>haga que el cuervo cante.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font color="#3366ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para
+hacer que el cuervo cante,</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>alabe
+al cuervo.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Para
+verificar que el cuervo tiene el queso,</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 5cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">[no]
+<b>haga nada.</b></font></font></p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estos
+procedimientos pueden ser aplicados, uno después del otro, para
+reducir la meta superior:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#ff0066">Yo
+tengo el queso</font>.</b></font></font></p>
+<p align="justify" style="margin-right: 7.95cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">a
+las sub-metas con las dos acciones:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#000000"><b>Yo
+alabo al cuervo </b></font><font color="#0000cc"><b>y</b></font><font color="#000000">
+</font><font color="#000000"><b>Yo tomo el queso.</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Juntas,
+estas dos acciones constituyen un plan para alcanzar la meta
+original.</font></font></p>
+<h2 class="western"><font face="Utopia, serif">Grafos de reducción
+de metas</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+reducción que hace la zorra trocando su meta original en las dos
+acciones sub-metas, puede ser representada con la ayuda de un grafo
+en el cual las implicaciones con la forma:</font></font></p>
+<p align="center"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Conclusión
+<b>if</b> Condición<sub>1</sub> <b>and</b> Condición<sub>2</sub></font></font></p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">son
+representadas por sub-grafos con la forma siguiente:</font></font></p>
+<p align="justify"><img src="capitulo02_html_6e7d19f7028a1b52.png" name="Graphic3" align="left" width="444" height="365">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+grafo tiene la forma de un árbol al revés, con la meta superior en
+la llamada raíz del árbol (que está al tope de la figura): </font></font>
+</p>
+<p align="justify"><img src="capitulo02_html_59114d317b9fa430.png" name="Graphic4" align="left" width="794" height="1123">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+que la zorra pueda resolver la meta superior es suficiente si “crece”
+(hace crecer) el árbol, comenzando desde la raíz, reduciendo metas
+a sub-metas hasta que no es posible reducir más. Si todas las metas
+en las “hojas” del árbol son acciones irreductibles, entonces
+estas acciones constituyen un plan para resolver la meta superior. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif">Razonamiento
+hacia atrás</font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+operación de resolver una meta a una sub-meta pueder también ser
+vista, en términos lógicos, como razonamiento hacia atrás con una
+implicación, apareando la meta con la conclusión de la implicación
+y derivando las condiciones de la implicación como sub-metas. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, la meta superior:</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0066"><b>Yo
+tengo el queso</b></font><b>.</b></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">se
+aparea con la conclusión de la implicación general: </font></font>
+</p>
+<p align="justify" style="margin-left: 2.5cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Un
+animal tiene un objeto</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#990099"><b>el animal está cerca del objeto</b></font></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>y</b></font><font color="#000000">
+</font><font color="#000000"><b>el animal toma el objeto.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonando
+hacia atrás podemos obtener las dos sub-metas:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#993366"><b>Yo
+estoy cerca del queso </b></font><font color="#0000cc"><b>y</b></font><font color="#000000">
+</font><font color="#000000"><b>Yo tomo el queso.</b></font></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">reemplazando
+por los términos específicos “Yo” y “el queso”, los más
+generales “el animal” y “el objeto” respectivamente (N.T.
+Noten que en Español tenemos que lidiar con algunos otros ajustes
+morfológicos, como la conjugación verbal. Así, en el apareo
+anterior, el “toma” se convierte en “tomo” y el “está”
+en “estoy”). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+segunda de estas dos sub-metas es una acción que no corresponde con
+la conclusión de ninguna implicación. Sólo puede ser resuelta si
+se le ejecuta exitósamente. La primera sub-meta, por su parte, puede
+ser reducida a otras sub-metas con tres pasos más de razonamiento
+hacia atrás. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+resultado final de esta cadena de razonamiento hacia atrás es una
+prueba lógica de que la zorra tiene el queso si alaba al cuervo y
+toma el queso. La prueba tiene la misma estructura de árbol que el
+grafo de reducción de metas que vimos antes. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+lógica tradicional, es más común mostrar las pruebas en la
+dirección hacia adelante. En este caso, la prueba tradicional sería
+algo como esto:</font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Yo
+alabo el cuervo.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#000000">Por
+lo tanto, </font><font color="#3366ff">El cuervo canta</font><font color="#000000">.</font></b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>El
+cuervo tiene el queso.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#000000">Por
+lo tanto, </font><font color="#990099">Yo estoy cerca del queso.</font></b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.75cm; margin-right: 7.95cm; margin-bottom: 0.51cm">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Yo
+tomo el queso.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-left: 3.8cm; margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font color="#000000">Por
+lo tanto, </font><font color="#ff0066">Yo tengo el queso</font>.</b></font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.95cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.95cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif">¿Fin de la historia?</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+un fundamentalista de la lógica, este sería el fin del cuento. No
+hay diferencia entre el mundo de la zorra y sus creencias sobre ese
+mundo, y no hay diferencia entre el plan de la zorra para obtener el
+queso y el que ya lo tenga. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, el sentido común nos dice que hay más en la vida que el
+sólo pensar – y, quizás, más en el pensar que la mera lógica.
+Además de pensar, un agente inteligente necesita observar los
+cambios en el mundo y, quizás como respuesta, actuar para cambiarlo.
+Y podría haber otras maneras de pensar – maneras que no usen la
+lógica e incluso quizás maneras que no usan ninguna representación
+mental del mundo. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Regresaremos
+a esta historia y a la discusión de estos temas en los siguientes
+capítulos. Pero antes:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif">¿Cuál
+es la moraleja del cuento?</font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Se
+supone que la fábula de Esopo tiene un propósito – Una lección
+que nos dice que no es bueno confiar en las palabras y en las
+acciones de otro agente, sin antes tratar de entender sus metas e
+intenciones. O, puesto aún más simple, que antes de hacer algo,
+debes pensar acerca de sus posibles consecuencias. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo en el cuento responde a las alabanzas de la zorra
+espontáneamente – sin pensar, se podría decir. Un cuervo más
+inteligente reflexionaría sobre las acciones que pretende, antes de
+realizarlas, para establecer si acaso pudieran tener consecuencias no
+previstas o no deseables. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Si
+tan sólo el cuervo supiera lo que sabe la zorra, podría razonar
+como sigue:</span>&nbsp;</font></font></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Y</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">o
+quiero cantar. </span></font></font>
+</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+si canto, la zorra se acercará (estará cerca) del queso</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+la zorra está cerca del queso y lo toma (al queso)</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">,
+</span></font></font>
+</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+la zorra tendrá el queso</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Quizás
+la zorra quiere el queso y, entonces, lo tomaría</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+si la zorra toma el queso, yo no tendré (más) el queso</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así
+que, puesto que Yo quiero el queso, Yo no canto</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">(N.T.
+En Español, la variedad de los tiempos y conjugaciones verbales es
+mayor y perturba el aparear de los términos y de los verbos al
+razonar). </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Note
+que esta línea de razonamiento que traza el cuervo usa varias
+creencias que tiene también la zorra, pero los usa hacia adelante,
+no hacia atrás como en aquel caso. Investigaremos este uso dual de
+las creencias para razonar hacia adelante o hacia atrás, dentro de
+dos capítulos. </font></font>
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Entretanto,
+note que, aunque el usar la lógica podría no ser siempre la forma
+más natural de pensar, podría ayudarnos (y también al cuervo)
+algunas veces a pensar y comportarnos con más efectividad. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western" align="justify"><font face="Utopia, serif">Resumen</font></h2>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" class="msonormal" align="justify" style="margin-bottom: 0.51cm; page-break-before: auto; page-break-after: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+visión de la lógica en la mente de un agente inteligente, como
+hemos visto en este capítulo, es algo así:</font></font></p>
+<p class="msonormal" align="justify" style="margin-right: 7.95cm; margin-bottom: 0.51cm">
+<img src="capitulo02_html_c3415f0d62f793c1.png" name="Graphic5" align="right" width="644" height="910">
+  <br clear="right"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.95cm; margin-bottom: 0.51cm">
+<br/>
+<br/>
+
+</p>
+<p class="msonormal" align="justify" style="margin-right: 7.95cm; margin-bottom: 0.51cm">
+<!--[if mso & !supportInlineShapes & supportFields]><span
+style='mso-ansi-language:EN-US'><v:shape id="_x0000_i1025" type="#_x0000_t75"
+ style='width:480.6pt;height:63pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--><!--[if gte vml 1]><v:line 
+id=_x0000_s1052 style="Z-INDEX: 26; POSITION: absolute" from = "624.625pt,198pt" 
+to = "624.625pt,252pt"><v:stroke endarrow = "block"></v:stroke></v:line><![endif]--><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esa
+visión será enriquecida mucho más en los siguiente capítulos . </font></font>
+</p>
+<p align="justify" style="margin-bottom: 0cm"><br/>
+
+</p>
+<hr size="1"/>
+
+<div id="ftn1" dir="ltr"><p align="justify"><a href="http://www-lp.doc.ic.ac.uk/UserPages/staff/rak/papers/Chap2.html#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a>
+	<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+	Español, hay una transformación morfológica considerable al pasar
+	del procedimiento a la forma declarativa. Los procedimientos, por
+	ejemplo, se suelen plantear con el verbo en infinitivo. En la forma
+	declarativa este se usa muy poco. </font></font>
+	</p>
+	<p align="justify">&nbsp;</p>
+	<p align="justify">&nbsp;</p>
+</div>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</font></p>
+</div>
+</body>
+</html>

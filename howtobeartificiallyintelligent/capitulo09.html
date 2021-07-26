@@ -1,0 +1,1147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-03-09T00:00:00.017340000"/>
+	<meta name="changed" content="2021-07-19T18:46:58.458419632"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<meta name="sdfootnote" content=";;;;P">
+	<meta name="sdendnote" content="ARABIC">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.21cm; background: transparent }
+		h1 { background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></h2>
+<h1 class="western"><font color="#ff0000"><font face="Utopia, serif">El
+cambiante mundo</font></font><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo09_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+</h1>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">He
+propuesto que el propósito de la lógica sea el de ayudar a la gente
+a sobrevivir y prosperar en el mundo. La lógica favorece tal tarea
+al proveer al agente con un medio para construir representaciones
+simbólicas del mundo y con un medio para procesar esas
+representaciones y razonar acerca del mundo. Podemos imaginar esta
+relación entre lógica y el mundo de la siguiente manera:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/cap09-fig01.jpg">
+  <img src="capitulo09_files/capitulo09_html_3c5ea8f8.jpg" name="gráficos1" align="left" width="544" height="395">
+    <br clear="left"/>
+  </img>
+</a>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, aún no hemos considerado la naturaleza de esta relación en
+detalle. En particular, hemos obviado cualquier consideración acerca
+de la forma en que las representaciones lógicas se conectan con la
+estructura del mundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cabrían
+dos tipos de consideraciones: Cuál es la relación entre la lógica
+y los estados estáticos del mundo y cuál es la relación entre la
+lógica y el cambio. Vamos a enfrentar esas consideraciones a
+continuación: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Las Estructuras del Mundo
+(o del Universo)</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+relación entre la lógica y el mundo puede ser vista desde dos
+puntos de vista. Desde el punto de vista del mundo, las oraciones de
+la lógica representan ciertas características de ese mundo. Desde
+la perspectiva de la lógica, el mundo le otorga su significado a las
+oraciones. Este segundo punto de vista es conocido también como
+“<i><b>semántica</b></i>”. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Aún
+cuando un agente real sólo debe preocuparse por el mundo real, es
+conveniente considerar otros mundos posibles, incluso mundos
+imaginarios y artificiales, como el mundo en la historia de la zorra
+y el cuervo. Ambos tipos de mundo, tanto el real como los posibles,
+pueden ser entendidos como <b>Estructuras del Mundo.</b> Una
+<i><b>estructura del mundo</b></i> es simplemente una colección de
+<i><b>individuos</b></i> y de <i><b>relaciones</b></i> entre ellos.
+Las relaciones son también denominadas “<i><b>hechos</b></i>”.
+En la lógica tradicional, “las estructuras del mundo” son
+normalmente conocidas como “interpretaciones”, “modelos” o,
+en otras ocasiones, “mundos posibles”. Por simplicidad, las
+propiedades de los individuos son consideradas como relaciones. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+lógica tradicional tiene una semántica muy simple, en la que tan
+sólo se debe establecer si las oraciones son o no son <i><b>verdaderas</b></i>
+o <i><b>falsas</b></i> en la estructura del mundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+oraciones que son verdaderas son, normalmente, más útiles para el
+agente que las oraciones que son falsas. </font></font>
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+estructura del mundo generalmente se corresponde con un sólo estado,
+estático, del mundo. Por ejemplo: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+la historia de la Zorra y el Cuervo, la Zorra, el Cuervo, el queso,
+el árbol, el área del suelo bajo el árbol y el espacio entre el
+Cuervo y el suelo son todos individuos; por otro lado, algo <b>que
+(sos)tiene</b> algo es una relación entre dos individuos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+oración “El Cuervo tiene el queso” es cierta en la estructura
+del mundo al comienzo de la historia y falsa en la estructura del
+mundo al final del la historia. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+<i><b>oración atómica</b></i> es cierta en una estructura del mundo
+si la relación que expresa se cumple en la estructura del mundo. De
+lo contrario es falsa. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+forma más simple de representar la estructura del mundo en términos
+lógicos es representarla como un conjunto de oraciones atómicas que
+son ciertas en la estructura – en este ejemplo, podríamos
+representar la estructura del mundo al comienzo de la historia con
+las siguientes oraciones atómicas: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo tiene el queso.</font></font></p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo está en el árbol.</font></font></p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol está suspendido en el aire. </font></font>
+</p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+aire está arriba del suelo.</font></font></p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+árbol está arriba del suelo. </font></font>
+</p>
+<p style="margin-left: 3.75cm; margin-top: 0.1cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra está en el suelo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+diferencia entre esas oraciones atómicas y la estructura del mundo
+que ellos representan es que en la estructura del mundo, los
+individuos y las relaciones entre ellos tienen una especie de
+existencia que es independiente del lenguaje. Las oraciones atómicas
+son, por otro lado, meras expresiones simbólicas que representan
+tales relaciones externas. En particular, frases como “el Cuervo”,
+“el queso”, “el árbol”, etc son <i><b>nombres</b></i> de
+individuos y “tiene”, “está en”, etc son <i><b>nombres</b></i>
+de relaciones entre individuos. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+atractivo de la lógica como representación del mundo proviene,
+esencialmente, de su habilidad para representar regularidades entre
+las estructuras del mundo por medio de oraciones no-atómicas. Por
+ejemplo, en el ejemplo anterior:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+objeto está sobre otro</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+El primer objeto está arriba de un tercer objeto </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+el tercer objeto está arriba del segundo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+valor de verdad de las <b>oraciones no-atómicas</b> se define a
+partir de los valores de verdad de oraciones más simples – por
+ejemplo, por medio de “<b>meta-oraciones</b>” como: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+oración con la forma “conclusión si condiciones” es cierta </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+“condiciones” es cierta y “conclusión” es cierta</font></font></p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">o
+“condiciones” no es cierta. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+oración de la forma “todo tiene propiedad P” es cierta </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+para cada cosa P en el mundo, “T tiene propiedad P” es cierta. </font></font>
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Estructuras del Mundo
+Dinámicas</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+estructuras del mundo en la lógica tradicional son estáticas,
+puesto que representan un sólo estado (<i><b>estático</b></i>) del
+mundo. Una forma natural de entender el cambio es ver las acciones y
+otros eventos como los causantes del cambio de estado de una
+estructura estática del mundo a otra. Por ejemplo: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/cap09-fig02.jpg">
+  <img src="capitulo09_files/capitulo09_html_3d3319df.jpg" name="gráficos2" align="left" width="576" height="561">
+    <br clear="left"/>
+  </img>
+</a>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p style="margin-right: 3.81cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+visión del cambio es la base de la semántica de la lógica modal. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+la lógica modal, las oraciones reciben un valor de verdad relativo a
+una estructura estática del mundo, imbuida en una colección de
+estructuras del mundo conectadas por eventos que transforman el
+mundo. Las expresiones tales como “en el pasado”, “en el
+futuro”, “después”, “desde” y “hasta” son tratadas
+como <i><b>operadores modales</b></i>, que se convierten así en
+conectores lógicos como “y”, “o”, “si”, “no” y
+“todos”. Los valores de verdad de las oraciones que contienen
+tales operadores modales se obtienen a partir de los valores de
+verdad de las oraciones más simples – Por ejemplo, por medio de
+meta-oraciones tales como: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+oración con la forma “en el futuro P” es cierta en una
+estructura del mundo S</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+hay una estructura del mundo S' </font></font>
+</p>
+<p style="margin-left: 5cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">que
+puede ser alcanzada desde S a través de una secuencia de eventos </font></font>
+</p>
+<p style="margin-left: 5cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">que
+transforman los estados intermedios</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+la oración “P” es cierta en S'. </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, en la lógica modal, es posible escribir la oración: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm">“<font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el futuro el cuervo tiene el queso.”</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esta
+oración es cierta en la estructura del mundo al principio de la
+historia y falsa en la estructura del mundo al final de la historia
+(suponiendo que el mundo se acaba luego de que la Zorra toma el
+queso). </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+objeción contra la lógica modal es que su semántica, basada en la
+validez de oraciones sobre una estructura del mundo en una colección
+de estructuras del mundo conectadas por eventos que transforman
+estados, es demasiado complicada. Una alternativa, que resuelve la
+objeción, es simplificar la semántica e incrementar el poder
+expresivo del lenguaje lógico tratando los estados del mundo como
+individuos. Tratar algo como un individuo, como si existiera, es
+<i><b>reificarlo</b></i> (NT: cosificarlo, hacerlo cosa) y el proceso
+correspondiente es llamado <i><b>reificación</b></i>. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+ventaja de la reificación es que nos hace más fácil el hablar de
+las cosas (N.T. Es decir, tendremos cosas de qué hablar). La
+desventaja es que parece molestar mucho a algunas personas. Parece
+estar bien eso de hablar de objetos materiales como la zorra, el
+cuervo y el queso, como individuos. Pero les parece más dificil el
+hablar acerca de estados del mundo y otros objetos abstractos como si
+ellos también fuesen individuos comunes. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">El cálculo de situaciones</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cálculo de situaciones</font></font><a href="#_ftn1" name="_ftnref1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i><b>[1]</b></i></span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">,
+que fuera desarrollado por McCarthy y Hayes en la Inteligencia
+Artificial, comparte con la lógica modal el mismo método de ver el
+cambio como la transformación de un estado del mundo en otro pero, a
+diferencia de esa lógica, el cálculo reifica los estados como
+individuos. Como consecuencia, las estructuras del mundo son
+dinámicas, puesto que incluyen las transiciones de estado como
+relaciones entre estados. </span></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, con el cálculo de situaciones, en la historia de la Zorra y
+el Cuervo, hay una sola estructura del mundo que contiene, además de
+los individuos ordinarios, individuos que son estados globales. Es
+posible expresar tales oraciones así: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm">“<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo tiene el queso en el estado al principio de la historia”.</font></font></p>
+<p style="margin-left: 3.75cm">“<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo tiene el queso en el estado que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+de que la zorra toma el queso, que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+de que el queso termina de caer, que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+de que el queso comienza a caer, que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+de que el cuervo cante, que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+de que la zorra adula al cuervo, que es</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">luego
+del estado inicial de la historia”.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+primera de estas dos oraciones es cierta y la segunda es falsa en la
+estructura del mundo del cálculo de situaciones para nuestro ejemplo
+de la historia de la Zorra y el Cuervo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Reificar
+los estados del mundo como individuos hace posible representar y
+razonar acerca de los efectos de las acciones en los estados. Si
+además reificamos los “hechos”, entonces esta representación
+puede ser formulada como dos axiomas en el cálculo de situaciones: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+hecho se cumple en el estado que es luego de una acción </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+el hecho es iniciado por la acción</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+la acción es posible en el estado antes de la acción.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+hecho se cumple en el estado que es luego de una acción</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+el estado se cumplía en el estado del mundo <u>que es</u> antes de
+la acción</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+la acción es posible en el estado antes de la acción</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+el hecho no es terminado por la acción.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Nuestra
+versión original de la historia de la Zorra y el Cuervo puede ser
+reformulada para el cálculo de situaciones así (luego de
+simplificar el primer axioma y particularizarlo para este caso
+especial):</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; page-break-after: avoid"><font color="#ff0066"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Un
+animal tiene un objeto en el estado del mundo que es luego de que
+animal tome el objeto</b></font></font></font></p>
+<p style="margin-left: 5cm; text-indent: 1.27cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#990099"><b>el animal está cerca del objeto </b></font></font></font>
+</p>
+<p style="margin-left: 5cm; text-indent: 1.27cm"><font color="#990099"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>en
+el estado del mundo que es antes de que el animal tome el objeto</b></font></font></font></p>
+<p style="margin-left: 5cm; text-indent: 1.27cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#990099"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Estoy
+cerca del queso en el estado del mundo que es luego de que el cuervo
+canta </b></font></font></font>
+</p>
+<p style="margin-left: 5cm; text-indent: 1.27cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#0000cc"><b>si</b></font><font color="#000000">
+</font><font color="#000000"><b>el cuervo tiene el queso</b></font> </font></font>
+</p>
+<p style="margin-left: 5cm; text-indent: 1.27cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>en
+el estado del mundo que es antes de que el cuervo canta</b></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3366ff"><b>El
+cuervo canta</b></font><font color="#000000"> </font><font color="#3366ff"><b>en
+el estado de el mundo que es después de que yo adule al cuervo.</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+teoría, un agente, tal como la Zorra, podría incluir tales axiomas
+entre sus creencias, para planificar sus acciones, inferir sus
+consecuencias e inferir las consecuencias de las acciones de otros
+agentes. En la práctica, sin embargo, el uso del segundo axioma
+(llamado el “<i><b>axioma marco</b></i>”), para razonar acerca de
+los hechos que no son afectados por las acciones, es explosivo
+computacionalmente. Este problema, conocido como el “<i><b>problema
+del marco</b></i>” (<i>The frame problem</i>) es, con mucha
+frecuencia, considerado como un problema inherente al uso de la
+lógica para razonar acerca del cambio. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Podemos
+decir que no es la lógica la fuente del problema, sino la visión
+del cambio plasmada en el cálculo de situaciones, que comparte con
+la lógica modal y que resulta demasiado global. Cada acción, sin
+importar que tal aislada sea su ocurrencia, se considera que cambia
+el estado de todo el mundo. Peor que eso, para razonar acerca del
+estado del mundo luego de realizar una secuencia de acciones, es
+necesario conocer todas las otras acciones que ocurren en todo el
+mundo en el intermedio. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así,
+para razonar acerca del estado del mundo que es luego de que la zorra
+adula al cuervo, el cuervo canta, el queso cae y la zorra toma el
+queso, es necesario conocer y razonar acerca de todo lo que ha
+ocurrido en todas partes del mundo entre el inicio y en fin de la
+historia. Este ejercicio de pensamiento no es muy difícil en el
+mundo imaginario de la zorra y el cuervo, pero es prácticamente
+imposible para un agente real que vive en el mundo real. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Una visión del cambio
+orientada a los eventos</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Una
+alternativa es abandonar la visión de que la acciones transforman
+estados globales del mundo, reemplazándola con la visión de que las
+acciones y otros eventos pueden ocurrir, incluso simultáneamente, en
+diferentes partes del mundo, en forma independiente y sin afectar
+otras partes del mundo. En este método, el foco está sobre la
+ocurrencia de los eventos y en el efecto de los eventos sobre los
+estados de cosas locales. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+<i><b>eventos</b></i> se dice que incluyen tanto acciones ordinarias
+(que son realizadas por agentes) como otro tipo de eventos (como el
+aterrizar del queso en el suelo) que pueden ser entendidos
+metafóricamente como acciones realizadas por objetos inanimados. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+simplicidad, asumimos que los eventos ocurren simultáneamente. Para
+ello, un evento con duración puede ser descompuesto en un evento
+instantáneo que lo comienza, seguido por un estado de cambio
+continuo, seguido de por otro evento instantáneo que lo termina.</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Así,
+la caida del queso al suelo puede ser descompuesta en el evento en el
+que el queso comienza a caer, que inicia el estado durante el cual el
+queso está cayendo, que es terminado por el evento instantáneo en
+el que el queso aterriza en el suelo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+eventos inician y terminan relaciones entre individuos. Estas
+relaciones, junto con los periodos para los que se cumplen, pueden
+ser considerados como estados locales. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Podemos
+ilustrar tal estado local y los eventos que lo inician y terminan
+así: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/cap09-img01.jpg">
+  <img src="capitulo09_files/capitulo09_html_59de1b8e.jpg" name="gráficos3" align="left" width="576" height="137">
+    <br clear="left"/>
+  </img>
+</a>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el cuento de la Zorra y el Cuervo, podemos ilustrar el efecto de los
+eventos sobre el estado del queso así: </font></font>
+</p>
+<p><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=EN-GB><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:430.35pt;
+ height:139.65pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--></p>
+<p><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/kowalski/cap09-img02.jpg">
+  <img src="capitulo09_files/capitulo09_html_m69efb449.jpg" name="gráficos4" align="left" width="576" height="159">
+    <br clear="left"/>
+  </img>
+</a>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Un cálculo de eventos
+simplificado</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Aún
+cuando podemos representar las estructuras del mundo con oraciones
+atómicas, la lógica nos permite hacerlo en forma todavía más
+compacta por medio de oraciones no-atómicas. En particular, podemos
+obtener información acerca de estados locales a partir de
+información acerca de la ocurrencia de eventos, por medio del
+siguiente axioma el cálculo de eventos<a href="#_ftn2" name="_ftnref2">[2]</a>:</span></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+hecho se cumple en un momento </font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>si</b>
+un evento ocurrió antes</font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+ese evento inició el hecho</font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>y</b>
+no hay otro evento </font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">que
+ocurra luego del evento iniciador, antes del momento y</font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">que
+termine el hecho. </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que este axioma usa información acerca de la ocurrencia de eventos
+para “calcular” información acerca de estados locales, le
+llamamos el “<i><b>cálculo de eventos</b></i>”.</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cálculo de eventos puede ser usado por un agente, al igual que el
+cálculo de situaciones, para planificar sus acciones, inferir sus
+consecuencias e inferir las consecuencias de las acciones de otros
+agentes. Puesto que requiere solamente conocimiento local sobre el
+efecto de las acciones, es potencialmente más práctico que el
+cálculo de situaciones. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+aplicar el cálculo de eventos, en la práctica, necesitamos
+aumentarlo con otros axiomas que definan la iniciación, terminación
+y el orden temporal de las cosas y eventos. En el caso del cambio de
+ubicación del queso en la historia de la Zorra y el Cuervo,
+necesitamos información acerca de eventos que efecten esa ubicación
+– por ejemplo: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+queso cae en el momento 3.</font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+queso aterriza en el momento 5.</font></font></p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+zorra toma el queso en el momento 8. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Necesitamos
+saber cuáles estados son iniciados y terminados por esos eventos: </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+caída de un objeto inicia el hecho de que un objeto está suspendido
+en el aire. </font></font>
+</p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+aterrizaje de un objeto inicia el hecho de que el objeto está en el
+suelo. </font></font>
+</p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm; background: transparent">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+que el agente tome un objeto inicia el hecho de que el agente tenga
+el objeto. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Necesitamos
+también alguna explicación del hecho de que el cuervo tiene el
+queso al comienzo de la historia. Esto se puede obtener, por ejemplo,
+suponiendo un evento adicional, tal como:</font></font></p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+cuervo toma el queso en el momento 0. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Finalmente,
+necesitamos establecer las relaciones temporales entre momentos y
+eventos. Puesto que, en este ejemplo, hemos usado convenientemente
+números para referirnos a los momentos, podemos establecer esas
+relaciones con aritmética simple. Sin embargo, debido a que el
+axioma de cálculo de eventos es muy vago acerca del tiempo, podemos
+usar cualquier sistema para medirlo (al tiempo), siempre que podamos
+precisar cuando es que un evento ocurre antes que otro y cuando un
+momento es después de cierto evento. El que usemos números, fechas
+o cantidades horarias no tiene mayor importancia. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Registrando el tiempo</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Lo
+importante es registrar el tiempo para garantizar que Ud hace lo que
+debe hacer antes de que sea muy tarde. Así, si Ud está hambriento,
+entonces necesita conseguir comida y comerla antes de se desmaye por
+falta de energía. Si un vehículo se dirige hacia Ud, entonces Ud
+debe apartarse antes de que lo arrolle. Si Ud tiene una cita a las
+9:00 en el trabajo, entonces Ud debe levantarse, lavarse, comer,
+vestirse, viajar al sitio y llegar antes de las 9:00.</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+hacer todo a tiempo, necesita alguna clase de reloj interno, tanto
+para marcar los eventos observados externamente, como para comparar
+el tiempo actual con los tiempos prefijados para cualquier acción en
+el futuro derivada por su pensar. Esto implica más complicaciones
+del ciclo del agente: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>Para
+ciclar</b></font><font color="#000000">,</font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><span lang="en-GB"><b>	observe</b></span></font><font color="#000000">
+el mundo, registre cualquier observación junto con su momento de
+observación</font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><b>	piense</b></font><font color="#000000">,</font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><span lang="en-GB"><b>	decida</b></span></font><font color="#3333cc">
+</font><span lang="en-GB">que accciones realizar, escogiendo sólo
+acciones que no han excedido su límite.</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#3333cc"><span lang="en-GB"><b>	actúe</b></span></font><font color="#000000"><span lang="en-GB"><b>,
+</b></span></font><font color="#3333cc"><span lang="en-GB"><b>cicle</b></span></font><font color="#000000">
+de nu</font><font color="#000000">E</font><font color="#000000">vo</font><font color="#000000"><span lang="en-GB">.</span></font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Considere,
+por ejemplo, el problema de la Zorra cuando le da hambre. Cuando su
+cuerpo le avisa que está hambrienta, debe estimar cuanto tiempo
+pasará sin comer y derivar las metas de conseguir comida y comerla
+antes de que sea muy tarde. Una forma de hacer esto es por medio de
+una meta de mantenimiento, con una representación explícita del
+tiempo:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+<span lang="en-GB"><b>Yo estoy hambriento en T</b></span><sub><span lang="en-GB"><b>hambre</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+Yo me desmayaré a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>colapso&nbsp;</b></span></sub><span lang="en-GB"><b>
+si Yo no como.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+Yo ob-tengo comida en <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+Yo como la comida a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+es posterior a T</b></span><sub><span lang="en-GB"><b>hambre&nbsp;</b></span></sub><span lang="en-GB"><b>
+pero anterior a T</b></span><sub><span lang="en-GB"><b>colapso</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">También
+necesita lidiar con cualquier ataque de algún cazador local: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+unos cazadores me atacan en el momento <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>ataque</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+<span lang="en-GB"><b>Me atraparían a las T</b></span><sub><span lang="en-GB"><b>&nbsp;atrapan
+</b></span></sub><span lang="en-GB"><b>si Yo no huyo</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+Yo huyo de los cazadores a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida </b></span></sub><span lang="en-GB"><b>es
+posterior a T</b></span><sub><span lang="en-GB"><b>ataque&nbsp; </b></span></sub><span lang="en-GB"><b>pero
+anterior a T</b></span><sub><span lang="en-GB"><b>atrapan</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que la zorra está hambrienta y siendo atacada por el cazador al
+mismo tiempo. Entonces la zorra necesita hacer algunos cálculos
+mentales rápidos, para estimar cuanto tiempo tiene para encontrar
+comida y cuanto para huir del cazador. Necesita calcular la
+probabilidad y las utilidades de dos acciones diferentes, y
+programarlas para maximar su utilidad esperada global. Si la zorra ha
+hecho sus cuentas bien y tiene la fortuna de su lado, tendrá
+suficiente tiempo para satisfacer su hambre y escapar del cazador. De
+lo contrario morirá, bien de hambre o bien por culpa del cazador. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+critíco, sin embargo, podría objetar que este tipo de razonamiento
+es un ideal normativo, más apropiado para un robot que para un ser
+biológico inteligente. Una persona común, en particular,
+simplemente le daría mayor prioridad a escapar del ataque que a
+satisfacer su hambre. Las reglas de mantenimiento de la persona sería
+“reglas heurísticas” que se parecerían a: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+Yo estoy hambriento en el momento <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>hambre</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+Yo ob-tengo comida en el tiempo <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+Yo como la comida en el tiempo <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+es tan pronto como se puede luego de T</b></span><sub><span lang="en-GB"><b>hambre</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+alguien me ataca a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>ataque</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+Yo huyo de los atacantes a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida</b></span></sub></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida</b></span></sub><span lang="en-GB"><b>
+es inmediatamente después de T</b></span><sub><span lang="en-GB"><b>ataque</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+esta forma, suponiendo que Ud es la persona hambrienta y atacada al
+mismo tiempo, digamos en el momento 1, sus metas lucirían así: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+ob-tengo comida en el tiempo <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+Yo como la comida en el tiempo <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+</b></span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+Yo huyo de los atacantes a las <span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida</b></span></sub></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>huida</b></span></sub><span lang="en-GB"><b>
+es inmediatamente después de 1</b></span><sub><span lang="en-GB"><b>
+</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+<span lang="en-GB"><b>T</b></span><sub><span lang="en-GB"><b>comida</b></span></sub><span lang="en-GB"><b>
+es tan pronto como se puede luego de 1</b></span><sub><span lang="en-GB"><b>
+</b></span></sub><span lang="en-GB"><b>.</b></span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Entonces
+será fácil para Ud decidir, no sólo que <b>T</b><sub><b>huida</b></sub>
+debe ser antes que <b>T</b><sub><b>comida</b></sub> sino que <b>T</b><sub><b>huida</b></sub>
+debe ser el siguiente momento inmediato. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sería
+lo mismo si Ud es atacado luego de darle hambre, pero antes de que
+pudiera conseguir comida. Huiría inmediatamente y volvería a buscar
+comida luego si ha logrado escapar del ataque. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Las
+reglas heurísticas dan un resultado rápido y fácil, que no siempre
+es óptimo. Si Ud estuviera huyendo de un ataque y notara una pieza
+de queso en el suelo, un cálculo normativo podría decirle que tiene
+suficiente tiempo para recoger el queso y para continuar su escape.
+Pero las reglas heurísticas, que están diseñadas para lidiar con
+los casos más comunes, probablemente no reconozcan esa posibilidad. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+relación entre cálculos normativos y reglas heurísticas es la
+misma que la relación entre pensamiento racional y pensamiento
+intuitivo que se discutió en el capítulo sobre niveles de
+conciencia. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font color="#ff0000">Conclusión</font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+mundo es un lugar difícil que no se queda quieto. En el momento en
+el que Ud termina de entender un problema, surge otro que es todavía
+más urgente. Le marea y le mantiene en puntillas (o de puntitas). </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hacemos
+lo mejor que podemos para lidiar con el mundo formando
+representaciones mentales. Pero no nos lo pone fácil. <u>Borra el
+pasado</u> y esconde el futuro, mostrando apenas lo que es ahora y
+aquí. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+la lucha por sobrevivir y prosperar, usamos nuestra memoria de las
+observaciones pasadas para generar creencias hipotéticas, explicar
+el pasado y precedir el futuro. Comparamos esas prediciones con la
+realidad y revisamos nuestras creencias como haga falta y si hace
+falta. Este proceso de formar hipótesis y revisar las creencias
+ocurre aparte del ciclo del agente, en momentos en el que el mundo
+desacelera lo suficiente como para que tomemos aliento. Este es uno
+de los temas principales que tenemos pendiente todavía para discutir
+en el resto del libro. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ultima
+modificación: 	Julio 2018</font></font></p>
+<hr size="1"/>
+
+<div id="ftn1" dir="ltr"><p><a href="#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><b>situación</b></i></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	es simplemente otro nombre para estado global. </font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">.</span></font></font></p>
+</div>
+<p align="justify"><a href="#_ftnref2" name="_ftn2"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[2]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+Es conveniente adoptar la convención de que un hecho se cumple justo
+en el momento luego de que ocurre un evento que lo inicie, pero no en
+el momento del evento que lo termina. </font></font>
+</p>
+<p>&nbsp;</p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018 </font>
+	</p>
+</div>
+</body>
+</html>

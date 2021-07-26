@@ -1,0 +1,787 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-03-02T00:00:00.000580700"/>
+	<meta name="changed" content="2021-07-19T18:45:56.871349403"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.2cm; background: transparent }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Times New Roman", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Arial Unicode MS"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "Tahoma"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></h2>
+<h2 class="western"><font face="Utopia, serif"><font size="6" style="font-size: 24pt">Unidad
+5. Pensar = Inferenc<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo05_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+ia
++ Búsqueda + Inferencia. </font></font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Jonathan
+Baron (1994) en su libro“Pensando y Decidiendo” escribe, en la
+página 4:</font></font></p>
+<p align="justify" style="margin-left: 1.27cm; margin-right: 0.02cm; margin-bottom: 0.51cm">
+“<font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+pensar acerca de acciones, creencias y metas personales puede todo
+ser descrito en términos de un mismo marco referencial, en el cual
+se explique que el pensar consiste de <i>búsqueda</i> e <i>inferencia</i>.
+Buscamos ciertos objetos y luego inferimos a partir y acerca de los
+objetos que hemos encontrado”</font></font></p>
+<p align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">A
+diferencia de Baron, quien ve el papel de la lógica limitado
+exclusivamente a la inferencia, en nuestro modelo basado en lógica
+del pensar, la <i><b>búsqueda</b></i> es realizada por el razonar
+hacia atrás y la <i><b>inferencia</b></i> por el razonar hacia
+adelante. Aquello por lo que buscamos son las metas. Como Baron,
+distinguimos entre el papel del <i><b>pensar</b></i>, para generar
+candidatas a soluciones y derivar sus consecuencias, y el papel del
+<i><b>decidir</b></i>, para evaluar las diversas soluciones y escoger
+entre ellas. </font></font>
+</p>
+<p align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Al
+parecer es común creer que la lógica no tiene nada que ver con la
+búsqueda. De hecho, Paul Thagard, en la introducción a su libro
+Cognitive Science (pg. 45) dice “En los sistemas basados en lógica,
+la operación fundamental del pensamiento es la dedución lógica,
+pero desde la perspectiva de los sistemas basados en reglas, la
+operación fundamental del pensamiento es la búsqueda”.</font></font></p>
+<p align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ver como la lógica está relacionada con la búsqueda, considere el
+siguiente problema: </font></font>
+</p>
+<p align="justify" style="margin-bottom: 0.51cm"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font size="5" style="font-size: 18pt">Ir
+de A a B.</font> </font></font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.51cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Todo
+tenemos una idea del cómo buscar objetos en un espacio físico y del
+cómo solucionar para llegar de un lugar otro:</font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ir de A a B,</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+A está directamente conectado a B entonces</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+directamente de A a B<span lang="en-GB">.</span></font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ir de A a B, </font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+C está entre A y B entonces</font></font></font></p>
+<p lang="en-GB" style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+de A a C y </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+de C a B.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">(NT:
+Para traducir estas oraciones a la forma lógica que sugiere Kowalski
+es mejor escribirlas así: </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">(Para
+ir de A a B, </font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+directamente de A a B)</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+A está directamente conectado a B.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ir de A a B, </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+de A a C y </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">vaya
+de C a B </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">si
+C está entre A y B.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">aunque
+se vean un poco extrañas en Español y en Lógica).</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+términos más generales y dispuestos en forma lógica:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+agente va de A a B si </font></font></font>
+</p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">A
+está directamente conectado a B y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">ese
+agente va directamente de A a B.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+agente va de A a B si</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">C
+está entre A y B y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">el
+agente va de A a C y</font></font></font></p>
+<p style="margin-left: 5cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">ese
+agente va de C a B.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estos
+procedimientos y creencias sirven, no sólo para desplazarse en
+espacios físicos, sino también para lugares conceptuales como
+“pobres” y “ricos”. </font></font></font>
+</p>
+<p style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Los
+procedimientos de reducción de metas son un caso especial de las
+creencias. Son el caso especial en el cuál las creencias son usadas
+para razonar hacia atrás y “el agente” es el mismo agente que
+los usa para reducir metas a sub-metas. A diferencia de los
+procedimientos, las creencias puede también ser usadas para razonar
+hacia adelante, por ejemplo para determinar las consecuencias de las
+observaciones acerca de la conducta de otro agente. </font></font></font>
+</p>
+<p align="justify" style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font color="#000000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puede
+que haya muchas maneras de escoger un lugar C, entre A y B. Por
+ejemplo, Ud puede ir de pobre a rico bien consiguiendo un buen
+empleo, bien robando un banco. De la misma manera, puede haber muchas
+formas de ir de A a C y de ir de C a B. Por ejemplo, Ud puede
+conseguir un buen empleo comenzando justo después de graduarse o
+haciendo un postgrado antes para luego ir a trabajar mejor
+calificado.</font></font></font></p>
+<p align="justify" style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Algunas
+decisiones al escoger el lugar intermedio C podrían no ser buenas
+para resolver las otras sub-metas de ir desde A a C o desde C a B.
+Por ejemplo, aunque Ud pudiera conseguir un buen trabajo justo al
+terminar su pregrado, puede que, aún así, no alcance a volverse
+rico. </font></font>
+</p>
+<p align="justify" style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+general, por tanto, para resolver la meta de ir de A a B, Ud necesita
+buscar la solución. En lugar de buscar en un espacio material, Ud
+puede ahorrarse algún esfuerzo (físico quizás), haciendo parte de
+la búsqueda en su cabeza. </font></font>
+</p>
+<p style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.05cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+puede aprovechar sus creencias, por ejemplo, si Ud está planificando
+sus vacaciones, para obtener un plan para ir de A a B, mucho antes de
+que comiencen sus vacaciones. Podría explorar planes alternativos, o
+inclusive, buscar un plan que optimice el resultado, quizás
+minimizando sus costos o maximizando sus beneficios. Más aún, Ud
+puede entrelazar ese planificar con otras actividades, suspendiéndolo
+cuando tenga compromisos más úrgentes que atender, y reanundándolo
+cuando no tenga algo más importante que hacer. </font></font>
+</p>
+<h2 class="western"><br/>
+<br/>
+
+</h2>
+<h2 class="western"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Cómo
+ir hasta la Riviera Francesa</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+aún no se convence, considere la meta:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Meta:
+</span>Yo voy desde Wimbledon a la Riviera Francesa<span lang="en-GB">.</span></font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que tengo la siguiente información:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>Crencias</i>:
+</font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Niza
+está entre Wimbledon y la Riviera Francesa.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">París
+está entre Wimbledon y la Riviera Francesa.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Heathrow
+está entre Wimbledon y la Riviera Francesa.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Gatwick
+está entre Wimbledon y Niza.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Clapham
+Junction está entre Wimbledon y Gatwick.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Wimbledon
+está directamente conectado a Clapham Junction.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Clapham
+Juction está directamente conectado a Gatwick.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Gatwick
+está directamente conectado a Niza.</font></font></font></p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Niza
+está directamente conectada a la Riviera Francesa. </font></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font color="#0000ff"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">etc.</font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+podría tener toda esta información almacenada previamente en mi
+memoria, directamente como una colección de hechos. O podría
+obtenerla de otras fuentes. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Razonando
+hacia atrás, tengo dos planes alternativos para tratar de resolver
+mi meta: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Wimbledon
+está directamente conectado a la Riviera Francesa y</font></font></font></p>
+<p style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">yo
+voy (va) directamente desde Wimbledon a la Riviera Francesa.</font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">O
+puedo usar las sub-metas: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">C
+está entre Wimbledon y la Riviera Francesa y</font></font></font></p>
+<p style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">yo
+voy de Wimbledon y C y</font></font></font></p>
+<p style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">yo
+voy de C y la Riviera Francesa. </font></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">A
+cuáles de estos genero primero o si genero todos simultáneamente
+depende de mi estrategia de búsqueda. Si genero el primero de
+primero, tengo que decidir sobre cuál sub-meta trabajar primero: la
+sub-meta <font color="#ff0000">Wimbledon está directamente conectado
+a la Riviera Francesa</font> o la sub-meta <font color="#ff0000">Voy
+de Wimbledon a la Riviera Francesa directamente</font>. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Imagine
+que decido trabajar en la primer sub-meta primero. Con sólo las
+creencias que listé arriba, no puedo resolver esta sub-meta. Debo,
+por tanto, abandonar o suspender esta línea de pensamiento (de
+búsqueda) o, por el contrario, debo realizar alguna acción sobre el
+ambiente para procurar información adicional en caso de que exista
+alguna conexión de la que aún no sé. Suponga ahora que decido
+suspender esta línea de búsqueda. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Me
+queda la alternativa de tratar de resolver mi meta superior: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">C
+está entre Wimbledon</span> y la Riviera Francesa <span lang="en-GB">y</span></font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de Wimbledon a C y </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de C a la Riviera Francesa</font></font></font></p>
+<p style="margin-left: 1.25cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que decido trabajar en la primera de las tres sub-metas (no tiene
+sentido trabajar en una de las otras dos puesto que aún no he
+seleccionado el lugar intermedio C). Dada la poca información que he
+listado antes, hay tres formas de resolver esta sub-meta. Debo
+decidir cuál tratar primero. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">De
+esta manera continúa la búsqueda, considerando alternativas,
+decidiendo sobre cuáles sub-metas tratar primero y decidiendo acerca
+de las acciones (en el ambiente) que debo realizar para obtener más
+información, hasta que consigo una o más soluciones. En este caso,
+si decido no hacer ninguna acción externa, la única solución es el
+plan:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent; page-break-before: auto">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de Wimbledon a Clapham Junction directamente y</font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de Clapham Junction a Gatwick directamente y </font></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de Gatwick a Niza directamente y</font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm; background: transparent"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Yo
+voy de Niza a la Riviera Francesa directamente. </font></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puedo
+derivar este plan, buscando en mi mente, bien hacia adelante a partir
+de Wimbledon o hacia atrás a partir de la Riviera Francesa,
+dependiendo en cada caso de sobre cuál sub-metas decida trabajar
+primero. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+embargo, en ambos casos, busco en mi mente realizando un razonamiento
+hacia atrás desde las metas hacia las sub-metas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+supuesto, si tuviera más información, podría encontrar más
+soluciones para alcanzar mi meta original. Necesitaría entonces
+escoger entre las alternativas, no sólo para decidir cual plan
+ejecutar, sino también y antes de eso, para seguir buscando la
+solución. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puesto
+que el <i><b>propósito del pensar,</b></i> en este caso, es
+finalmente <i><b>decidir</b></i> que hacer, podría usar los mismo
+criterios que use para escoger entre las soluciones - por ejemplo, el
+criterio de mayor beneficio por menor costo – como una estrategia
+de búsqueda, explorando las líneas de pensamiento o búsqueda más
+prometedoras solamente o por lo menos, antes que las menos
+prometedoras. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Razonamiento
+lógico = Búsqueda + Inferencia</font></font></h2>
+<h2 class="western"> 
+</h2>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hay,
+sin embargo, otra forma muy interesante para explicar, en lógica,
+como se combinan la búsqueda y la inferencia – es la forma en que
+Johathan Baron explica el pensar en genera: “Buscamos ciertos
+objetos y luego inferimos a partir y sobre los objetos que hemos
+encontrado”.</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+nuestro marco lógico conceptual, buscamos por soluciones razonando
+hacia atrás a partir de las metas. Sin embargo, para ayudarnos a
+decidir entre soluciones alternativas, exploramos ese espacio de las
+inferencias hacia adelante, para prever cualquier consecuencia
+adicional, deseable o indeseable, de las soluciones. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Para
+ilustrar el sentido en el que el pensar combina búsqueda e
+inferencia, Baron presenta el ejemplo de una estudiante tratando de
+decidir que curso electivo tomar. Primero considera ella un curso en
+historia moderna, que suena interesante pero exige demasiado. Luego
+considera otro curso en historia moderna que también suena
+interesante, pero que quizás no demande tanto. Entonces trata de
+encontrar a alguien que haya tomado ese curso antes para ver que
+tanto trabajo realmente exige. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+ejemplo de Baron es muy parecido a nuestro ejemplo del viaje de
+vacaciones a la Riviera Francesa, pero además illustra la
+importancia de las acciones en procura de información. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Muestra
+que Ud no puede confiar que tiene, en su memoria desde el principio,
+toda la información que requiere para resolver un problema. Es
+posible que tenga que consultar fuente externas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+propósito principal de este ejemplo es ilustrar el uso de la
+inferencia para derivar las consecuencias de las soluciones
+candidatas, para ayudar a decidir que hacer. En el ejemplo de Baron
+la inferencia es simple: Si la estudiante toma el primer curso,
+tendrá que trabajar muy duro. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Decidir
+que hacer, sobre la base de estas inferencias es mas complicado.
+Implica comparar las ventajas y desventajas de distintos candidatos a
+cursos de acción. Puesto que es poco probable que algún curso
+supere a todos los demás en todos las aspectos relevantes, es muy
+probable que se tenga que tomar algunas decisiones difíciles, quizás
+comprometiendo las ventajas de un curso para evitar algunas de sus
+desventajas. Para complicar las cosas todavía más, el estudiante
+tendrá que basar sus estimados de costos y beneficios de las
+diversas altenativas en información incierta, quizás hasta de
+caracter estocástico. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><br/>
+<br/>
+
+</h2>
+<h2 class="western"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Incertidumbre</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+incertidumbre acerca de la circunstancias futuras fuera de nuestro
+control es característica de la mayoría de las situaciones y
+problemas en la vida. Considere, nuevamente el problema de pasar de
+pobre a rico y suponga que estoy considerando el robo de un banco
+como una manera de hacerme rico. Robar un banco no es una opción
+fácil. Voy a tener que pensar mucho para construir un plan que tenga
+algún chance de tener éxito. Tendré que escoger un banco, decidir
+si iré solo o con una banda organizada para ayudarme, decidir si lo
+haré en plena luz del día o en la oscuridad y planificar mi escape.
+</font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+antes de construir un plan con todos sus detalles, podría explorar
+en mi mente las consecuencias más probables de robar el banco, para
+establecer si hay otros efectos deseables o indeseables. Separando
+cualquier consideración moral, si robo un banco y me atrapan y me
+condenan, terminaré en la cárcel. Pero yo no quiero ir a la cárcel.
+</font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puedo
+decidir si trataré o no de robar el banco. Pero no puedo controlar
+si seré capturado o condenado al intentarlo. No sólo es que estas
+posibilidades están completamente fuera de mi control. Es que no
+puedo siquiera predecir su probable ocurrencia con un nivel de
+certeza predefinido. Lo más lejos que pueda llegar es a estimar esas
+probabilidades. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+creo que los chances de ser capturado y luego convicto son muy altos,
+no robaré el banco, puesto que no quiero ir a la carcel. Ni siquiera
+comenzaría a considerar el cómo robarlo, pues todas la alternativas
+tienen la misma conclusión indeseable. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pensar
+el robo de banco no sólo muestra el valor de inferir las
+consecuencias de cada solución, sino que también expone la
+necesidad calcular o estimar probabilidades asociadas a
+circunstancias fuera de nuestro control. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esa
+combinación de estimaciones de probabilidad con evaluaciones de la
+utilidad de las diferentes resultados es el tema de lo que se conoce
+como <i><b>Teoría de Decisiones</b></i>. Volveremos a ese tema más
+adelante. Entretanto, es suficiente con notar que en muchos casos,
+<i><b>pensar</b></i>, entendido como la búsqueda de las opciones y
+el cálculo de sus consecuencias, puede con frecuencia ser mucho más
+fácil que <i><b>decidir</b></i> que hacer. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font size="5" style="font-size: 18pt">Pensar
+sin buscar</font> </font></font>
+</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esa
+caracterización de pensar como búsqueda más inferencia constituye
+un gran avance con respecto a otras teorías en las que el pensar es
+visto como apenas algo más que sólo búsqueda. No obstante, no
+sirve para dar cuenta del tipo de pensar que es necesario para lidiar
+con cambios en el ambiente – especialmente cuando tales cambios
+requieren una respuestas rápida y no hay mucho tiempo para buscar la
+solución óptima. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pensar,
+buscando e infiriendo consecuencias es suficiente en muchas
+situaciones, como cuando Ud está planificando sus vacaciones,
+planificando un curso electivo o el robo de un banco, ocasiones todas
+en las que Ud dispone de todo el tiempo necesario para buscar
+soluciones alternativas. Sin embargo, hay otras situaciones, como las
+de emergencia, cuando Ud no tiene tiempo para considerar todas las
+alternativas y no tiene tiempo para terminar su pensar antes de
+comenzar a actuar. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga,
+por ejemplo, que Ud es un explorador de Marte, tipo 2, equipado con
+toda la capacidad para pensar lógicamente. Ud se encuentra buscando
+vida en Marte cuando un Exterminador Marciano se atravieza en su
+camino. Afortunadamente, Ud ha sido advertido de tales emergencias y
+está equipado con la meta de mantenimiento apropiada: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><i>Meta</i></font><font color="#ff0000">:
+</font><font color="#ff0000"><b>Si</b></font><font color="#ff0000">
+el Exterminador Marciano está a la vista, </font><font color="#ff0000"><b>entonces</b></font><font color="#ff0000">
+vaya desde donde estoy hacia la nave espacial.</font> </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#008000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Observación</span></i><b>:
+<span lang="en-GB">El Exterminado Marciano está a la vista</span>.</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; font-weight: normal"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><font color="#008000">Razonando
+hacia adelante,</font><font color="#0000ff"> </font></i></font></font>
+</p>
+<p style="margin-left: 3.75cm; font-weight: normal"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i><span style="font-weight: normal">Meta
+de logro</span></i><b>: V<span lang="en-GB">aya desde donde estoy
+hacia la nave espacial</span>.</b></font></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+teoría, Ud podría simplemente sentarse a pensar en todas la formas
+de volver a la seguridad de su nave espacial, tal como si Ud
+estuviera planificando sus vacaciones en la Riviera Francesa. Pero,
+en la práctica, su vida terminaría antes de que pudiera comenzar
+con esos planes. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Lo
+que Ud necesita es pensar rápido, con el mismo conocimiento que Ud
+usa al planificar las vacaciones, pero sin explorar todo el espacio
+mental de alternativas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Debe
+Ud escoger un lugar C contiguo al lugar donde Ud está y más cerca
+de su nave espacial y, de inmediato, comenzar a moverse hacia ese
+lugar, incluso antes de ponerse a pensar que hará despues. Cuando
+haya llegado a C, Ud selecionará otro lugar C' contiguo a su nueva
+posición C y también en dirección a la nave y, de nuevo, se moverá
+hacia allá. Ud seguirá de esta forma, pensando donde ir y
+moviendose hacia allá, hasta que llegue a la nave espacial si es que
+tiene la suerte de su lado. O será capturado por el Exterminador
+Marciano si no está de suerte. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Pensando
+en el tiempo</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el caso general, para lograr el balance perfecto entre pensar y
+actuar, un agente necesita pensar en el tiempo – Tanto acerca de
+los tiempos en que debe realizar las acciones, como en la duración
+del pensar dado el tiempo disponible para hacerlo. Este tema del
+pensar acerca del tiempo será tratado muy pronto en este libro. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western"><font face="Utopia, serif"><font size="5" style="font-size: 18pt">Pensar
+= Inferencia + Búsqueda + Inferencia</font></font></h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-right: 0.02cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Tenemos
+ahora una visión más completa del papel de la lógica en el ciclo
+de observación-pensamiento-decisión-acción:</font></font></p>
+<p style="margin-right: 8.28cm"><br/>
+<br/>
+
+</p>
+<img src="capitulo05_files/vision-capitulo-05.jpg" name="Graphic1" align="left" width="591" height="299">
+  <br clear="left"/>
+</img>
+
+<p style="margin-right: 8.28cm"><br/>
+<br/>
+
+</p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018</font></p>
+</div>
+</body>
+</html>

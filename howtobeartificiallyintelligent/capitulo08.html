@@ -1,0 +1,1200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>El dilema del prisionero</title>
+	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
+	<meta name="author" content="Jacinto Dávila"/>
+	<meta name="created" content="2005-03-07T00:00:00.020391900"/>
+	<meta name="changed" content="2021-07-19T18:46:45.521782747"/>
+	<meta name="classification" content="Lógica de agentes"/>
+	<meta name="description" content="Por Bob Kowalski
+Traducción al Español: Jacinto Dávila"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:05:46.465045971">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T10:03:50.223418766">
+	<meta name="created" content="2004-07-27T00:00:00.009581963">
+	<meta name="changed" content="2018-05-07T09:58:52.614622598">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2018-05-07T08:31:21.432615438">
+	<meta name="created" content="2004-07-26T00:00:00.008240763">
+	<meta name="changed" content="2018-04-28T21:07:43.563654589">
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 3.18cm; margin-right: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { margin-bottom: 0.2cm; background: transparent }
+		td p { margin-bottom: 0.2cm; background: transparent }
+		h1 { background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Thorndale", serif; font-size: 24pt; font-weight: bold }
+		h1.cjk { font-size: 22pt; font-weight: bold }
+		h1.ctl { font-size: 22pt; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; color: #000000; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; font-weight: bold }
+		h2.cjk { font-family: "Noto Sans CJK SC Regular"; font-size: 18pt; font-weight: bold }
+		h2.ctl { font-family: "FreeSans"; font-size: 18pt; font-weight: bold }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h2 lang="en-GB" class="western" align="justify" style="background: transparent; page-break-after: avoid">
+<font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b><font face="Utopia, serif"><font size="5" style="font-size: 18pt"><a href="http://webdelprofesor.ula.ve/ingenieria/jacinto/logica/agentes-y-logica-computacional.html">Kowalski,
+R. (2011) La lógica computacional y el pensamiento humano: cómo ser
+artificialmente inteligente</a></font></font></b></font></font></font></h2>
+<p lang="en-GB" align="justify" style="margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent">
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <img src="capitulo08_html_4ec41fdaebb8efd6.png" name="HTTPS://CREATIVECOMMONS.ORG/LICENSES/BY-NC-SA/4.0/DEED.ES" align="left" width="85" height="16" border="0"/>
+</a>
+<br/>
+<br/>
+
+</p>
+<h1 class="western"><font color="#ff0000"><font face="Utopia, serif">El
+Dilema del Prisionero </font></font>
+</h1>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Imagine
+que, en su desesperación por enriquecerse tan rápido como sea
+posible, Ud considera varias alternativas, infiere sus consecuencias
+más probables y decide que la mejor es asaltar el banco más
+cercano. Persuade Ud a su mejor amigo, Keith, conocido por su
+meticulosidad y atención a los detalles, de que le ayude a planear y
+ejecutar el crimen. Gracias al esfuerzo coordinado, ambos tienen
+éxito en entrar al Banco durante la noche, abrir la bóveda y huir
+con un buen millón de libras esterlinas (1.65 millones de dólares
+al momento de escribir esto) como botín que guardan en el
+compartimiento de las maletas de su vehículo. </font></font>
+</p>
+<p align="justify"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Desafortunamente,
+tanto tiempo en la pobreza se reflejan en el estado de ese vehículo
+y Ud es detenido por la policía que le reclama conducir de noche sin
+uno de los faros. Al revisar su vehículo, los policias descubren el
+buen millón en la cajuela. Ud se declara ignorante del origen del
+dinero, pero tanto Ud como su amigo son arrestados como sospechosos
+de un robo.</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sin
+testigos y sin confesión alguna, la policia no puede condenarlos
+salvo por poseer propiedad robada, que apenas implica una pena de 1
+año. Sin embargo, si alguno confiesa el crimen (en detrimento del
+otro) y el otro no confiesa, el primero obtiene la libertad plena y
+el segundo es condenado a 6 años de cárcel. Si ambos confiesan,
+entonces ambos compartirán la pena de 3 años de cárcel. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Este
+es un ejemplo con el clásico Dilema del Prisionero. En teoría de
+Juegos, el problema de decidir entre esas alternativas de acción se
+presenta frecuentemente como una tabla, en la que las filas y
+columnas representan las acciones de los agentes y las celdas
+representan los resultados esperados. En este caso, la tabla es así:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="69*"/>
+
+	<col width="94*"/>
+
+	<col width="93*"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="27%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.11cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<br/>
+
+				</p>
+			</td>
+			<td width="37%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.11cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				confiesa</font></font></p>
+			</td>
+			<td width="36%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				no confiesa</font></font></p>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="27%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Keith
+				confiesa</font></font></p>
+			</td>
+			<td width="37%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				se gana 3 años de cárcel</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Keith
+				se gana 3 años de cárcel</font></font></p>
+			</td>
+			<td width="36%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				se gana 6 años de cárcel</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Keith
+				se gana 0 años de cárcel</font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="27%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Su
+				amigo no confiesa</font></font></p>
+			</td>
+			<td width="37%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				se gana 0 años de cárcel</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Keith
+				se gana 6 años de cárcel</font></font></p>
+			</td>
+			<td width="36%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+				se gana 1 año de cárcel</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Keith
+				se gana 1 año de cárcel</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+los dos prisioneros pudieran consultarse, se pondrían, obviamente
+(??) de acuerdo de que la mejor opción para ambos es no confesar y
+evitar perjudicar al otro. Para evitar esto, la policía los separa
+antes de que puedan hablarse. Así que cada uno debe decidir que
+hacer sin saber lo que el otro hará. </font></font>
+</p>
+<p align="justify" style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<h2 class="western">La Lógica del Dilema del Prisionero.</h2>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-right: 0.05cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+Dilema del Prisionero tiene una representación natural en términos
+de las metas y creencias del Prisionero. </font></font>
+</p>
+<p style="margin-right: 7.64cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm; margin-right: 0.05cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Meta:
+ </b></span></font>Si me arrestan entonces confieso o no confieso. </font></font>
+</p>
+<p style="margin-left: 3.75cm; margin-right: 7.64cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Creencias:</b></span></font>
+</font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Me
+arrestan. </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+prisionero es condenado a 0 años de cárcel</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+el <span lang="en-GB">prisionero confiesa </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el otro prisionero no confiesa<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+prisionero es condenado a 6 años de cárcel </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+el prisionero no confiesa </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el otro prisionero confiesa</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+prisionero es condenado a 3 años de cárcel </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+el prisionero confiesa </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el otro prisionero también confiesa<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Un
+prisionero es condenado a 1 año de cárcel</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+el prisionero no confiesa </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el otro prisionero tampoco confiesa.</font></font></p>
+<p style="margin-left: 3.75cm; margin-right: 7.64cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+todo se asume, desde luego, que los prisioneros creen lo que les dice
+la policía. También se asume que ambos prisioneros saben que el
+mismo trato le ha sido ofrecido al otro prisionero. Sin embargo, el
+análisis que hacemos al final de este capítulo puede ser fácilmente
+modificado para cubrir otros casos. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">La Lógica de los Juegos.</h2>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+general, cualquier juego de dos que se represente con una tabla puede
+también ser representado con metas y creencias. Por ejemplo, la
+tabla: </font></font>
+</p>
+<p style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="69*"/>
+
+	<col width="94*"/>
+
+	<col width="93*"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="27%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.11cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<br/>
+
+				</p>
+			</td>
+			<td width="37%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.11cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador hace A</font></font></p>
+			</td>
+			<td width="36%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador hace B</font></font></p>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="27%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador hace C</font></font></p>
+			</td>
+			<td width="37%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador se gana AC</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador se gana CA</font></font></p>
+			</td>
+			<td width="36%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador se gana BC</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador se gana CB</font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="27%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador hace D</font></font></p>
+			</td>
+			<td width="37%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador se gana AD</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador se gana DA</font></font></p>
+			</td>
+			<td width="36%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.11cm; padding-left: 0.11cm; padding-right: 0.11cm"><p>
+				<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Primer
+				jugador se gana BD</font></font></p>
+				<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Segundo
+				jugador se gana DB</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-right: 0.02cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puede
+ser representada con metas y creencias que, en el caso del primer
+jugador, son:</font></font></p>
+<p style="margin-right: 0.02cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Meta:
+</b></span></font>El primer jugador realiza acción A <span lang="en-GB">o
+ El primer jugador realiza acción B.</span></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Creencias:</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+primer jugador obtiene el resultado AC </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+<span lang="en-GB">El primer jugador realiza la acción A </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el segundo jugador realiza la acción C<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+primer jugador obtiene el resultado <span lang="en-GB">BC </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+El primer jugador realiza la acción B </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el segundo jugador realiza la acción C<span lang="en-GB">.</span></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+primer jugador obtiene el resultado AD </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+El primer jugador realiza la acción A </font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el segundo jugador realiza la acción D.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+primer jugador obtiene el resultado <span lang="en-GB">BD </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	si
+El primer jugador realiza la acción B </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el segundo jugador realiza la acción D<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm">&nbsp;</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Noten
+que, de acuerdo a las circunstancias, un jugador puede saber o no los
+resultados del otro agente. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">¿Debo llevar el paragüas?</h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Antes
+de discutir como resolver el dilema del prisionero, es útil
+compararlo con el aparentemente no relacionado problema de decidir si
+debo o nó llevar el paragüas al salir de casa en la mañana.</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Podemos
+representar el problema del paragüas como un juego contra la
+naturaleza:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<table width="575" cellpadding="2" cellspacing="0">
+	<col width="138"/>
+
+	<col width="215"/>
+
+	<col width="208"/>
+
+	<tr valign="top">
+		<td width="138" style="border-top: 1px solid #111111; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0.05cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<br/>
+
+			</p>
+		</td>
+		<td width="215" style="border-top: 1px solid #111111; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0.05cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Llevo
+			el paragüas</font></font></p>
+		</td>
+		<td width="208" style="border: 1px solid #111111; padding: 0.05cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+			llevo el paragüas.</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="138" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Llueve</font></font></p>
+		</td>
+		<td width="215" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sigo
+			seco. </font></font>
+			</p>
+			<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cargo
+			el paragüas.</font></font></p>
+		</td>
+		<td width="208" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: 1px solid #111111; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Me
+			mojo.</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="138" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">No
+			llueve.</font></font></p>
+		</td>
+		<td width="215" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sigo
+			seco.</font></font></p>
+			<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cargo
+			el paragüas.</font></font></p>
+		</td>
+		<td width="208" style="border-top: none; border-bottom: 1px solid #111111; border-left: 1px solid #111111; border-right: 1px solid #111111; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p>
+			<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sigo
+			seco.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Podemos
+modelar el juego desde el lado del agente, usando metas y creencias
+para el agente<a href="#_ftn1" name="_ftnref1">[1]</a>:</span></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><font color="#ff0000"><span lang="en-GB"><b>Meta:
+</b></span></font> Si salgo entonces Llevo el paragüas o no llevo el
+paragüas.</font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Creencias:</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Salgo<span lang="en-GB">.</span></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Cargo
+el paragüas si llevo el paragüas<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sigo
+seco si llevo el paragüas<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Sigo
+seco si no llueve<span lang="en-GB">.</span></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Me
+mojo si no llevo el paragüas y llueve<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Ud
+puede controlar si lleva o no el paragüas, pero no puede controlar
+si llueve o no llueve. Lo mejor que puede hacer es estimar la
+probabilidad de que llueva. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Esto
+suena familiar. En el capítulo anterior, cuando consideraba si robar
+o no el banco, escribí: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify">“<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Puede
+controlar si robas o no el banco. Pero no puedes controlar si vas a
+ser capturado y condenado. No sólo son posibilidades lejos de tu
+control, sino que ni siquiera puedes predecir su ocurrencia con
+certeza. Lo mejor que puedes hacer es estimar sus probabilidades”</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+el mismo cuento. Para decidir entre acciones diferentes, Ud debe
+inferir sus consecuencias, juzgar las utilidades y probabilidades de
+esas consecuencias, y escoger la acción con la mayor utilidad
+esperada global. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Suponga
+que Ud juzga que el beneficio de seguir seco, si llueve, es
+significativamente superior al costo del inconveniente de tener que
+cargar el paragüas, llueva o no llueva.<a href="#_ftn2" name="_ftnref2">[2].</a></span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">En
+ese caso, Ud debe llevar el paragüas, si Ud estima que la
+probabilidad de que llueva es relativamente alta. Pero, Ud debe dejar
+el paragüas si Ud estima que la probabilidad de que llueva es
+relativamente baja. </span></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">Aplicando Teoría de Decisiones al caso del
+Paraguas</h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Esta
+clase de “pensamiento”<a href="#_ftn3" name="_ftnref3">[3]</a>,
+que combina juicios de utilidad con estimados de probabilidad es el
+tema de la llamada Teoría de Decisiones. De acuerdo a esos
+postulados, uno debe sopesar la utilidad de cada resultado posible de
+un acción con su probabilidad y luego sumar todas las utilidades
+alternativas, así sopesadas, para medir la utilidad esperada total
+de esa acción. Al final, uno debe seleccionar la acción con la
+mayor utilidad esperada<a href="#_ftn4" name="_ftnref4">[4]</a>.</span></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+el caso de decidir si llevar o no el paraguas, suponga que Ud
+considera que:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+beneficio de permanecer seco es <span lang="en-GB"><i>D</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+costo cargar el paraguas es <span lang="en-GB"><i>C</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+costo de mojarse es <span lang="en-GB"><i>W</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+probabilidad de que llueva es <span lang="en-GB"><i>P</i></span><span lang="en-GB">,
+</span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+en consecuencia, de que no llueva es <span lang="en-GB">(1 – </span><span lang="en-GB"><i>P</i></span><span lang="en-GB">).</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces,
+la utilidad esperada de llevar el paraguas es igual a </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">el
+beneficio de permanecer seco </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">menos
+el costo de cargar el paraguas </font></font>
+</p>
+<p style="margin-left: 3.75cm"><a name="OLE_LINK1"></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+</span><span lang="en-GB"><i>D</i></span><span lang="en-GB"> – </span><span lang="en-GB"><i>C.</i></span><span lang="en-GB">
+</span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de no llevar el paraguas es </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">el
+beneficio de permanecer seco si no llueve </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">menos
+el costo de mojarse si llueve </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+(1 – </span><span lang="en-GB"><i>P</i></span><span lang="en-GB">)
+</span><span lang="en-GB"><i>·D </i></span><span lang="en-GB">–
+</span><span lang="en-GB"><i>P·W.</i></span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+ejemplo, si el beneficio de permanecer seco es igual a un barra de
+chocolate, el costo de cargar el paragua es de 2 barras de chocolate
+y el costo de mojarse es de 9 barras de chocolate, entonces: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>D</i></span><span lang="en-GB">
+= 1</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>C</i></span><span lang="en-GB">
+= 2</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>W</i></span><span lang="en-GB">
+= 9.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de llevar el paraguas es <span lang="en-GB">= –
+1</span><span lang="en-GB"><i>.</i></span><span lang="en-GB"> </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de no llevar el paraguas es </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+(1 – 10</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">)</span><span lang="en-GB"><i>.</i></span></font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Por
+lo tanto, si la probabilidad de que llueva es mayor que .20, entonces
+Ud debería llevar su paraguas. Si es menor que .20, Ud no debería
+llevar su paraguas. Si es exactamente del .20, entonces no hay
+diferencia, en barras de chocolate, si Ud lleva o no el paraguas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">El
+uso de la Teoría de Decisiones es <i><b>normativo</b></i>, por
+cuanto postula una situación ideal (caracterizada por estimado y
+cálculos utilitarios), que sólo podemos aproximar en la realidad.
+En la vida real, tendemos a compilar esas decisiones rutinarias en
+reglas más simples, representadas por metas y creencias: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Metas:</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">Si
+salgo </span>y es probable que llueva entonces cargo el paraguas<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Creencias:</b></font></font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+probable que llueva si hay nubes negras en el cielo.</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Es
+probable que llueva si ha sido pronosticado <span lang="en-GB">por el
+canal del clima. </span></font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">Resolviendo el Dilema del Prisionero. 
+</h2>
+<p style="margin-right: 7.64cm"><br/>
+<br/>
+
+</p>
+<p style="margin-right: 7.64cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Tal
+como en el caso anterior con el paraguas, en el que Ud decide cuando
+sale, Ud puede controlar sus acciones, aún si se encuentra en el
+Dilema del Prisionero, pero no puede controlar el mundo a su
+alrededor. En este caso, Ud no puede controlar las acciones del otro
+prisionero. Puede, no obstante, tratar de predecirlas tan bien como
+sea posible. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que Ud emplea el método de Teoría de Decisiones y considera que: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad de ganarse N años en la cárcel es de –<span lang="en-GB"><i>N.</i></span><span lang="en-GB">
+</span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+probabilidad de que Keith confiese es de <span lang="en-GB"><i>P</i></span><span lang="en-GB">,
+</span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y,
+por tanto, de que no confiese es <span lang="en-GB">(1 – </span><span lang="en-GB"><i>P</i></span><span lang="en-GB">).</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces,
+la utilidad esperada de que Ud confiese </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+ <span lang="en-GB">3 si Keith confiesa, </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+ <span lang="en-GB">0 si no lo hace</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–3</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB"> +
+0</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1 –
+</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">)  </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–3</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">. </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de no confesar, para Ud,</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">6 se Keith confiesa, </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">y
+ –<span lang="en-GB">1 si no lo hace </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–6</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB"> –
+1</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1 –
+</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">) </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+ –1 – 5</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+resulta que la utilidad de que Ud confiese es mayor que la de no
+confesar, –3<i>·P </i>&gt; –1 – 5<i>·P</i>, para todo <i>P.</i>
+Por lo tanto, sin importar cuál sea la probabilidad P de que Keith
+confiese, Ud siempre estará en ventaja confesando. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Desafortunadamente,
+si Keith es tan sagaz como Ud y tiene las mismas creencias, metas y
+utilidades suyas, entonces va a decidir, de la misma manera, confesar
+en contra suya, en cuyo caso ambos tendrán, con toda seguridad,
+ganados sus 3 años en la cárcel. Ambos estarían mejor olvidando
+todo este asunto de la Teoría de Decisiones, arriesgándose y
+reusándose a confesar, en cuyo caso ambos obtendrían 1 año de
+cárcel. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+hay otra moraleja para esta historia – que lo malo no es la Teoría
+de Decisiones, sino su propio juicio egoísta acerca de la utilidad:</font></font></p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Suponga
+que, en lugar de lo que ha hecho, Ud se preocupara (y ocupara) tanto
+por Keith como por Ud mismo y considerara que: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad de que Ud gane N años en la cárcel y Keith M es – <span lang="en-GB">(</span><span lang="en-GB"><i>N
+</i></span><span lang="en-GB">+ </span><span lang="en-GB"><i>M</i></span><span lang="en-GB">).</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Entonces,
+la utilidad esperada de que Ud confiese </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">6 si Keith confiesa, y </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">6 si no lo hace</span></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–6</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB"> –
+6</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1 –
+</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">) </span></font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">=
+–6. </font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de que Ud no confiese </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">6 si Keith confiesa, y </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">2 si no lo hace </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–6</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB"> –
+2</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1 –
+</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">) </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–2 – 4</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero,
+ahora, la utilidad de su confesión es menor o igual que la de no
+confesar, –6 ≤ –2 – 4<i>·P</i>, para cualquier valor de <i>P.
+</i>Por lo tanto, de nuevo sin importar el valor que se asigne a la
+probabilidad P de que Keith confiese, no hay ninguna ventaja para Ud
+en el confesar. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">En
+este caso, además, si Keith tiene las mismas (generosas) creencias,
+metas y utilidades suyas, entonces va a decidir de la misma manera,
+no confesar y ambos tendrán asegurado el año de cárcel mínimo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Pero
+preocuparse tanto por Keith como por Ud mismo podría sonar un poco
+ingenuo. Para ser más realista, suponga que Ud quiere a Keith la
+mitad de lo que se quiere Ud mismo: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad de que Ud gane N años en la cárcel y Keith M es – <span lang="en-GB">(</span><span lang="en-GB"><i>N
+</i></span><span lang="en-GB">+ 1/2</span><span lang="en-GB"><i>·M</i></span><span lang="en-GB">).</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Entonces,
+la utilidad esperada de que Ud confiese </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">4.5 si Keith confiesa, y </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">3 si no lo hace&nbsp; </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–4.5</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">
+– 3</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1
+– </span><span lang="en-GB"><i>P</i></span><span lang="en-GB">) </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–3 –1.5</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">.
+</span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+utilidad esperada de que Ud no confiese</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+ –<span lang="en-GB">6 si Keith confiesa, y </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">es
+–<span lang="en-GB">1.5 si no lo hace </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–6</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB"> –
+1.5</span><span lang="en-GB"><i>·</i></span><span lang="en-GB">(1 –
+</span><span lang="en-GB"><i>P</i></span><span lang="en-GB">) </span></font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">=
+–1.5 – 4.5</span><span lang="en-GB"><i>·P</i></span><span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Note
+que –3 –1.5<i>·P </i>= –1.5 – 4.5<i>·P</i> cuando <i>P</i>
+= .5. Por lo tanto, si Ud cree que la probabilidad P de que Keith
+confiese es menor de .5 entonces Ud no debe confesar . Pero si Ud
+cree que la probabilidad es mayor que .5 entonces Ud debe confesar –
+quid pro quo. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Tal
+como ocurre en el caso de decidir si cargo o no el paragua al salir,
+estos cálculos son un ideal normativo, al que apenas nos podemos
+aproximar en la práctica. En la realidad, tendemos a compilar esta
+decisiones en reglas de conducta, representadas con metas y
+creencias. Por ejemplo: </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font color="#ff0000"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><b>Metas:</b></font></font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+me ofrecen un trato</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el trato me beneficia </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el trato daña a alguien más de lo que me beneficia</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+la persona es mi amigo</font></font></p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">entonces
+rechazo el trato<span lang="en-GB">.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Si
+me ofrecen un trato</font></font></p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el trato me beneficia </font></font>
+</p>
+<p style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+el trato daña a alguien más </font></font>
+</p>
+<p lang="en-GB" style="margin-left: 3.75cm"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">	y
+la persona NO es mi amigo</font></font></p>
+<p style="margin-left: 3.75cm"> <font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">entonces
+acepto el trato.</span></font></font></p>
+<p style="margin-left: 3.75cm"><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Estas
+reglas no son muy gentiles, pero debe estar claro que pueden ser
+redefinidas, tanto para cubrir otros casos como para distinguir más
+precisamente otras características del trato en consideración. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">Conclusiones</h2>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hay
+tres conclusiones. La primera es acerca del Dilema propiamente – es
+que vale la pena cooperar con otros agentes y simplemente tratar de
+optimizar sobre sus propios intereses. Esta conclusión es, desde
+luego, bien conocida en la literatura del Dilema del Prisionero. Lo
+que quizás no es tan conocido es hasta que punto los beneficios de
+la cooperación pueden obtenerse simplemente al considerar en
+bienestar de otros en la función de utilidad. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+segunda conclusión es más general – que para decidir entre
+distintos cursos de acción necesitamos, no solamente juzgar costos y
+beneficios de nuestras acciones, sino también estimar las
+probabilidades de circunstancias fuera de nuestro control. Hemos
+visto eso antes, pero debe ser enfatizado una vez más, no sólo
+porque es importante, sino porque ha sido ampliamente ignorado en la
+lógica tradicional. La estrategia mostrada en este capítulo muestra
+una forma en que la lógica y la probabilidad se pueden combinar. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">La
+tercer conclusión es más sutil. Es que los cálculos en la Teoría
+de Decisiones son un ideal normativo, que algunas veces aproximamos
+en la vida real usando reglas más simples basadas en metas y
+creencias. Esta relación entre la Teoría de Decisiones “de nivel
+superior” y las reglas de decisión “de nivel inferior” es como
+la relación entre representaciones lógicas de alto nivel y
+asociaciones de entrada-salida de bajo nivel. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Hemos
+visto, en otros capítulos, que podemos compilar representaciones
+lógicas de metas y creencias en asociaciones de entrada-salida y,
+algunas veces, decompilar esas asociaciones en representaciones
+lógicas. Más aún, pareciera que el pensamiento humano, ambos
+niveles de pensamiento pueden ocurrir en cascada. Las asociaciones de
+entrada-salida proponen, con mucha eficiencia, salidas candidatas
+como respuestas a ciertas entradas, mientras que el razonamiento con
+metas y creencias supervisa la calidad de esas respuestas. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p align="justify"><font face="Utopia, serif"><font size="4" style="font-size: 14pt">Parece
+haber una relación parecida entre Teoría de Decisiones y reglas de
+decisión. Las reglas puede ser ejecutadas eficientemente, pero la
+Teoría de Decisión da resultados de mejor calidad. Como en el caso
+de las representaciones de nivel superior e inferior, la Teoría de
+Decisiones puede ser usada para supervisar la aplicación de las
+reglas y proponer modificaciones de las reglas que deben ser cambias,
+bien porque hay fallado o porque el mismo ambiente ha cambiado. En su
+libro, Pensando y Decidiendo, Baron discute, en detalle, relaciones
+similares entre las formas descriptivas, prescriptivas y normativas
+de tomar decisiones. </font></font>
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<div id="ftn1" dir="ltr"><p align="justify"><a href="#_ftnref1" name="_ftn1"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[1]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	Note que la representación en términos de creencias es más
+	informativa que la reprseentación del juego, puesto que indica con
+	más precisión que la tabla, las condiciones de las que depende el
+	resultado de cada acción. Por ejemplo, la representación con
+	creencias indica que permanecer seco depende solamente de cargar el
+	paraguas y no depende de que llueva. </font></font>
+	</p>
+</div>
+<div id="ftn2" dir="ltr"><p align="justify"><a href="#_ftnref2" name="_ftn2"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[2]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	En general, se asume que podemos cuantificar los beneficios y costos
+	en las mismas unidades</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">,
+	por tanto utilidad = beneficios – costos.</span></font></font></p>
+</div>
+<div id="ftn3" dir="ltr"><p align="justify"><a href="#_ftnref3" name="_ftn3"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[3]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+	De acuerdo Baron, en su “pensar y decidir”, nuestro “pensar”
+	no es tal, sino un “decidir” entre opciones diferentes. Es un
+	asunto interesante hasta que punto “decidir” podría involucrar
+	“pensar” en un nivel diferente (quizás un meta-nivel). Habrá
+	más de esto más adelante. </font></font>
+	</p>
+</div>
+<p align="justify"><a href="#_ftnref4" name="_ftn4"><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">[4]</span></font></font></a><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+En términos matemáticos, si una acción tiene </font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><i>n</i></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+resultados alternativos, con </font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><u><b>utilidades</b></u></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt">
+</font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>1</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>,
+u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>2</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>,
+..., u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>n</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">
+que tienen, respectivamente, </span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i><u>probabilidades</u></i></span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">
+</span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>1</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>,
+p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>2</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>,
+..., p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>n</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">
+entonces la </span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i><u>utilidad
+esperada de la acción</u></i></span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB">
+es </span></font></font><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>1·</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>1</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>
++ p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>2·</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>2</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>
++ ... + p</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>n·</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>u</i></span></font></font><sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>n</i></span></font></font></sub><font face="Utopia, serif"><font size="4" style="font-size: 14pt"><span lang="en-GB"><i>.</i></span></font></font></p>
+<p>&nbsp;<font face="Utopia, serif"><font size="4" style="font-size: 14pt">Actualizado
+por última vez: Julio 2018</font></font></p>
+<div title="footer"><p style="margin-top: 0.5cm; margin-bottom: 0cm"><font size="2" style="font-size: 11pt">Kowalski.
+	R.A. Lógica Computacional y el Pensamiento Humano (Traducido por
+	Jacinto Dávila) 2011-2018 </font>
+	</p>
+</div>
+</body>
+</html>
