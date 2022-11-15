@@ -1,0 +1,23 @@
+Core RBAC keeps several sets including the following:
+USERS: set of users
+ROLES: set of roles
+PERMS: set of permissions
+UR: set of user-role pairs
+PR: set of permission-role pairs
+with constraints:
+UR is subset of USERS * ROLES
+PR is subset of PERMS * ROLES
+update functions for each set, subject to the constraints above:
+AddUser, DeleteUser, AddRole, DeleteRole, AddPerm, DeletePerm
+AddUR, DeleteUR, AddPR, DeletePR, where
+each Add has pre-conditions: the element is not in and no constraints
+will be violated, and
+each Delete has the pre-condition that the element is in, and maintains
+the constraints by
+updates if needed
+and query functions including the following:
+AssignedRoles(user): the set of roles assigned to user in UR
+UserPermissions(user): the set of permissions assigned to the roles
+assigned to user
+CheckAccess(user, perm): whether some role is assigned to user and is
+granted perm
