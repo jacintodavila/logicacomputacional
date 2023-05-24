@@ -6,32 +6,32 @@
 
 eliza(Estimulo, Respuesta) :-
     plantilla(EstimuloInterno,RespuestaInterna),
-    compara(EstimuloInterno, Estimulo),
-    compara(RespuestaInterna, Respuesta).
+    iguala(EstimuloInterno, Estimulo),
+    iguala(RespuestaInterna, Respuesta).
     %!.
 
 plantilla([o([i,am]),o(X)], [o([why,are,you]),o(X),p('?')]).
 plantilla([p(i),o(X),p(you)], [o([why,do,you]),o(X),p(me),p('?')]).
-plantilla([p(te), o([X,o])], [o(['Por', 'qué', me]), o([X, as])]).
+plantilla([p(te), o([X,o])], [o(['¿','Por', 'qué', me]), o([X, as, '?'])]).
 plantilla([p(ciao)], [p(ciao)]).
 plantilla([p(ciao)], [p(hola)]).
  
 
-compara([],[]).
-compara([Item|Items],[Palabra|Palabras]) :-
-    compara(Item, Items, Palabra, Palabras).
+iguala([],[]).
+iguala([Item|Items],[Palabra|Palabras]) :-
+    iguala(Item, Items, Palabra, Palabras).
 
-compara(p(Palabra), Items, Palabra, Palabras) :-
-    compara(Items, Palabras).
-compara(o([Palabra|Resto]), Items, Palabra, Palabras0) :-
+iguala(p(Palabra), Items, Palabra, Palabras) :-
+    iguala(Items, Palabras).
+iguala(o([Palabra|Resto]), Items, Palabra, Palabras0) :-
     append(Resto, Palabras1, Palabras0),
-    compara(Items, Palabras1).
+    iguala(Items, Palabras1).
 
 
 /** <examples>
 
-?- eliza([i, am, very, hungry], Response).
-?- eliza([i, love, you], Response).
-?- eliza([te, am,o], Response).
+?- eliza([i, am, very, hungry], Respuesta).
+?- eliza([i, love, you], Respuesta).
+?- eliza([te, am,o], Respuesta).
 */
 
