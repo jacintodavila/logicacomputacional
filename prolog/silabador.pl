@@ -1,24 +1,24 @@
 % silabador.pl
 %
-% Este programa implementa una definiciÛn del concepto SILABA para el
-% idioma EspaÒol. 
+% Este programa implementa una definici√≥n del concepto SILABA para el
+% idioma Espa√±ol. 
 %
-%Copyright (C)
+% Copyright (C)
 %
-%This program is free software; you can redistribute it
-%and/or modify it under the terms of the GNU General Public License
-%as published by the Free Software Foundation; either version 2 of
-%the License, or any later version.
+% This program is free software; you can redistribute it
+% and/or modify it under the terms of the GNU General Public License
+% as published by the Free Software Foundation; either version 2 of
+% the License, or any later version.
 %
-%This program is distributed in the hope that it will be
-%useful, but WITHOUT ANY WARRANTY; without even the implied
-%warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-%See the GNU General Public License for more details.
+% This program is distributed in the hope that it will be
+% useful, but WITHOUT ANY WARRANTY; without even the implied
+% warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU General Public License for more details.
 %
-%You should have received a copy of the GNU General Public
-%License along with this program; if not, write to the Free
-%Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-%02111-1307 USA or see http://www.opensource.org/licenses/gpl-license.php
+% You should have received a copy of the GNU General Public
+% License along with this program; if not, write to the Free
+% Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+% 02111-1307 USA or see http://www.opensource.org/licenses/gpl-license.php
 % 
 % Authors:  Luis Astorga Junquera <luisastorga@hotmail.com>, <astorga@intercable.net.ve>
 %           Jacinto Davila <jacinto@ula.ve>
@@ -27,14 +27,13 @@
 %           Melva Marquez <melva@ula.ve>
 %           Marilu Parra <mmarilu@ula.ve>
 %
-% Address: Universidad de Los Andes. MÈrida, Venezuela. 
+% Address: Universidad de Los Andes. M√©rida, Venezuela. 
 %
-% 
 
-silabador(Silabario):- getsentence(Wordlist),silaba(Wordlist,Silabario).
+silabador(Silabario):- getsentence(Wordlist), silaba(Wordlist,Silabario).
 
 silaba([],[]).
-silaba([P|Resto],Silabario):-   name(P,As),sil(As,Silab),
+silaba([P|Resto],Silabario):-   name(P,As), sil(As,Silab),
                 append(Silab,Silabario1,Silabario),
                 silaba(Resto,Silabario1).
 
@@ -383,7 +382,7 @@ cluster(C1, C2) :- member(C1, [112,116,99,107,102,98,100,103,110]),
 getsentence(Wordlist):- get0(Char),
                         getrest(Char, Wordlist).
 
-getrest(46,[]):- !.                          /*fin de oraciÛn: 46 = ASCII para '.'*/
+getrest(46,[]):- !.                          /*fin de oraci√≥n: 46 = ASCII para '.'*/
 
 getrest(32,Wordlist):- !,                    /*fin de palabra 32 = ASCII para blanco*/
                        getsentence(Wordlist). /*salta el blanco*/
@@ -408,6 +407,6 @@ getletters(Let,[Let|Letters],Nextchar):- get0(Char),
 
 % los que caminan sobre rios de vino a veces flotan
 % cada comarca tiene los fanatismos que se merece
-% nada hay mas m·gico que la ruta del semen por el que somos
+% nada hay mas m√°gico que la ruta del semen por el que somos
 
  

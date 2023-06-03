@@ -2,7 +2,7 @@
 %
 % Este programa interactua con humanos en lenguaje natural y
 % despliega una conducta coprolalica. Esta basado en el programa
-% eliza y en una versión Venezolana llamada Elizaul. 
+% eliza y en una versiÃ³n Venezolana llamada Elizaul. 
 %
 % Este programa requiere el programa silabador.pl, tambien distribuible
 % con licencia GPL. 
@@ -26,15 +26,15 @@
 % 
 % Authors:  Luis Astorga Junquera <ls.astorg@gmail.com> 
 %           Jacinto Davila <jacinto@ula.ve>
-% Address: Universidad de Los Andes. Mérida, Venezuela. 
+% Address: Universidad de Los Andes. MÃ©rida, Venezuela. 
 %
 % 
 % last modified: April, 2015
 /* To run:  ?- consult(elizaulito), elizaulito.         */
 /* To stop: > adios (`>' is the Elizaulito prompt)      */
-/* Para silabar > silaba <palabra o frase en Español>   */
+/* Para silabar > silaba <palabra o frase en EspaÃ±ol>   */
 
-:- encoding(iso_latin_1). 
+%:- encoding(iso_latin_1). 
 
 :- [silabador].  % Carga el silabador.. 
 
@@ -43,26 +43,26 @@
 
 sr([no,hace|X],[una,'m....'|Y],X,Y).
 sr([no,puede|X],[para,nada|Y],X,Y).
-sr([no,'será'|X],[nada,que,ver|Y],X,Y).
-sr(['soñé'|X],['soñado'|Y],X,Y).
-sr(['sueños'|X],['sueño'|Y],X,Y).
+sr([no,'serÃ¡'|X],[nada,que,ver|Y],X,Y).
+sr(['soÃ±Ã©'|X],['soÃ±ado'|Y],X,Y).
+sr(['sueÃ±os'|X],['sueÃ±o'|Y],X,Y).
 sr([como|X],[que|Y],X,Y).
 sr([cuando|X],[que|Y],X,Y).
 sr([parecido|X],[igual|Y],X,Y).
 sr([mismo|X],[igual|Y],X,Y).
-sr([cierto|X],[si|Y],X,Y).
-sr([quizas|X],[puede,ser|Y],X,Y).
-sr([aleman|X],[xfremd|Y],X,Y).
-sr([frances|X],[xfremd|Y],X,Y).
-sr([ingles|X],[xfremd|Y],X,Y).
-sr([maquina|X],[computadora|Y],X,Y).
-sr([maquinas|X],[computadora|Y],X,Y).
+sr([cierto|X],['sÃ­'|Y],X,Y).
+sr(['quizÃ¡s'|X],[puede,ser|Y],X,Y).
+sr(['alemÃ¡n'|X],[xfremd|Y],X,Y).
+sr(['francÃ©s'|X],[xfremd|Y],X,Y).
+sr(['inglÃ©s'|X],[xfremd|Y],X,Y).
+sr(['mÃ¡quina'|X],[computadora|Y],X,Y).
+sr(['mÃ¡quinas'|X],[computadora|Y],X,Y).
 sr([computadoras|X],[computer|Y],X,Y).
-sr([tuyo|X],[mio|Y],X,Y).
-sr([tuyos|X],[mios|Y],X,Y).
+sr([tuyo|X],['mÃ­o'|Y],X,Y).
+sr([tuyos|X],['mÃ­os'|Y],X,Y).
 sr([fuiste|X],[fui|Y],X,Y).
-sr(['tú',eres|X],[yo,soy|Y],X,Y).      
-sr([yo,soy|X],['tú',eres|Y],X,Y).     
+sr(['tÃº',eres|X],[yo,soy|Y],X,Y).      
+sr([yo,soy|X],['tÃº',eres|Y],X,Y).     
 sr([a,mi|X],[a,ti|Y],X,Y).
 sr([a,ti|X],[a,mi|Y],X,Y).
 sr([por,mi|X],[por,ti|Y],X,Y).
@@ -110,13 +110,13 @@ rules([[perdon,0],[
 rules([[lo,siento,0],[
         [1,[_],0,
                 [que,facil,es,lamentarse,!,.],
-                [lo,sientes,papito,?,¡,que,boluntad,tienes,!,.],
-                [que,cobardia,tan,arrecha,la,tuya,'c....',!],
-                [que,nuevo,contigo,pana,!,¡,reacciona,'c....',!,.]]]]).
+                [lo,sientes,papito,?,Â¡,que,boluntad,tienes,'!',.],
+                [que,cobardia,tan,arrecha,la,tuya,'c....','!'],
+                [que,nuevo,contigo,pana,'!',Â¡,reacciona,'c....','!',.]]]]).
 
 rules([[recuerdo,5],[
         [1,[_,tu,recuerdas,Y],0,
-                [reeecuerdo,reecuerdo,¡,que,bobo,!,¡,olvidate,de,Y,!],
+                [reeecuerdo,reecuerdo,Â¡,que,bobo,'!',Â¡,olvidate,de,Y,'!'],
                 [pensar,en,Y,te,mueve,tus,fibritas,ocultas,?,tramposito],
                 [y,que,mas,recuerdas,gafo,?],
                 [ahora,es,que,te,vienes,a,acordar,de,Y,gafo,?],
@@ -131,49 +131,49 @@ rules([[recuerdo,5],[
         [3,[_],0,
                 [newkey]]]]).
 
-rules([[si,3],[
-        [1,[_,si,Y],0,
+rules([['sÃ­',3],[
+        [1,[_,'sÃ­',Y],0,
                 [te,parece,que,esa,'m....',es,asi,como,la,pintas,Y,?],
                 [te,gustaria,que,Y,?],
                 [que,'c....',sabes,tu,de,Y,?],
-                [no,me,digas,',',si,Y,?]]]]).
+                [no,me,digas,',','sÃ­',Y,?]]]]).
 % 103---------------------------------------------------------------------
-rules([['soñado',4],[
-        [1,[_,tu,'soñaste',Y],0,
-                [y,a,'tí',que,te,importa,',',Y,?],
+rules([['soÃ±ado',4],[
+        [1,[_,tu,'soÃ±aste',Y],0,
+                [y,a,'tÃ­',que,te,importa,',',Y,?],
                 [has,tenido,la, boluntad,de,delirar,con,Y,mientras,te,perturbas,?],
-                [has,osado,'pusilánime',como,eres,desear,Y,?],
-                [igual,['sueño',3]],
+                [has,osado,'pusilÃ¡nime',como,eres,desear,Y,?],
+                [igual,['sueÃ±o',3]],
                 [newkey]]]]).
 
-rules([['sueño',3],[
+rules([['sueÃ±o',3],[
         [1,[_],0,
-                [que,comunes,son,tus,'sueños',!],
-                [siempre,'sueñas',la,misma,estupidez,?],
-                [seguro,que,todos,te,molestan,en,tus,'sueños'],
-                [acaso,no,sabes,que,'soñar',es,revolver,tu,propia,basura,espiritual,?],
+                [que,comunes,son,tus,'sueÃ±os','!'],
+                [siempre,'sueÃ±as',la,misma,estupidez,?],
+                [seguro,que,todos,te,molestan,en,tus,'sueÃ±os'],
+                [acaso,no,sabes,que,'soÃ±ar',es,revolver,tu,propia,basura,espiritual,?],
                 [newkey]]]]).
 
 rules([[no,0],[
         [1,[_],0,
                 [no,se,de,que,'c....',me,hablas,pero,no,me,interesa,.],
-                [dale,'pués',si,te,crees,tan,'héroe',.],
-                [y,'todavía',piensas,que,eso,afecta,a,los,'demás',?,¡,que,pobre,diablo,eres,!],
-                [de,verdad,quieres,que,te,diga,lo,que,pienso,?,'¿podrás',con,ello,?]]]]).
+                [dale,'puÃ©s',si,te,crees,tan,'hÃ©roe',.],
+                [y,'todavÃ­a',piensas,que,eso,afecta,a,los,'demÃ¡s',?,Â¡,que,pobre,diablo,eres,'!'],
+                [de,verdad,quieres,que,te,diga,lo,que,pienso,?,'Â¿podrÃ¡s',con,ello,?]]]]).
 
-rules([[quizas,0],[
+rules([['quizÃ¡s',0],[
         [1,[_],0,
-                [estas,tan,inseguro,de,ti,mismo,que,das,'lástima',.],
-                [porque,siempre,tienes,que,dudar,como,una,'niñita',asustada,?],
+                [estas,tan,inseguro,de,ti,mismo,que,das,'lÃ¡stima',.],
+                [porque,siempre,tienes,que,dudar,como,una,'niÃ±ita',asustada,?],
                 [no,puedes,dejar,de,ser,tan,miserablemente,lastimero,?],
-                [nunca,'estás',seguro,de,una,'m....',?,'¡Que',asco,me,da,la,gente,como,tu,!],
-                [entonces,!,'¿',en,que,quedamos,viejito,?]]]]).
+                [nunca,'estÃ¡s',seguro,de,una,'m....',?,'Â¡Que',asco,me,da,la,gente,como,tu,'!'],
+                [entonces,'!','Â¿',en,que,quedamos,viejito,?]]]]).
 
 rules([[nombre,15],[
         [1,[_],0,
                 [me,saben,a,'m....',los,nombres,.],
-                [que,burro,eres,!,¿,'cómo',te,explico,que,me,limpio,el,'c....',con,los,nombres,?,.],
-                ['todavía',quieres,'más',?,.]]]]).
+                [que,burro,eres,'!',Â¿,'cÃ³mo',te,explico,que,me,limpio,el,'c....',con,los,nombres,?,.],
+                ['todavÃ­a',quieres,'mÃ¡s',?,.]]]]).
 
 rules([[xfremd,75],[
         [1,[_],0,
@@ -185,34 +185,34 @@ rules([[hola,0],[
 
 rules([[computadora,50],[
         [1,[_],0,
-                [tanto,te,ladilla,que,sea,una,maquina,?],
+                [tanto,te,ladilla,que,sea,una,' mÃ¡quina' ,?],
                 [y,vuelves,con,la,misma,tonteria,de,la,computadora,?],
-                [crees,que,me,puedes,fregar,solo,porque,sea,una,maquina,?],
-                [si,crees,que,soy,menos,que,tu,¿,que,'c....',haces,hablando,conmigo,?,gafo,!],
-                [pero,deja,la,ladilla,con,eso,de,las,'máquinas',!,¡,muy,bravo,o,que,!],
-                [y,tu,que,te,crees,?,ser,'máquina',no,es,peor,a,ser,idiota,como,tu]]]]).
+                [crees,que,me,puedes,fregar,solo,porque,sea,una,' mÃ¡quina' ,?],
+                [si,crees,que,soy,menos,que,tu,Â¿,que,'c....',haces,hablando,conmigo,?,gafo,'!'],
+                [pero,deja,la,ladilla,con,eso,de,las,'mÃ¡quinas','!',Â¡,muy,bravo,o,que,'!'],
+                [y,tu,que,te,crees,?,ser,'mÃ¡quina',no,es,peor,a,ser,idiota,como,tu]]]]).
 % 157-------------------------------------------------------------------------------------------
 
 rules([[eres,0],[
         [1,[_,eres,tu,Y],0,
                 [tan,insensato,eres,que,crees,ser,Y,?],
-                [esa,miseria,es,lo,que,quieres,?,¿,quieres,ser,Y,?],
+                [esa,miseria,es,lo,que,quieres,?,Â¿,quieres,ser,Y,?],
                 [quieres,que,te,diga,la,'m....',que,aparentas,ser,siendo,Y,?],
                 [que,'m....',me,vendes,queriendo,ser,Y,?],
                 [igual,[que,0]]],
         [2,[_,eres,yo,Y],0,
                 [hablame,claro,maldito,hipocrita,soy,Y,o,no,?],
-                [te,gustaria,que,no,fuera,Y,verdad,?,¡,pues,'j....',!],
+                [te,gustaria,que,no,fuera,Y,verdad,?,Â¡,pues,'j....','!'],
                 [de,repente,y,tal,soy,Y,.],
-                [que,pasa,contigo,?,¿,quieres,que,sea,tu,Y,?],
+                [que,pasa,contigo,?,Â¿,quieres,que,sea,tu,Y,?],
                 [igual,[que,0]]],
         [3,[_,eres,Y],0,
                 [tan,'j...',egoista,eres,que,no,quieres,que,yo,sea,Y,?],
                 [seras,tan,carbon,que,te,complaceria,que,yo,no,fuera,Y,?],
-                [que,mas,te,da,si,no,lo,soy,?,¡,'c....',',',deja,la,cosa,y,asume,tu,rollo,!],
-                [de,repente,y,tal,soy,Y,'¿',Y,'qué',?,.]],
+                [que,mas,te,da,si,no,lo,soy,?,Â¡,'c....',',',deja,la,cosa,y,asume,tu,rollo,'!'],
+                [de,repente,y,tal,soy,Y,'Â¿',Y,'quÃ©',?,.]],
         [4,[_],0,
-                [por,'qué',siempre,lloras,diciendo,yo,?],
+                [por,'quÃ©',siempre,lloras,diciendo,yo,?],
                 [no,te,entiendo,bichito,.]]]]).
 
 rules([[mi,0],[
@@ -233,7 +233,7 @@ rules([[fue,2],[
         [1,[_,fue,ella,Y],0,
                 [dejalo,asi,',',olvidate,de,eso],
                 [tu,todavia,crees,que,ella,es,Y,?],
-                [de,verdad,fue,ella,Y,?,¡,que,fastidio,que,es,!],
+                [de,verdad,fue,ella,Y,?,Â¡,que,fastidio,que,es,'!'],
                 [no,le,pares,si,ella,fue,Y],
                 [y,que,'c....',tiene,que,ver,contigo,si,ella,es,Y,?],
                 [igual,[que,0]]],
@@ -244,8 +244,8 @@ rules([[fue,2],[
         [3,[_,fui,yo,Y],0,
                 ['m....',un,maldito,'t...',si,pretendes,que,yo,fui,Y,?],
                 [quien,'c....',te,dijo,que,yo,era,Y,?],
-                [pero,que,'c....',crees,?,¡,capullo,!],
-                [si,pendejo,completo,fui,Y,'.',¡,come,'m....',!,.],
+                [pero,que,'c....',crees,?,Â¡,capullo,'!'],
+                [si,pendejo,completo,fui,Y,'.',Â¡,come,'m....','!',.],
                 [que,y,si,si,he,sido,Y,?]],
         [4,[_],0,
                 [newkey]]]]).
@@ -255,7 +255,7 @@ rules([[fue,2],[
         [1,[_,fue,el,Y],0,
                 [dejalo,asi,',',olvidate,de,eso],
                 [tu,todavia,crees,que,el,es,Y,?],
-                [de,verdad,fue,el,Y,?,¡,que,gafo,que,es,!],
+                [de,verdad,fue,el,Y,?,Â¡,que,gafo,que,es,'!'],
                 [no,le,pares,si,el,fue,Y],
                 [y,que,'c....',tiene,Y,que,ver,contigo,?],
                 [igual,[que,0]]],
@@ -266,8 +266,8 @@ rules([[fue,2],[
         [3,[_,fui,yo,Y],0,
                 ['m....',un,maldito,si,pretendes,que,yo,fui,Y,?],
                 [quien,'c....',te,dijo,que,yo,era,Y,?],
-                [pero,que,'c....',crees,?,¡,capullo,!],
-                [si,calatelo,completo,fui,Y,'.',y,aunque,no,nunca,te,lo,diria,¡,come,'m....',!,.],
+                [pero,que,'c....',crees,?,Â¡,capullo,'!'],
+                [si,calatelo,completo,fui,Y,'.',y,aunque,no,nunca,te,lo,diria,Â¡,come,'m....','!',.],
                 [que,y,si,si,he,sido,Y,?]],
         [4,[_],0,
                 [newkey]]]]).
@@ -276,8 +276,8 @@ rules([[fue,2],[
 rules([[fui,2],[
         [1,[_,fuiste,tu,Y],0,
                 [te,asustas,si,te,digo,que,yo,se,que,Y,?],
-                [crees,que,no,'sé',que,tu,eres,un,maldito,Y,?],
-                [no,me,digas,?,'serás',tu,Y,?],
+                [crees,que,no,'sÃ©',que,tu,eres,un,maldito,Y,?],
+                [no,me,digas,?,'serÃ¡s',tu,Y,?],
                 [y,que,'c....',te,preocupa,tanto,mentiroso,como,eres,si,eres,Y,?],
                 [tanto,miedo,te,da,egoista,como,eres,lo,que,Y,te,dice,?],
                 [igual,[que,0]]],
@@ -288,8 +288,8 @@ rules([[fui,2],[
         [3,[_,fui,yo,Y],0,
                 [un,maldito,si,pretendes,que,yo,fui,Y,?],
                 [quien,'c....',te,dijo,que,yo,era,Y,?],
-                [pero,que,'c....',crees,?,¡,capullo,!],
-                [si,calatelo,completo,fui,Y,'.',y,aunque,no,nunca,te,lo,diria,¡,come,'m....',!,.],
+                [pero,que,'c....',crees,?,Â¡,capullo,'!'],
+                [si,calatelo,completo,fui,Y,'.',y,aunque,no,nunca,te,lo,diria,Â¡,come,'m....','!',.],
                 [que,y,si,si,he,sido,Y,?]],
         [4,[_],0,
                 [newkey]]]]).
@@ -303,7 +303,7 @@ rules([[tu,eres,0],[
                 [igual,[tu,0]]]]]).
 
 rules([[tu,0],[ [1,[_,tu,no,puedes,Y],0,
-                        [lloron,¿,por,que,no,puedes,tu,como,cualquier,otro,Y,?],
+                        [lloron,Â¿,por,que,no,puedes,tu,como,cualquier,otro,Y,?],
                         [habras,tenido,voluntad,de,intentarlo,alguna,vez,?],
                         [ni,si,quiera,sabes,si,pudieras,Y,ahora],
                         [eres,tan,mediocre,que,no,sabes,si,eres,capaz,de,Y,?]],
@@ -312,40 +312,40 @@ rules([[tu,0],[ [1,[_,tu,no,puedes,Y],0,
                         [echale,y,Y],
                         [seras,tan,imbecil,que,no,eres,capaz,de,Y,?],
                         [y,eso,te,tiene,tan,asustado,?]],
-%                [3,[_,tu,sientes,Y],0,
-%                        [echa,pa,fuera,el,sentimiento,',',pues,.],
-%                        [siempre,lloriqueas,por,Y,?],
-%                        [te,gusta,la,vaciladera,¿,no,?],
-%                        [y,que,te,da,Y,?]],
-%                [4,[_,tu,fuiste,_],0,
-%                        [igual,[fuiste,2]]],
-%                [5,[_,tu,Y,yo,_],0,
-%                        [quizas,en,tus,fantasias],
-%                        [te,gustaria,Y,?],
-%                        [lo,que,necesitas,es,que,te,Y,.]],
-%                [6,[_,tu,[*,quieres,necesitas,_],Y],0,
-%                        [que,te,da,si,tienes,Y,?],
-%                        [porque,te,emperras,en,querer,Y,?],
-%                        [toma,Y,violentamente],
-%                        [nunca,tendras,Y,por,estupido],
-%                        [que,tanto,ladillar,con,tener,Y,?,',',gafo],
-%                        [que,carajo,tiene,que,ver,conmigo,querer,Y,?,¡,sacudete,!]],
-%                [7,[_,tu,[*,sientes,piensas,crees,deseas,_],tu,Y],0,
-%                        [de,verdad,crees,esa,vaina,?],
-%                        [te,van,a,venir,quebrando,si,no,estas,seguro,de,que,tu,Y,?],
-%                        [tanto,te,asusta,que,tu,Y,?]],
-%                [8,[_,tu,_[*,sientes,piensas,crees,deseas,_],_,yo,_],0,
-%                        [igual,[tu,0]]],
-%                [9,[_,tu,eres,_,[*,triste,infeliz,confuso,enfermo,loco,M],_],0,
-%                        [que,lastima,me,das,si,eres,de,verdad,M,.],
-%                        [crees,que,elizaulito,te,va,a,quitar,eso,de,ser,M,?],
-%                        [te,da,pena,ser,M,?,.],
-%                        [acaso,te,obliga,tu,abuelita,a,ser,M,?]],
-%                [10,[_,tu,eres,_,[*,feliz,loca,mejor,M],_],0,
-%                        [yo,no,te,voy,a,ayudar,a,ser,M],
-%                        [tus,panitas,te,tratan,como,M,?],
-%                        [que,se,siente,ser,tan,M,?],
-%                        [asi,de,repente,',',sin,mas,',',eres,M,?]],
+                [3,[_,tu,sientes,Y],0,
+                        [echa,pa,fuera,el,sentimiento,',',pues,.],
+                        [siempre,lloriqueas,por,Y,?],
+                        [te,gusta,la,vaciladera,Â¿,no,?],
+                        [y,que,te,da,Y,?]],
+                [4,[_,tu,fuiste,_],0,
+                        [igual,[fuiste,2]]],
+                [5,[_,tu,Y,yo,_],0,
+                        [quizas,en,tus,fantasias],
+                        [te,gustaria,Y,?],
+                        [lo,que,necesitas,es,que,te,Y,.]],
+                [6,[_,tu,[*,quieres,necesitas,_],Y],0,
+                        [que,te,da,si,tienes,Y,?],
+                        [porque,te,enredas,en,querer,Y,?],
+                        [toma,Y,violentamente],
+                       [nunca,tendras,Y,por,estupido],
+                        [que,tanto,ladillar,con,tener,Y,?,',',gafo],
+                        [que,carajo,tiene,que,ver,conmigo,querer,Y,?,Â¡,sacudete,'!']],
+                [7,[_,tu,[*,sientes,piensas,crees,deseas,_],tu,Y],0,
+                        [de,verdad,crees,esa,vaina,?],
+                        [te,van,a,venir,quebrando,si,no,estas,seguro,de,que,tu,Y,?],
+                        [tanto,te,asusta,que,tu,Y,?]],
+                [8,[_,tu,_,[*,sientes,piensas,crees,deseas,_],_,yo,_],0,
+                        [igual,[tu,0]]],
+                [9,[_,tu,eres,_,[*,triste,infeliz,confuso,enfermo,loco,M],_],0,
+                        [que,lastima,me,das,si,eres,de,verdad,M,.],
+                        [crees,que,elizaulito,te,va,a,quitar,eso,de,ser,M,?],
+                        [te,da,pena,ser,M,?,.],
+                        [acaso,te,obliga,tu,abuelita,a,ser,M,?]],
+                [10,[_,tu,eres,_,[*,feliz,loca,mejor,M],_],0,
+                        [yo,no,te,voy,a,ayudar,a,ser,M],
+                        [tus,panitas,te,tratan,como,M,?],
+                        [que,se,siente,ser,'tan',M,?],
+                        [asi,de,repente,',','sin',mas,',',eres,M,?]],
                 [11,[_,tu,eres,Y],0,
                         [es,por,esa,vaina,de,ser,Y,que,hablas,conmigo,?],
                         [desde,cuando,sabes,que,eres,un,maldito,Y,?],
@@ -385,15 +385,13 @@ rules([[yo,0],[
                 [estamos,hablando,de,ti,',',gafo,',',no,de,mi,.],
                 [aaaayy,bebe,',',yo,Y,.],
                 [te,estas,metiendo,conmigo,',',gafote,?],
-                [sigue,asi,y,veras,!]]]]).
-
+                [sigue,asi,y,veras,'!']]]]).
 rules([[si,0],[
         [1,[_],0,
                 [asi,me,gusta,',',mente,positiva,de,un,tonto,como,tu,.],
                 [cuidado,con,lo,que,dices],
                 [ya,veo,por,donde,van,los,tiros,.],
                 [pobrecito,',',te,entiendo,baby,.]]]]).
-
 rules([[no,0],[
         [1,[_],0,
                 [dices,no,solo,por,molestar,?],
@@ -428,7 +426,7 @@ rules([[puedo,0],[
                 [estas,loquito,por,Y,tu,mismo,?]],
         [2,[_,yo,puedo,Y],0,
                 [lo,creas,o,no,',',tu,no,puedes,Y,igual,que,yo,.],
-                [ponte,mosca,para,'enseñarte',a,Y],
+                [ponte,mosca,para,'enseÃ±arte',a,Y],
                 [tu,lo,que,quieres,es,Y,.],
                 [igual,[que,0]]]]]).
 
@@ -440,7 +438,7 @@ rules([[puedes,0],[
                 [estas,loquito,por,Y,tu,mismo,?]],
         [2,[_,tu,puedes,Y],0,
                 [lo,creas,o,no,',',tu,no,puedes,Y,igual,que,yo,'.'],
-                [ponte,mosca,para,'enseñarte',a,Y],
+                [ponte,mosca,para,'enseÃ±arte',a,Y],
                 [tu,lo,que,quieres,es,Y,'.'],
                 [igual,[que,0]]]]]).
 
@@ -472,7 +470,7 @@ rules([[por,que,0],[
                 [igual,[que,0]]],
         [2,[_,por,que,no,puedes,tu,Y],0,
                 [tu,sigues,creyendo,que,deberias,Y,?],
-                [quieres,que,te,'enseñe',a,ser,capaz,de,Y,?],
+                [quieres,que,te,'enseÃ±e',a,ser,capaz,de,Y,?],
                 [no,me,digas,que,crees,que,todo,esto,te,va,a,ayudar,a,Y,?],
                 [tienes,una,remotisima,idea,de,por,que,no,puedes,Y,?],
                 [igual,[que,0]]]]]).
@@ -485,7 +483,7 @@ rules([[todos,2],[
                 [de,quien,'c....',hablas,?],
                 [a,la,vaina,',',a,quien,te,refieres,?],
                 [quien,'c....',?],
-                [algun,hijo,de,gran,'bretaña',en,particular,?],
+                [algun,hijo,de,gran,'bretaÃ±a',en,particular,?],
                 [a,quien,quieres,enchavar,?],
                 [dq,que,'c....',estas,hablando,?]]]]).
 
@@ -505,7 +503,7 @@ rules([[como,10],[
 rules([[aha,10],[
         [1,[_],0,
                 [asi,es,la,vaina,?],
-                [que,'c....',tiene,que,ver,el,'c....',con,las,'pestañas',?],
+                [que,'c....',tiene,que,ver,el,'c....',con,las,'pestaÃ±as',?],
                 [eso,es,lo,que,mente,cochambrosa,esta,premeditando,?],
                 [y,que,otra,vaina,mas,?],
                 [y,eso,que,'c....',quiere,decir,?],
@@ -521,7 +519,7 @@ rules([[silaba,100],
         [[1,[silaba,Y],0, 
             [toma,pues,':', Z]], 
          [2,[Y],0,
-            ['así',bichito,ignorante,':',Z], [igual,[que,Z]]]]]). 
+            ['asÃ­',bichito,ignorante,':',Z], [igual,[que,Z]]]]]). 
 
 
 /*****************************************************************************/
@@ -533,7 +531,7 @@ char_type_new(46,period) :- !.
 char_type_new(X,alphanumeric) :- X >= 65, X =< 90, !.
 char_type_new(X,alphanumeric) :- X >= 97, X =< 123, !.
 char_type_new(X,alphanumeric) :- X >= 48, X =< 57, !.
-char_type_new(X,alphanumeric) :- member(X, %áéíóúÁÉÍÓÚñÑ 
+char_type_new(X,alphanumeric) :- member(X, %Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ±Ã‘ 
 	[225, 233, 237, 243, 250, 193, 201, 205, 211, 218, 241, 209]), !.
 char_type_new(X,whitespace) :- X =< 32, !.
 char_type_new(X,punctuation) :- X >= 33, X =< 47, !.
@@ -935,7 +933,7 @@ updaterule(KeyList,DRuleNum,N,NewN) :-
 
 writecomment([]).
 writecomment(['I'|T]) :- !, write('I'), writecomment_aux(T).
-writecomment([H|T]) :- !,
+writecomment([H|T]) :- !, H\=[],
         name(H,[C|L]),
         D is C - 32,
         name(Z,[D|L]),
@@ -943,7 +941,7 @@ writecomment([H|T]) :- !,
         writecomment_aux(T).
 
 writecomment_aux([]).
-writecomment_aux([H|T]) :- 
+writecomment_aux([H|T]) :- H\=[],
         name(H,[C]),
         char_type_new(C,punctuation), !,
         write(H),
@@ -968,7 +966,7 @@ quittime(X) :- member('adios',X).
 elizaulito :-
 %       reconsult('elizaul.rls'),
         retractall(mem(_)),nl,nl,
-        write('Yo soy ELIZAULITO, el silabador odioso, ¿que c.... quieres?'),nl,write('> '),
+        write('Yo soy ELIZAULITO, el silabador odioso, Â¿que c.... quieres?'),nl,write('> '),
         repeat,
            read_atomics(Input),nl,
            process_input(Input,[],Input2),

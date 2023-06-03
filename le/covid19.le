@@ -1,0 +1,62 @@
+the target language is: prolog. 
+
+los predicados son:
+    *una persona* tiene *una condición*.
+    *una persona* podría tener *una condición*.
+    *una prueba* de *un tipo* de *una persona* salió *un valor*. 
+
+la base de conocimiento covid19 incluye:
+
+% https://espanol.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html
+una persona tiene algún síntoma de covid
+    si la persona tiene fiebre
+    o la persona tiene escalofríos
+    o la persona tiene dificultad para respirar
+    o la persona tiene fatiga
+    o la persona tiene dolores musculares y corporales
+    o la persona tiene dolor de cabeza
+    o la persona tiene pérdida reciente del olfato
+    o la persona tiene pérdida reciente del gusto
+    o la persona tiene dolor de garganta
+    o la persona tiene congestión nasal
+    o la persona tiene moqueo
+    o la persona tiene náuseas
+    o la persona tiene vómitos
+    o la persona tiene diarrea. 
+    
+una persona tiene covid
+    si una prueba de antígeno de la persona salió positiva.
+    
+una persona tiene covid
+    si una prueba de pcr de la persona salió positiva. 
+
+una persona podría tener covid
+    si la persona tiene covid.
+    
+una persona podría tener covid
+    si la persona tiene algún síntoma de covid. 
+ 
+escenario uno es:
+    prueba 0001 de antígeno de Jacinto Dávila salió positiva. 
+    Jacinto Dávila tiene fiebre.
+    Jacinto Dávila tiene diarrea. 
+    Jacinto Dávila tiene tos. 
+    
+escenario dos es:
+    Fulano de Tal tiene fiebre.
+    Fulano de Tal tiene escalofríos.
+    Fulano de Tal tiene dificultad para respirar.
+    Fulano de Tal tiene fatiga.
+    Fulano de Tal tiene dolores musculares y corporales.
+    Fulano de Tal tiene dolor de cabeza.
+    Fulano de Tal tiene pérdida reciente del olfato.
+    Fulano de Tal tiene pérdida reciente del gusto.
+    Fulano de Tal tiene dolor de garganta.
+    Fulano de Tal tiene congestión nasal.
+    Fulano de Tal tiene moqueo.
+    Zutano Barriga tiene náuseas.
+    Zutano Barriga tiene vómitos.
+    Zutano Barriga tiene diarrea. 
+
+la pregunta uno es:
+    cuál persona podría tener cuál condición. 
